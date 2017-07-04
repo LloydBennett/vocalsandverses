@@ -1,0 +1,56 @@
+.artist-card {
+    @include dropShadow;
+    position: relative;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1);
+    transition: transform 400ms cubic-bezier(.87,-.41,.19,1.44);
+
+    @media #{$small-mobile-breakpoint} {
+        max-width: 250px;
+    }
+}
+
+.no-touch {
+    .artist-card:hover {
+        transition: transform 400ms cubic-bezier(.87,-.41,.19,1.44);
+        transform: scale(1.15);
+        z-index: 2;
+    }
+}
+
+.artist-name {
+    font-family: $display-font-family;
+    font-weight: normal;
+    text-transform: capitalize;
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: pxtoem(12, 16);
+    color: $display-font-color;
+}
+
+.artist-info {
+    position: relative;
+    background-color: #FCFCFC;
+    width: 100%;
+    padding: 1.7em 1.5em 3em;
+
+    span {
+        display: block;
+        position: absolute;
+        left: 1.3em;
+        bottom: 0;
+        margin-bottom: 0;
+        color: $swatch-color-blue;
+        @extend .artist-brief;
+    }
+
+}
+
+.artist-brief {
+    margin-bottom: 2em;
+    font-size: 1.3em;
+    line-height: 1.4;
+    margin-top: 0;
+}

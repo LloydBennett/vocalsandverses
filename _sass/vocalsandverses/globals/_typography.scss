@@ -1,0 +1,112 @@
+/* Typography */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 100%;
+	font-family: $body-font-family;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+	font-family: $display-font-family;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+h1 {
+	margin: 0;
+	font-size: 3.6em;
+	line-height: 1.2;
+	color: darken($display-font-color, 40%);
+
+	@media #{$small-mobile-breakpoint} {
+		font-size: 2.8em;
+	}
+
+	@media #{$small-desktop-breakpoint} {
+		font-size: 4.5em;
+	}
+}
+
+h2 {
+	font-size: 3em;
+	color: darken($display-font-color, 20%);
+
+	span {
+		display: block;
+		@media #{tablet-breakpoint}{
+			display: inline;
+		}
+	}
+
+}
+
+h3 {
+	font-size: 2em;
+	font-weight: 400;
+	color: $display-font-color;
+ }
+
+h4 {
+	font-size: 1.8em;
+	font-weight: 400;
+	letter-spacing: normal;
+	color: lighten($display-font-color, 20%);
+}
+
+
+p {
+	line-height: 1.6;
+	font-size: 1.6em;
+	font-weight: 300;
+	color: $body-font-color;
+	max-width: pxtoem(480);
+	& + & {
+		margin-top: pxtoem(10, 16);
+	}
+}
+
+blockquote {
+	position: relative;
+	padding: 5em 0 2.5em;
+	margin: 4em 0;
+	width: 100%;
+	max-width: pxtoem(650, 10);
+
+	&:before {
+		@extend %quote;
+
+		content: "\201C";
+		top: 0;
+		left: 0;
+		color: $brand-color-yellow;
+		font-size: pxtoem(70, 10);
+
+		@media #{$tablet-breakpoint} {
+			font-size: pxtoem(100, 10);
+		}
+	}
+
+	p {
+		font-weight: 600;
+		font-size: 1.8em;
+		line-height: 1.5;
+
+		@media #{$large-mobile-breakpoint} {
+			margin: 0 0 0 1em;
+			font-size: 1.6em;
+		}
+
+		@media #{$tablet-breakpoint} {
+			margin: 0 0 0 pxtoem(70, 18);
+		}
+	}
+
+	@media #{$large-mobile-breakpoint} {
+		padding: 5em 0 1em;
+		margin: 2em 0;
+	}
+}

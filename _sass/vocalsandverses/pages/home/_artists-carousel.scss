@@ -1,0 +1,67 @@
+.artists-carousel {
+    position: relative;
+
+    .carousel-wrapper {
+        @media screen and (max-width: pxtoem(1099)) {
+            width: 100vw;
+            margin: -5em -60.547px 0;
+            height: pxtoem(540, 10);
+            overflow-x: hidden;
+            padding: 5em 0 5em 5em;
+        }
+
+        @media #{$large-mobile-breakpoint} {
+            margin: -5em -15px 0;
+        }
+
+        @media #{$small-mobile-breakpoint}  {
+            padding: 5em 0 5em 3em;
+        }
+
+    }
+
+    .artist-carousel-items {
+        @extend .clearfix;
+        @media screen and (max-width: pxtoem(1099)) {
+            display: flex;
+        }
+    }
+
+    .artist-card {
+        width: 100%;
+
+        &:last-child {
+            @media screen and (max-width: pxtoem(1099)) {
+                margin-right: 0;
+            }
+        }
+
+        .artist-info {
+            @media #{$small-desktop-breakpoint} {
+                height: 176px;
+            }
+        }
+
+        @media screen and (max-width: pxtoem(1099)) {
+            display: table;
+            margin-right: pxtoem(20, 10);
+        }
+
+        @media screen and (min-width: pxtoem(1100)) {
+            width: 18.5%;
+            float: left;
+            margin-right: 0.75%;
+            margin-left: 0.75%;
+        }
+    }
+
+    .ctas {
+        margin-top: 8em;
+
+        @media screen and (max-width: pxtoem(1099)) {
+            margin-top: 0;
+        }
+    }
+}
+
+

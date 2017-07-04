@@ -1,0 +1,14 @@
+.artist-avatar {
+  @extend %full-bleed-bg-image;
+  //@include dropShadow;
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  display: inline-block;
+  z-index: 2;
+
+  @media #{$small-mobile-breakpoint} {
+    max-width: 130px;
+    height: 130px;
+  }
+}

@@ -1,0 +1,49 @@
+.modal-overlay {
+    @extend .overlay;
+    background: rgba(0,0,0,0.7);
+    transition: opacity 500ms ease;
+    position: fixed;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+        transition: opacity 500ms ease;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.modal-content {
+    @include absolutelyCentered(horizontal);
+    transition: transform 600ms ease 100ms,
+                opacity 500ms ease;
+    position: fixed;
+    display: table;
+    transform: translate(-50%, 80%);
+    opacity: 0;
+
+    &.open {
+        transition: transform 500ms ease,
+                    opacity 500ms ease 100ms;
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: -20px;
+    z-index: 3000;
+    text-transform: uppercase;
+    color: white;
+
+    span {
+        vertical-align: middle;
+        font-family: $display-font-family;
+        font-size: 1.3em;
+    }
+}

@@ -1,0 +1,40 @@
+footer {
+	background-color: $swatch-color-black;
+	color: white;
+	padding-top: pxtoem(65, 10);
+	padding-bottom: pxtoem(55, 10);
+	text-align: center;
+
+	.thumbnail {
+		display: block;
+		margin-bottom: pxtoem(50, 10);
+	}
+}
+
+.footer-icons {
+	font-size: 3em;
+	margin-bottom: pxtoem(65, 30);
+
+	a {
+		display: inline-block;
+		margin-right: pxtoem(25, 30);
+
+		@media #{tablet-breakpoint} {
+			margin-right: pxtoem(80, 30);
+		}
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
+#theme-author {
+	font-size: 1.4em;
+}
+
+.copywright {
+	@extend #theme-author;
+	display: block;
+	margin-bottom: pxtoem(10, 14);
+}

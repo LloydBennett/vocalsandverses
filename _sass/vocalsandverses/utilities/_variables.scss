@@ -1,0 +1,52 @@
+// Brand Colours //
+$brand-color-yellow: #d6bb20;
+
+// Swatches //
+$swatch-color-blue: #6890CA;
+$swatch-color-darkblue: #3B5070;
+$swatch-color-black: #1B1B1B;
+$swatch-color-subscribe: lighten($swatch-color-black, 5%);
+
+$category-general: #C081FF;
+$category-event: #21A0A8;
+$category-motivation: #878787;
+
+// Playlist Colours //
+$playlist-track: #E9E9E9;
+$player-skin: #F2F2F2;
+$track-number-carousel: #D5D5D5;
+$track-number-listing: #A4A4A4;
+
+// Type //
+$display-font-family: 'Montserrat', sans-serif;
+$body-font-family: 'Hind', sans-serif;
+
+$display-font-color: #404040;
+$body-font-color: #414141;
+
+$browser-context: 16;
+// block components //
+$block--grey: #f4f4f4;
+
+
+//Margin
+$margin-lrg: pxtoem(100, 10);
+$margin-sml: pxtoem(50, 10);
+$margin-xs: pxtoem(25, 10);
+
+//Animations
+$gentle-ease: cubic-bezier(.46,.09,.48,1.04);
+$base-anim-duration: 400ms;
+
+// responsive //
+$small-mobile-max: pxtoem(550);
+$large-mobile-max: pxtoem(767);
+$tablet: pxtoem(768);
+$small-desktop: pxtoem(992);
+$large-desktop: pxtoem(1200);
+
+$small-mobile-breakpoint: 'only screen and (max-width: #{$small-mobile-max})';
+$large-mobile-breakpoint: 'only screen and (max-width: #{$large-mobile-max})';
+$tablet-breakpoint: 'only screen and (min-width: #{$tablet})';
+$small-desktop-breakpoint: 'only screen and (min-width: #{$small-desktop})';
+$large-desktop-breakpoint: 'only screen and (min-width: #{$large-desktop})';

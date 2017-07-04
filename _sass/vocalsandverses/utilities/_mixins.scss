@@ -1,0 +1,59 @@
+@mixin play-btnWithCircle($widtheight){
+    width: $widtheight;
+    border-radius: 100%;
+    height: $widtheight;
+    border: 2px solid;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+@mixin triangle($direction, $color, $top, $right, $bottom, $left) {
+  width: 0;
+  height: 0;
+  border-width: $top $right $bottom $left;
+  border-style: solid;
+  border-color: transparent;
+  border-#{$direction}-color: $color; 
+}
+
+@mixin socialFeed($unicode) {
+    font-family: FontAwesome;
+    font-size: 25px;
+    margin-bottom: 30px;
+    content: $unicode;
+    text-align: center;
+    display: block;
+}
+
+@mixin absolutelyCentered($direction:null) {
+  position: absolute;
+  @if ($direction == 'horizontal') {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if ($direction == 'vertical') {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+@mixin dropShadow {
+  &:after {
+    content: "";
+    display: block;
+    background-color: grey;
+    height: 100%;
+    width: 85%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    box-shadow: 0 20px 50px 0 rgba(0,0,0,0.3);
+  }
+}

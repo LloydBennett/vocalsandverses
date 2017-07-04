@@ -1,0 +1,133 @@
+.events-widget {
+	margin-bottom: 8em;
+	width: 100%;
+
+	@media screen and (min-width: pxtoem(401)) and (max-width: pxtoem(899)){
+    	max-width: 400px;
+    }
+
+    @media screen and (max-width: pxtoem(899)){
+    	margin-left: auto;
+    	margin-right: auto;
+    	margin-bottom: pxtoem(120);
+
+    }
+
+
+	.btn {
+		width: 100%;
+		padding-top: pxtoem(15, 14);
+		padding-bottom: pxtoem(15, 14);
+		display: inline-block;
+    	font-weight: bold;
+    	font-size: 1.4em;
+    	text-transform: uppercase;
+	}
+
+    .thumbnail {
+    	position: relative;
+		display: block;
+    	width: 100%;
+    	margin-bottom: 0;
+
+
+    	.overlay {
+    	   top: inherit;
+    	   bottom: 0 !important;
+           background-image: linear-gradient(-180deg, transparent 32%, rgba(0,0,0,0.3) 45%);
+
+           @media screen and (max-width: pxtoem(400)) {
+				background-image: none;
+				background-color: rgba(0,0,0,.6);
+           }
+    	}
+    }
+	
+	.details {
+		position: absolute;
+		font-size: 1.4em;
+		left: 15px;
+		bottom: 16px;
+		color: white;
+		font-weight: 400;
+
+		@media screen and (max-width: pxtoem(400px)) {
+			right: 0;
+			left: 0;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			bottom: 30px;
+		}
+
+		@media screen and (min-width: 401px) {
+			left: 30px;
+		}
+
+		@media #{$tablet-breakpoint} {
+			font-weight: 300;
+		}
+
+		.event-name {
+			font-weight: 600;
+			font-size: pxtoem(16, 14);
+			margin-bottom: pxtoem(10, 14);
+			color: white;
+
+			@media screen and (min-width: pxtoem(401)) {
+				margin-left: 2.1em;
+			}
+		}
+
+	}
+	
+}
+
+.address-block {
+	margin-bottom: pxtoem(10, 14);
+}
+
+.time-block {
+	div {
+		display: inline-block;
+	}
+}
+
+.icon-location {
+	font-family: untitled-font-6;
+	font-size: pxtoem(25, 14);
+	margin-right: pxtoem(5, 25);
+	display: inline-block;
+
+	@media screen and (max-width: pxtoem(400)) {
+		display: none;
+	}
+}
+
+.icon-calendar {
+	@extend .icon-location;
+	font-size: pxtoem(23, 14);
+}
+
+.address {
+	line-height: 1.4;
+	display: inline-block;
+
+	span {
+		display: block;
+	}
+}
+
+.time, .date {
+	display: block;
+	line-height: 1.4;
+}
+
+.page-content {
+	margin-top: 5em;
+
+	@media #{$tablet-breakpoint} {
+		margin-top: 8em;
+	}
+
+}

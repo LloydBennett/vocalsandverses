@@ -1,0 +1,143 @@
+.comments-area {
+  max-width: pxtoem(750, 10);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .container {
+    @media #{$tablet-breakpoint} {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100% !important;
+    }
+  }
+
+  .section-title {
+    margin-bottom: 3em;
+
+    &:after {
+      @extend %divider;
+      content: "";
+      margin-top: pxtoem(25, 18);
+      display: block;
+    }
+
+    @media screen and (max-width: pxtoem(607)) {
+      margin-bottom: 2em;
+    }
+
+  }
+
+  .avatar {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: pxtoem(15, 10);
+
+    @media screen and (max-width: pxtoem(607)) {
+      max-width: 50px;
+      height: 50px;
+      width: 100%;
+    }
+  }
+}
+
+.comments-list {
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    margin-bottom: pxtoem(30, 10);
+  }
+
+  &:after {
+    @extend %divider;
+    content: "";
+    display: block;
+    margin-top: pxtoem(60, 10);
+
+    @media screen and (max-width: pxtoem(607)) {
+      margin-top: 5em;
+    }
+  }
+}
+
+.comment-meta,
+.comment-stamp {
+  display: inline-block;
+}
+
+.username {
+  margin: 0 pxtoem(15, 18) 0 auto;
+  display: inline-block;
+  color: $display-font-color;
+
+  @media screen and (max-width: pxtoem(607)) {
+    font-size: 1.6em;
+    display: block;
+    margin: 0 0 0.5em;
+  }
+}
+
+.comment-time {
+  text-align: right;
+  display: inline-block;
+  font-size: 1.4em;
+  color: #ababab;
+
+  @media screen and (max-width: pxtoem(607)) {
+    font-size: 1.2em;
+  }
+}
+
+.comment {
+  p {
+    margin-top: pxtoem(10, 16);
+    line-height: 1.5;
+
+    @media screen and (max-width: pxtoem(607)) {
+      font-size: 1.2em;
+    }
+  }
+
+  @media screen and (max-width: pxtoem(607)) {
+    display: flex;
+  }
+}
+
+.actions {
+  font-size: 1.4em;
+
+  span {
+    display: inline-block;
+    cursor: pointer;
+    color: lighten($display-font-color, 20%);
+
+    &:first-child {
+      margin-right: pxtoem(10, 14);
+    }
+  }
+}
+
+.response {
+  margin: pxtoem(30, 10) auto;
+
+  .response {
+    padding-left: 0;
+  }
+
+  .avatar {
+    height: 50px;
+    width: 50px;
+
+    @media #{$small-mobile-breakpoint} {
+      max-width: 40px;
+      width: 100%;
+      height: 40px;
+    }
+  }
+}

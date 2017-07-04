@@ -1,0 +1,173 @@
+form {
+	.btn {
+		@media screen and (max-width: 767px) {
+			padding: 12px 45px;
+		}
+
+		@media #{$tablet-breakpoint} {
+			height: 54px;
+			padding-left: 40px;
+			padding-right: 40px;
+			vertical-align: top;
+		}
+	}
+}
+
+.text-field {
+	font-size: 1.6em;
+	line-height: 1.8;
+	font-weight: 300;
+	transition: 300ms ease;
+	padding: pxtoem(8) pxtoem(15);
+
+	@media #{$tablet-breakpoint} {
+		font-size: 1.8em;
+	}
+}
+
+.search-field,
+.suggestions {
+	width: 100%;
+	max-width: pxtoem(435);
+}
+
+
+.subscribe {
+	width: 100%;
+	background-color: $swatch-color-subscribe;
+	text-align: center;
+	padding-top: 6em;
+	padding-bottom: 7em;
+	
+	@media screen and (min-width: pxtoem(880)) {
+		padding-top: 4em;
+		padding-bottom: 8em;
+	}
+
+	.headline {
+		color: white;
+		padding-top: pxtoem(10, 18);
+		padding-bottom: 1em;
+		margin-top: 0;
+		font-weight: 300;
+		font-size: 1.8em;
+		line-height: 1.5;
+
+		@media screen and (min-width: pxtoem(400)) and (max-width: pxtoem(879)) {
+			font-size: 2.2em;
+		}
+
+		@media #{$tablet-breakpoint} {
+			padding-top: pxtoem(30, 22);
+		}
+
+		@media screen and (min-width: pxtoem(880)) {
+			font-size: 2.8em;
+		}
+		
+		span {
+			@media screen and (max-width: 767px) {
+				display: block;
+			}
+		}
+	}
+}
+
+.search-form {
+	margin-top: 3em;
+	text-align: center;
+
+	.wrapper {
+		position: relative;
+		display: inline;
+		z-index: 2;
+	}
+
+	.search {
+		margin-right: 10px;
+	}
+
+	.btn {
+		padding: 15px 30px;
+	}
+}
+
+.suggestions {
+	position: absolute;
+	left: 0;
+	background-color: white;
+	padding: pxtoem(10, 16);
+	text-align: left;
+	font-size: 1.6em;
+
+	.suggestions-list {
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.suggestions-item {
+		padding: pxtoem(10, 16);
+		display: flex;
+
+		span {
+			width: 100%;
+		}
+
+		.suggestions-category {
+			text-transform: uppercase;
+			text-align: right;
+			color: #a9a9a9;
+		}
+	}
+}
+
+.subscription-form {
+	.email, .your-name {
+		position: relative;
+		@media screen and (min-width: 880px){
+			display: inline-block;
+			width: 300px; 
+		}
+		@media screen and (max-width: 879px){
+			display: table; 
+			margin-left: auto;
+   			margin-right: auto; 
+   			margin-bottom: 20px;
+   			width: 90%;
+   			max-width: 500px;
+		}
+
+		i {
+			position: absolute;
+			top: 14px;
+    		left: 17px;
+    		z-index: 10;
+    		color: #A9A9A9;
+    		font-size: 2rem;
+
+    		@media screen and (max-width: 767px) {
+				left: 12px;
+			}
+		}
+
+	}
+	
+	.email {
+		@media screen and (min-width: 880px){
+			margin-right: 15px;
+			margin-left: 5px;
+		}
+	}
+
+	.your-name {
+		input {
+			@media screen and (max-width: 879px) {
+				width: 90%;
+			}
+			@media screen and (min-width: 880px) {
+				width: 100%;
+			}
+		}
+	}
+}
+
