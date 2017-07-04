@@ -41,3 +41,9 @@ gems:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+contentful:
+  spaces:
+    - example: # Jekyll _data folder identifier - Required
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
