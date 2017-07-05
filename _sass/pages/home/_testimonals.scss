@@ -3,8 +3,9 @@
 .testimonals {
 	position: relative;
 	width: 100%;
-	@extend %clearfix;
-	
+	@extend .clearfix;
+
+
 	.thumbnail {
 		margin-bottom: 0;
 		height: 100%;
@@ -23,7 +24,7 @@
 		box-shadow: 4px 2px 16px 0 rgba(0,0,0,0.15);
 		font-family: untitled-font-6;
 		color: #D1D1D1;
-		
+
 		.prev, .next {
 			width: 50%;
 			height: 100%;
@@ -50,12 +51,12 @@
 			float: right;
 			border-left: 1px solid darken(#F8F8F8, 8%);
 		}
-		
+
 		.prev {
 			float: left;
 			border-right: 1px solid darken(#F8F8F8, 8%);
 		}
-		
+
 	}
 
 }
@@ -88,6 +89,7 @@
 	}
 }
 
+
 .carousel-title {
 	font-size: 1.4em;
 	margin-bottom: pxtoem(10, 14);
@@ -105,7 +107,6 @@
 	padding-right: pxtoem(10, 23);
 	font-size: 3em;
 	font-weight: bold;
-	font-family: $display-font-family;
 
 	@media #{$small-mobile-breakpoint} {
 		font-size: 2.8em;

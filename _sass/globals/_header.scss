@@ -32,7 +32,7 @@
 	width: 22px;
 	display: inline-block;
 	cursor: pointer;
-	
+
 	@media #{$tablet-breakpoint}{
 		margin-top: pxtoem(13, 10);
 	}
@@ -109,7 +109,6 @@
 
 .nav-menu {
 	position: relative;
-	font-family: $display-font-family;
 	font-weight: bold;
 	text-transform: lowercase;
 	text-align: right;

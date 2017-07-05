@@ -3,6 +3,7 @@
 	font-size: inherit;
 }
 
+
 .btn {
 	border-radius: 0;
 	color: white;
@@ -10,7 +11,7 @@
 	text-align: center;
 	cursor: pointer;
 	display: inline-block;
-	
+
 	&:hover {
 		text-decoration: none;
 	}
@@ -18,10 +19,6 @@
 	&:focus {
     	outline: none;
 	}
-}
-
-input {
-	font-family: $body-font-family;
 }
 
 .btn-lrg {
@@ -81,7 +78,7 @@ input {
 			font-size: 1.6em;
 		}
 	}
-	
+
 }
 
 .play-btn-white-stroke {

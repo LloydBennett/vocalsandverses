@@ -11,23 +11,23 @@ var gulp = require('gulp'),
 
 gulp.task("concatJS", function(){
   return gulp.src([
-    './js/dev/**/*.js'
+    './javascript/dev/**/*.js'
   ])
   .pipe(sourceMaps.init())
   .pipe(gulpConcat('script.js'))
   .pipe(sourceMaps.write('./'))
-  .pipe(gulp.dest('./js/production'));
+  .pipe(gulp.dest('./javascript/production'));
 });
 
 gulp.task("minifyScripts", ['concatJS'], function(){
-  return gulp.src('./js/script.js')
+  return gulp.src('./javascript/script.js')
   .pipe(renameFile('script.min.js'))
   .pipe(uglify())
-  .pipe(gulp.dest('./js/production'));
+  .pipe(gulp.dest('./javascript/production'));
 });
 
 gulp.task("compileSass", function(){
-  return gulp.src('sass/style.scss')
+  return gulp.src('_sass/vocalsandverses.scss')
   .pipe(sourceMaps.init())
   .pipe(sass())
   .pipe(autoPrefixer('last 2 versions'))
@@ -39,8 +39,8 @@ gulp.task("compileSass", function(){
 
 gulp.task("watchFiles", function(){
 
-  gulp.watch('sass/**/*.scss', ['compileSass']);
-  gulp.watch('js/dev/*.js', ['concatJS']);
+  gulp.watch('_sass/**/*.scss', ['compileSass']);
+  gulp.watch('javascript/dev/*.js', ['concatJS']);
 });
 
 gulp.task("serve", ['watchFiles']);
