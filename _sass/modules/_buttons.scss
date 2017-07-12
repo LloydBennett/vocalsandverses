@@ -1,8 +1,3 @@
-.link {
-	color: $swatch-color-blue;
-	font-size: inherit;
-}
-
 .btn {
 	border-radius: 0;
 	color: white;
@@ -19,6 +14,11 @@
 	&:focus {
     outline: none;
 	}
+
+  & + &,
+  & + .play-btn {
+    margin-left: $spacing-m;
+  }
 }
 
 .btn-lrg {
@@ -47,53 +47,20 @@
 	}
 }
 
-.play-btn-sml {
-	@include play-btnWithCircle(30px);
+.play-btn {
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
 
-	i {
-		@extend %playsymbol;
-		top: 28%;
-		font-size: 1.2em;
-	}
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.play-btn-lrg {
-	@include play-btnWithCircle(45px);
-
-	@media #{$large-mobile-breakpoint} {
-		width: 40px;
-		height: 40px;
-	}
-
-	i {
-		@extend %playsymbol;
-		font-size: 1.4em;
-
-		@media #{$tablet-breakpoint} {
-			font-size: 1.6em;
-		}
-	}
-
-}
-
-.play-btn-white-stroke {
-	border: 2px solid white;
-
-	i {
-		color: white;
-	}
-}
-.play-btn-solid-yellow {
-	background-color: $swatch-brand-yellow;
-	border: 2px solid $swatch-brand-yellow;
-
-	i {
-		color: white;
-	}
-}
-
-.center-cta {
-	margin-left:auto;
-	margin-right: auto;
-	display: table;
+.link {
+	color: $swatch-color-blue;
+	font-size: inherit;
 }

@@ -4,7 +4,10 @@
 }
 
 .hero-content {
-  padding: $spacing-xl 0;
+  padding: $spacing-m 0;
+  @media #{$tablet-breakpoint} {
+    padding: $spacing-xl 0;
+  }
 }
 
 .hero-content-title, .hero-content-copy {
