@@ -33,24 +33,34 @@
   }
 }
 
-@mixin dropShadow {
-  &:after {
-    content: "";
-    display: block;
-    background-color: grey;
-    height: 100%;
-    width: 85%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    box-shadow: 0 20px 50px 0 rgba(0,0,0,0.3);
-  }
-}
-
 @mixin setVerticalRhythmn($font-size) {
   font-size: $font-size#{em};
   line-height: calculateLineHeight($font-size);
+}
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin nowrap($breakpoint: null, $breakOnNewLine: true) {
+  @if ($breakpoint and $breakOnNewLine) {
+    @media #{breakpoint} {
+      display: block;
+      white-space: nowrap;
+    }
+  } @else if ($breakpoint) {
+      @media #{breakpoint} {
+        white-space: nowrap;
+      }
+  } @else if ($breakOnNewLine) {
+      display: block;
+      white-space: nowrap;
+  } @else {
+      white-space: nowrap;
+  }
 }

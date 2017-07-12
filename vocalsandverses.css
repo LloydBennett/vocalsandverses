@@ -1,8 +1,3 @@
-.clearfix:after, .sub-row:after {
-  content: "";
-  display: table;
-  clear: both; }
-
 .nowrap {
   white-space: nowrap; }
 
@@ -18,8 +13,12 @@
   padding-left: 0 !important;
   padding-right: 0 !important; }
 
-.sub-row {
-  display: inline-block; }
+.play-btn-sml i, .play-btn-lrg i {
+  position: absolute;
+  top: 31%;
+  left: 55%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%); }
 
 @media screen and (max-width: 56.1875em) {
   .col-custom {
@@ -27,16 +26,6 @@
     width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0; } }
-
-.light-title {
-  font-weight: 400; }
-
-@media screen and (max-width: 767px) {
-  .break-title-xs {
-    display: block; } }
-
-.section-title {
-  margin-bottom: 3.5em; }
 
 .thumbnail {
   display: inline-block;
@@ -489,6 +478,10 @@ li {
   margin-left: auto;
   width: 90%;
   max-width: 1600px; }
+  .container::before, .container::after {
+    content: "";
+    display: table;
+    clear: both; }
   @media only screen and (max-width: 34.375em) {
     .container {
       padding-right: 0;
@@ -497,6 +490,10 @@ li {
 .row {
   margin-left: -15px;
   margin-right: -15px; }
+  .row::before, .row::after {
+    content: "";
+    display: table;
+    clear: both; }
   @media only screen and (max-width: 34.375em) {
     .row {
       margin-left: 0;
@@ -1032,24 +1029,6 @@ li {
   .col-lg-offset-0 {
     margin-left: 0%; } }
 
-.clearfix:before, .sub-row:before,
-.clearfix:after,
-.sub-row:after,
-.container:before,
-.container:after,
-.container-fluid:before,
-.container-fluid:after,
-.row:before,
-.row:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after, .sub-row:after,
-.container:after,
-.container-fluid:after,
-.row:after {
-  clear: both; }
-
 /* Typography */
 body {
   color: #414141;
@@ -1083,6 +1062,9 @@ h4 {
   line-height: 1.20226;
   color: #737373;
   font-weight: 600; }
+
+.light-title {
+  font-weight: 300; }
 
 /* Navigation Styles */
 .nav-bar {
@@ -1244,5 +1226,123 @@ h4 {
 
 body.menu-open {
   overflow: hidden; }
+
+.link {
+  color: #6890CA;
+  font-size: inherit; }
+
+.btn {
+  border-radius: 0;
+  color: white;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block; }
+  .btn:hover {
+    text-decoration: none; }
+  .btn:focus {
+    outline: none; }
+
+.btn-lrg {
+  padding: 0.625em 2.1875em;
+  font-size: 1.6em;
+  background-color: #aa9419;
+  -webkit-transition: background 300ms ease;
+  transition: background 300ms ease; }
+  @media only screen and (min-width: 48em) {
+    .btn-lrg {
+      padding: 0.75em 3.4375em; } }
+  .btn-lrg:hover {
+    -webkit-transition: background-color 300ms ease;
+    transition: background-color 300ms ease;
+    background-color: #7d6d13; }
+
+.btn-sml {
+  padding: 0.8em 1.5em;
+  font-size: 1.4em; }
+
+.btn-blue {
+  background-color: #6890CA;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease; }
+  .btn-blue:hover {
+    background-color: #3B5070;
+    -webkit-transition: background-color 300ms ease;
+    transition: background-color 300ms ease; }
+
+.play-btn-sml {
+  width: 30px;
+  border-radius: 100%;
+  height: 30px;
+  border: 2px solid;
+  text-align: center;
+  position: relative;
+  cursor: pointer; }
+  .play-btn-sml i {
+    top: 28%;
+    font-size: 1.2em; }
+
+.play-btn-lrg {
+  width: 45px;
+  border-radius: 100%;
+  height: 45px;
+  border: 2px solid;
+  text-align: center;
+  position: relative;
+  cursor: pointer; }
+  @media only screen and (max-width: 47.9375em) {
+    .play-btn-lrg {
+      width: 40px;
+      height: 40px; } }
+  .play-btn-lrg i {
+    font-size: 1.4em; }
+    @media only screen and (min-width: 48em) {
+      .play-btn-lrg i {
+        font-size: 1.6em; } }
+
+.play-btn-white-stroke {
+  border: 2px solid white; }
+  .play-btn-white-stroke i {
+    color: white; }
+
+.play-btn-solid-yellow {
+  background-color: #d6bb20;
+  border: 2px solid #d6bb20; }
+  .play-btn-solid-yellow i {
+    color: white; }
+
+.ctas {
+  margin-top: 3em; }
+  @media only screen and (min-width: 48em) {
+    .ctas {
+      margin-top: 4em; } }
+  @media only screen and (max-width: 47.9375em) {
+    .ctas .btn + .play-btn-large {
+      margin-top: 30px; } }
+
+.center-cta {
+  margin-left: auto;
+  margin-right: auto;
+  display: table; }
+
+.hero {
+  position: relative;
+  overflow: hidden; }
+
+.hero-content-title, .hero-content-copy {
+  color: white; }
+
+.hero-content-title span {
+  display: block;
+  white-space: nowrap; }
+
+.with-gradient {
+  background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
+
+.with-bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

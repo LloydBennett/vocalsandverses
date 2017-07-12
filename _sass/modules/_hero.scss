@@ -1,73 +1,16 @@
 .hero {
 	position: relative;
 	overflow: hidden;
-    margin-bottom: $margin-sml;
-
-    @media #{$tablet-breakpoint} {
-        margin-bottom: $margin-lrg;
-    }
 }
 
-#main-hero {
-	height: pxtoem(500, 10);
-
-	.hero-text {
-		max-width: none;
-	}
-
-	.hero-content {
-		@media #{$large-mobile-breakpoint} {
-			margin-top: pxtoem(80, 10);
-		}
-
-		@media #{$tablet-breakpoint}{
-			margin-top: pxtoem(120, 10);
-		}
-
-		@media #{$small-desktop-breakpoint}{
-			margin-top: pxtoem(160, 10);
-		}
-	}
-
-	.play-btn-lrg {
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: pxtoem(30, 10);
-
-		@media #{$tablet-breakpoint}{
-			display: inline-block;
-		}
-	}
-
-	@media #{$tablet-breakpoint}{
-		height: pxtoem(580, 10);
-	}
-
-	@media screen and (min-width: pxtoem(960)) {
-		height: pxtoem(630, 10);
-	}
+.hero-content-title, .hero-content-copy {
+  color: white;
 }
 
-.hero-sml {
-	height: pxtoem(380, 10);
-	padding-bottom: pxtoem(30, 10);
-}
-
-.hero-lrg {
-	min-height: pxtoem(500, 10);
-
-	.hero-content {
-		margin-top: pxtoem(50, 10);
-		text-align: center;
-
-		@media #{$tablet-breakpoint}{
-			margin-top: pxtoem(80, 10);
-		}
-	}
-
-	@media #{$tablet-breakpoint} {
-		padding-bottom: pxtoem(80, 10);
-	}
+.hero-content-title {
+  span {
+    @include nowrap;
+  }
 }
 
 .with-gradient {
@@ -79,34 +22,4 @@
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-attachment: fixed;
-}
-
-.hero-text {
-	margin-top: pxtoem(25);
-
-	@media #{$tablet-breakpoint} {
-		margin-top: pxtoem(25, 18);
-		font-size: 1.8em;
-		line-height: 1.3;
-	}
-
-	@media #{$small-desktop-breakpoint} {
-		margin-top: pxtoem(20, 22);
-		font-size: 2.2em;
-	}
-
-	&.text-center {
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-.hero-content {
-	h1, p {
-		color: white;
-	}
-
-	.category {
-		margin-bottom: 1.5em;
-	}
 }

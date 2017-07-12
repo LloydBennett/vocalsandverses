@@ -34,3 +34,7 @@ h4 {
   color: lighten($font-display-color, 20%);
   font-weight: $font-weight-semi-bold;
 }
+
+.light-title {
+  font-weight: $font-weight-light;
+}
