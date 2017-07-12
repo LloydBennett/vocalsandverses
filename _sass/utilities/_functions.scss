@@ -1,3 +1,7 @@
 @function pxtoem($value, $context: 16) {
   @return #{$value / $context}em;
 }
+
+@function calculateLineHeight($font-size) {
+  @return round($font-size / $font-base-line-height) * ($font-base-line-height / $font-size);
+}

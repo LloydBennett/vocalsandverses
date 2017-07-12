@@ -118,7 +118,7 @@
 	background-color: $swatch-color-black;
 	overflow: auto;
 	color: white;
-	transition: transform $base-anim-duration $gentle-ease;
+	transition: transform $base-anim-duration $animation-base-bezier;
 	transform-origin: right center;
 
 	ul {
@@ -138,8 +138,8 @@
 			font-size: 1.8em;
 			opacity: 0;
 			transform: translateX(25%);
-			transition: transform $base-anim-duration $gentle-ease,
-						opacity $base-anim-duration $gentle-ease 150ms;
+			transition: transform $base-anim-duration $animation-base-bezier,
+						opacity $base-anim-duration $animation-base-bezier 150ms;
 
 			@media #{$tablet-breakpoint} {
 				font-size: 4em;

@@ -14,17 +14,9 @@
   border-width: $top $right $bottom $left;
   border-style: solid;
   border-color: transparent;
-  border-#{$direction}-color: $color; 
+  border-#{$direction}-color: $color;
 }
 
-@mixin socialFeed($unicode) {
-    font-family: FontAwesome;
-    font-size: 25px;
-    margin-bottom: 30px;
-    content: $unicode;
-    text-align: center;
-    display: block;
-}
 
 @mixin absolutelyCentered($direction:null) {
   position: absolute;
@@ -56,4 +48,9 @@
     z-index: -1;
     box-shadow: 0 20px 50px 0 rgba(0,0,0,0.3);
   }
+}
+
+@mixin setVerticalRhythmn($font-size) {
+  font-size: $font-size#{em};
+  line-height: calculateLineHeight($font-size);
 }

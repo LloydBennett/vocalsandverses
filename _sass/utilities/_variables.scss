@@ -1,43 +1,60 @@
-// Brand Colours //
-$brand-color-yellow: #d6bb20;
+// TYPE //
 
-// Swatches //
+//family
+$font-base-family: "Montserrat", sans-serif;
+
+//size
+$font-base-size: 1.125rem;
+
+//weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+//line-height
+$font-base-line-height: 1.7;
+
+//color
+$font-display-color: #404040;
+$font-base-color: #414141;
+
+
+// SWATCHES //
+
+// Brand Colours //
+$swatch-brand-yellow: #d6bb20;
+$swatch-brand-black: #1B1B1B;
+$swatch-brand-light-black: lighten($swatch-brand-black, 5%);
+
+// Secondary Colours //
 $swatch-color-blue: #6890CA;
 $swatch-color-darkblue: #3B5070;
-$swatch-color-black: #1B1B1B;
-$swatch-color-subscribe: lighten($swatch-color-black, 5%);
 
-$category-general: #C081FF;
-$category-event: #21A0A8;
-$category-motivation: #878787;
-
-// Playlist Colours //
-$playlist-track: #E9E9E9;
-$player-skin: #F2F2F2;
-$track-number-carousel: #D5D5D5;
-$track-number-listing: #A4A4A4;
-
-// Type //
-$base-font-family: 'Montserrat', sans-serif;
-
-$display-font-color: #404040;
-$body-font-color: #414141;
+// Blog Post Categories //
+$swatch-category-general: #C081FF;
+$swatch-category-event: #21A0A8;
+$swatch-category-motivation: #878787;
 
 $browser-context: 16;
-// block components //
-$block--grey: #f4f4f4;
 
 
-//Margin
-$margin-lrg: pxtoem(100, 10);
-$margin-sml: pxtoem(50, 10);
-$margin-xs: pxtoem(25, 10);
+//SPACING
+$spacing-base: $font-base-size * $font-base-line-height; // 30
+$spacing-s: $spacing-base / 2; // 15
+$spacing-xs: $spacing-s / 2; //7.5
+$spacing-xxs: $spacing-xs / 2; // 3.75
+$spacing-m: $spacing-base * 2; //60
+$spacing-l: $spacing-m * 2; // 120
+$spacing-xl: $spacing-l * 2; //240
 
-//Animations
-$gentle-ease: cubic-bezier(.46,.09,.48,1.04);
-$base-anim-duration: 400ms;
 
-// responsive //
+//ANIMATION
+$animation-base-bezier: cubic-bezier(.46,.09,.48,1.04);
+$animation-base-duration: 400ms;
+
+
+// RESPONSIVE BREAKPOINTS //
 $small-mobile-max: pxtoem(550);
 $large-mobile-max: pxtoem(767);
 $tablet: pxtoem(768);

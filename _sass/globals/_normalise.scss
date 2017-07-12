@@ -270,7 +270,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: $base-font-family; /* 1 */
+  font-family: $font-base-family; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
@@ -490,11 +490,11 @@ li {
 }
 
 ::-moz-selection {
-  background: $brand-color-yellow;
+  background: $swatch-brand-yellow;
   color: white;
 }
 
 ::selection {
-  background: $brand-color-yellow;
+  background: $swatch-brand-yellow;
   color: white;
 }

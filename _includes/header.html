@@ -1,36 +1,22 @@
 <header>
-    <div class="nav-bar">
-        <div class="row">
-            <div class="col-xs-2 text-left">
-                  <!-- <a class ="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" data-page-transition>
-                      <img src="<?php echo $image[0]; ?>" alt="Vocals &amp; Verses" />
-                  </a> -->
-            </div>
-            <div class="col-xs-2 col-xs-offset-8">
-                <div class="hamburger-container">
-                    <div class="hamburger-icon" data-role="open-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
+  <div class="nav-bar">
+    <div class="row">
+      <div class="col-xs-2 text-left">
+            <!-- <a class ="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" data-page-transition>
+                <img src="<?php echo $image[0]; ?>" alt="Vocals &amp; Verses" />
+            </a> -->
+      </div>
+      <div class="col-xs-2 col-xs-offset-8">
+        <div class="hamburger-container">
+          <div class="hamburger-icon" data-role="open-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </header>
-<div class="nav-modal" data-role="nav-menu">
-    <div class="nav-background-image">
-        <div class="thumbnail active"></div>
-        <div class="thumbnail"></div>
-    </div>
-    <nav class="nav-menu">
-        <ul>
-            <!-- <?php
-                $nav = wp_get_nav_menu_items( 'main-menu' );
-                foreach ( $nav as $nav_item ) {
-                    echo '<li data-role="nav-menu-links"><a href="' . $nav_item->url .'"'. 'data-page-transition>' . $nav_item->title . '</a></li>';
-                }
-            ?> -->
-        </ul>
-    </nav>
-</div>
+
+{% include nav-menu.html %}

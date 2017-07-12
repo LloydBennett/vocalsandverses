@@ -10,7 +10,7 @@
   display: block;
   height: 1px;
   width: 100%;
-  background-color: lighten($display-font-color, 50%);
+  background-color: $swatch-brand-yellow;
 }
 
 .nowrap {
@@ -104,13 +104,5 @@
 }
 
 .text-center {
-    text-align: center;
-}
-
-.section-block {
-    margin-bottom: $margin-sml;
-
-    @media #{$tablet-breakpoint} {
-        margin-bottom: $margin-lrg;
-    }
+  text-align: center;
 }
