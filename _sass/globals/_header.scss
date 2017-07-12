@@ -1,5 +1,4 @@
 /* Navigation Styles */
-
 .nav-bar {
 	padding-top: pxtoem(20, 10);
 	@media #{$tablet-breakpoint} {
@@ -115,10 +114,10 @@
 	width: 50%;
 	transform: scale(0, 1);
 	height: 100%;
-	background-color: $swatch-color-black;
+	background-color: $swatch-brand-black;
 	overflow: auto;
 	color: white;
-	transition: transform $base-anim-duration $animation-base-bezier;
+	transition: transform $animation-base-duration $animation-base-bezier;
 	transform-origin: right center;
 
 	ul {
@@ -138,8 +137,8 @@
 			font-size: 1.8em;
 			opacity: 0;
 			transform: translateX(25%);
-			transition: transform $base-anim-duration $animation-base-bezier,
-						opacity $base-anim-duration $animation-base-bezier 150ms;
+			transition: transform $animation-base-duration $animation-base-bezier,
+						opacity $animation-base-duration $animation-base-bezier 150ms;
 
 			@media #{$tablet-breakpoint} {
 				font-size: 4em;
@@ -168,7 +167,7 @@
 		background: grey;
 		display: block;
 		opacity: 0;
-		transition: opacity $base-anim-duration ease 300ms;
+		transition: opacity $animation-base-duration ease 300ms;
 	}
 
 	.thumbnail {
