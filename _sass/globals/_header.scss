@@ -1,9 +1,5 @@
-/* Navigation Styles */
 .nav-bar {
-	padding-top: pxtoem(20, 10);
-	@media #{$tablet-breakpoint} {
-		padding-top: pxtoem(50, 10);
-	}
+  padding: $spacing-s 0;
 }
 
 .logo {

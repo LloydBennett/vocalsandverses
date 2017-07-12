@@ -1044,7 +1044,8 @@ h1 {
   font-size: 3.998em;
   line-height: 0.85043;
   color: black;
-  font-weight: 700; }
+  font-weight: 700;
+  line-height: 1; }
 
 h2 {
   font-size: 2.827em;
@@ -1063,15 +1064,11 @@ h4 {
   color: #737373;
   font-weight: 600; }
 
-.light-title {
+.light-text {
   font-weight: 300; }
 
-/* Navigation Styles */
 .nav-bar {
-  padding-top: 2em; }
-  @media only screen and (min-width: 48em) {
-    .nav-bar {
-      padding-top: 5em; } }
+  padding: 0.95625rem 0; }
 
 .logo {
   width: 80px;
@@ -1237,29 +1234,26 @@ body.menu-open {
   border: none;
   text-align: center;
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  font-weight: 400; }
   .btn:hover {
     text-decoration: none; }
   .btn:focus {
     outline: none; }
 
 .btn-lrg {
-  padding: 0.625em 2.1875em;
-  font-size: 1.6em;
-  background-color: #aa9419;
+  padding: 0.95625rem 3.825rem;
+  background-color: #c0a81d;
   -webkit-transition: background 300ms ease;
   transition: background 300ms ease; }
-  @media only screen and (min-width: 48em) {
-    .btn-lrg {
-      padding: 0.75em 3.4375em; } }
   .btn-lrg:hover {
     -webkit-transition: background-color 300ms ease;
     transition: background-color 300ms ease;
     background-color: #7d6d13; }
 
 .btn-sml {
-  padding: 0.8em 1.5em;
-  font-size: 1.4em; }
+  padding: 0.95625rem 1.9125rem;
+  font-size: 0.888em; }
 
 .btn-blue {
   background-color: #6890CA;
@@ -1311,15 +1305,6 @@ body.menu-open {
   .play-btn-solid-yellow i {
     color: white; }
 
-.ctas {
-  margin-top: 3em; }
-  @media only screen and (min-width: 48em) {
-    .ctas {
-      margin-top: 4em; } }
-  @media only screen and (max-width: 47.9375em) {
-    .ctas .btn + .play-btn-large {
-      margin-top: 30px; } }
-
 .center-cta {
   margin-left: auto;
   margin-right: auto;
@@ -1328,6 +1313,9 @@ body.menu-open {
 .hero {
   position: relative;
   overflow: hidden; }
+
+.hero-content {
+  padding: 15.3rem 0; }
 
 .hero-content-title, .hero-content-copy {
   color: white; }
