@@ -113,20 +113,17 @@
 }
 
 .hamburger-icon {
-	margin-top: pxtoem(8, 10);
-	width: 22px;
+	width: 30px;
 	display: inline-block;
 	cursor: pointer;
+  margin-top: $spacing-s;
 
-	@media #{$tablet-breakpoint}{
-		margin-top: pxtoem(13, 10);
-	}
 
 	span {
 		display: block;
 		background-color: white;
-		height: 2px;
-		margin-bottom: 6px;
+		height: 3px;
+		margin-bottom: 8px;
 		transition: 300ms ease;
 		position: relative;
 
