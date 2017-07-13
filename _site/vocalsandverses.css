@@ -1295,6 +1295,9 @@ body.menu-open {
   display: block;
   white-space: nowrap; }
 
+.hero-content-copy {
+  max-width: 500px; }
+
 .with-gradient {
   background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
 
