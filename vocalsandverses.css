@@ -467,6 +467,7 @@ li {
 .container {
   padding-right: 15px;
   padding-left: 15px;
+  position: relative;
   margin-right: auto;
   margin-left: auto;
   width: 90%;
@@ -1061,7 +1062,8 @@ h4 {
   font-weight: 300; }
 
 .nav-bar {
-  padding: 0.95625rem 0; }
+  padding: 0.95625rem 0;
+  width: 100%; }
   @media only screen and (min-width: 48em) {
     .nav-bar {
       padding: 1.9125rem 0; } }
@@ -1272,7 +1274,8 @@ body.menu-open {
   overflow: hidden; }
 
 .hero {
-  position: relative; }
+  position: relative;
+  min-height: 800px; }
   .hero::after {
     content: "";
     position: absolute;
@@ -1282,11 +1285,29 @@ body.menu-open {
     left: 0;
     background: url("../images/hero-section-brush.png") no-repeat center top/cover; }
 
+.home-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
 .hero-content {
-  padding: 3.825rem 0; }
+  padding: 3.825rem 0;
+  position: relative;
+  z-index: 2; }
   @media only screen and (min-width: 48em) {
     .hero-content {
-      padding: 15.3rem 0; } }
+      padding: 7.65rem 0; } }
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  max-width: 800px; }
+  .hero-image img {
+    width: 100%; }
 
 .hero-content-title, .hero-content-copy {
   color: white; }
