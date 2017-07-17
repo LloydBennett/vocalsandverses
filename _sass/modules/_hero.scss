@@ -1,6 +1,5 @@
 .hero {
 	position: relative;
-  min-height: 800px;
 
   &::after {
     content: "";
@@ -16,6 +15,17 @@
 .home-hero {
   display: flex;
   flex-wrap: wrap;
+  overflow-x: hidden;
+
+  @media #{$large-desktop-breakpoint} {
+    min-height: 800px;
+  }
+
+  & > .container {
+    @media #{$tablet-breakpoint} {
+      position: relative;
+    }
+  }
 }
 
 .hero-content {
@@ -28,15 +38,23 @@
 }
 
 .hero-image {
+  background: url('../images/artist-hero.png') no-repeat center top/cover;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 60%;
-  max-width: 800px;
 
-  img {
-    width: 100%;
+  width: 150%;
+  height: 85%;
+  left: -142px;
+
+  @media #{$tablet-breakpoint} {
+    left: auto;
+    right: 0;
+    width: 60%;
+    max-width: 800px;
   }
+
+
 }
 
 .hero-content-title, .hero-content-copy {

@@ -113,19 +113,27 @@
 }
 
 .hamburger-icon {
-	width: 30px;
+	width: 25px;
 	display: inline-block;
 	cursor: pointer;
-  margin-top: $spacing-s;
+  margin-top: $spacing-xs;
 
+  @media #{$tablet-breakpoint} {
+    margin-top: $spacing-s;
+    width: 30px;
+  }
 
 	span {
 		display: block;
 		background-color: white;
 		height: 3px;
-		margin-bottom: 8px;
+		margin-bottom: 6px;
 		transition: 300ms ease;
 		position: relative;
+
+    @media #{$tablet-breakpoint} {
+      margin-bottom: 8px;
+    }
 
 		&:first-child, &:last-child {
 			transform: rotate(0);

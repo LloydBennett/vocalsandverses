@@ -1,10 +1,22 @@
 /* Typography */
+html {
+  font-size: map-get($font-base-sizes, mobile);
+  line-height: $font-base-line-height;
+
+  @media #{$tablet-breakpoint} {
+    font-size: map-get($font-base-sizes, tablet);
+  }
+
+  @media #{$large-desktop-breakpoint} {
+    font-size: map-get($font-base-sizes, desktop);
+  }
+}
+
 body {
   color: $font-base-color;
-  font-size: $font-base-size;
+  font-size: 1em;
   font-family: $font-base-family;
   font-weight: $font-weight-light;
-  line-height: $font-base-line-height;
 }
 
 
@@ -13,7 +25,7 @@ h1, h2, h3, h4, p, blockquote, ul, li, dl {
 }
 
 h1 {
-  @include setVerticalRhythmn(3.998);
+  @include setVerticalRhythmn(2.827);
   color: darken($font-display-color, 40%);
   font-weight: $font-weight-bold;
   line-height: 1;
