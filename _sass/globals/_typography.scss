@@ -25,27 +25,43 @@ h1, h2, h3, h4, p, blockquote, ul, li, dl {
 }
 
 h1 {
-  @include setVerticalRhythmn(2.827);
+  @include setVerticalRhythmn(48px);
   color: darken($font-display-color, 40%);
   font-weight: $font-weight-bold;
   line-height: 1;
+
+  @media #{$small-mobile-breakpoint} {
+    @include setVerticalRhythmn(36px);
+  }
 }
 
 h2 {
-	@include setVerticalRhythmn(2.827);
+	@include setVerticalRhythmn(36px);
 	color: darken($font-display-color, 20%);
+
+  @media #{$small-mobile-breakpoint} {
+    @include setVerticalRhythmn(24px);
+  }
 }
 
 h3 {
-  @include setVerticalRhythmn(1.999);
+  @include setVerticalRhythmn(24px);
 	color: $font-display-color;
   font-weight: $font-weight-semi-bold;
- }
+
+  @media #{$small-mobile-breakpoint} {
+    @include setVerticalRhythmn(21px);
+  }
+}
 
 h4 {
-  @include setVerticalRhythmn(1.414);
+  @include setVerticalRhythmn(21px);
   color: lighten($font-display-color, 20%);
   font-weight: $font-weight-semi-bold;
+
+  @media #{$small-mobile-breakpoint} {
+    @include setVerticalRhythmn(18px);
+  }
 }
 
 .light-text {

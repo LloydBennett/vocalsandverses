@@ -34,8 +34,8 @@
 }
 
 @mixin setVerticalRhythmn($font-size) {
-  font-size: $font-size#{em};
-  line-height: calculateLineHeight($font-size);
+  font-size: pxtoem($font-size);
+  line-height: calculateLineHeight(strip-unit($font-size));
 }
 
 @mixin clearfix {
