@@ -1372,7 +1372,7 @@ body.menu-open {
       display: none; } }
   @media only screen and (min-width: 75em) {
     .home-hero-image {
-      height: 110%;
+      height: 100%;
       width: 80%; } }
 
 .hero-content-title, .hero-content-copy {
