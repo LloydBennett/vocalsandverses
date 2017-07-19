@@ -4,11 +4,15 @@
   &::after {
     content: "";
     position: absolute;
-    height: 100px;
+    height: 120px;
     width: 100%;
     bottom: 0;
     left: 0;
     background: url('../images/hero-section-brush.png') no-repeat center top/cover;
+
+    @media #{$small-mobile-breakpoint} {
+      height: 90px;
+    }
   }
 }
 
@@ -22,39 +26,55 @@
   }
 
   & > .container {
-    @media #{$tablet-breakpoint} {
+    @media #{$large-desktop-breakpoint} {
       position: relative;
     }
   }
 }
 
-.hero-content {
-  padding: $spacing-m 0;
+.home-hero-content {
+  padding: $spacing-xl 0 $spacing-l + $spacing-m;
   position: relative;
   z-index: 2;
-  @media #{$tablet-breakpoint} {
+
+  @media #{$small-mobile-breakpoint} {
+    text-align: center;
+    padding: $spacing-m + $spacing-base 0 $spacing-l + $spacing-base;
+  }
+
+  @media #{$large-desktop-breakpoint} {
     padding: $spacing-l 0;
+  }
+
+  .btn {
+    display: table;
+    @media #{$small-mobile-breakpoint} {
+      margin: 0 auto;
+    }
+
+    & + .play-btn {
+      margin-top: $spacing-base;
+    }
   }
 }
 
-.hero-image {
+.home-hero-image {
   background: url('../images/artist-hero.png') no-repeat center top/cover;
   position: absolute;
   right: 0;
   bottom: 0;
-
-  width: 150%;
+  width: 100%;
   height: 85%;
-  left: -142px;
+  max-width: 800px;
 
-  @media #{$tablet-breakpoint} {
-    left: auto;
-    right: 0;
-    width: 60%;
-    max-width: 800px;
+  @media #{$small-mobile-breakpoint} {
+    display: none;
   }
 
-
+  @media #{$large-desktop-breakpoint} {
+    height: 110%;
+    width: 80%;
+  }
 }
 
 .hero-content-title, .hero-content-copy {
@@ -68,7 +88,16 @@
 }
 
 .hero-content-copy {
-  max-width: 500px;
+  max-width: 350px;
+
+  @media #{$small-mobile-breakpoint} {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media #{$tablet-breakpoint} {
+    max-width: 500px;
+  }
 }
 
 .with-gradient {

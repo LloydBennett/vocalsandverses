@@ -105,11 +105,7 @@
 }
 
 .hamburger-container {
-	text-align: center;
-
-	@media #{$tablet-breakpoint} {
-		text-align: right;
-	}
+	text-align: right;
 }
 
 .hamburger-icon {

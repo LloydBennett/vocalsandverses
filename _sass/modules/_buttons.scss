@@ -15,8 +15,7 @@
     outline: none;
 	}
 
-  & + &,
-  & + .play-btn {
+  & + & {
     margin-left: $spacing-m;
   }
 }
@@ -50,14 +49,31 @@
 .play-btn {
   display: inline-block;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
   vertical-align: middle;
   border-radius: 100%;
+  color: white;
 
-  svg {
-    width: 100%;
-    height: 100%;
+  .play-btn-icon {
+    display: inline-block;
+    margin-right: $spacing-xs;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+
+    @media #{$tablet-breakpoint} {
+      width: 40px;
+      height: 40px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .play-btn-label {
+    font-weight: $font-weight-regular;
+    vertical-align: middle;
   }
 }
 

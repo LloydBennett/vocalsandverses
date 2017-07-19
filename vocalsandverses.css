@@ -1113,8 +1113,7 @@ h4 {
     text-decoration: none; }
   .btn:focus {
     outline: none; }
-  .btn + .btn,
-  .btn + .play-btn {
+  .btn + .btn {
     margin-left: 3.2rem; }
 
 .btn-lrg {
@@ -1143,13 +1142,25 @@ h4 {
 .play-btn {
   display: inline-block;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
   vertical-align: middle;
-  border-radius: 100%; }
-  .play-btn svg {
-    width: 100%;
-    height: 100%; }
+  border-radius: 100%;
+  color: white; }
+  .play-btn .play-btn-icon {
+    display: inline-block;
+    margin-right: 0.4rem;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle; }
+    @media only screen and (min-width: 48em) {
+      .play-btn .play-btn-icon {
+        width: 40px;
+        height: 40px; } }
+    .play-btn .play-btn-icon svg {
+      width: 100%;
+      height: 100%; }
+  .play-btn .play-btn-label {
+    font-weight: 400;
+    vertical-align: middle; }
 
 .link {
   color: #6890CA;
@@ -1253,10 +1264,7 @@ h4 {
       opacity: 1; }
 
 .hamburger-container {
-  text-align: center; }
-  @media only screen and (min-width: 48em) {
-    .hamburger-container {
-      text-align: right; } }
+  text-align: right; }
 
 .hamburger-icon {
   width: 25px;
@@ -1309,11 +1317,14 @@ body.menu-open {
   .hero::after {
     content: "";
     position: absolute;
-    height: 100px;
+    height: 120px;
     width: 100%;
     bottom: 0;
     left: 0;
     background: url("../images/hero-section-brush.png") no-repeat center top/cover; }
+    @media only screen and (max-width: 34.375em) {
+      .hero::after {
+        height: 90px; } }
 
 .home-hero {
   display: -webkit-box;
@@ -1325,32 +1336,44 @@ body.menu-open {
   @media only screen and (min-width: 75em) {
     .home-hero {
       min-height: 800px; } }
-  @media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 75em) {
     .home-hero > .container {
       position: relative; } }
 
-.hero-content {
-  padding: 3.2rem 0;
+.home-hero-content {
+  padding: 12.8rem 0 9.6rem;
   position: relative;
   z-index: 2; }
-  @media only screen and (min-width: 48em) {
-    .hero-content {
+  @media only screen and (max-width: 34.375em) {
+    .home-hero-content {
+      text-align: center;
+      padding: 4.8rem 0 8rem; } }
+  @media only screen and (min-width: 75em) {
+    .home-hero-content {
       padding: 6.4rem 0; } }
+  .home-hero-content .btn {
+    display: table; }
+    @media only screen and (max-width: 34.375em) {
+      .home-hero-content .btn {
+        margin: 0 auto; } }
+    .home-hero-content .btn + .play-btn {
+      margin-top: 1.6rem; }
 
-.hero-image {
+.home-hero-image {
   background: url("../images/artist-hero.png") no-repeat center top/cover;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 150%;
+  width: 100%;
   height: 85%;
-  left: -142px; }
-  @media only screen and (min-width: 48em) {
-    .hero-image {
-      left: auto;
-      right: 0;
-      width: 60%;
-      max-width: 800px; } }
+  max-width: 800px; }
+  @media only screen and (max-width: 34.375em) {
+    .home-hero-image {
+      display: none; } }
+  @media only screen and (min-width: 75em) {
+    .home-hero-image {
+      height: 110%;
+      width: 80%; } }
 
 .hero-content-title, .hero-content-copy {
   color: white; }
@@ -1360,7 +1383,14 @@ body.menu-open {
   white-space: nowrap; }
 
 .hero-content-copy {
-  max-width: 500px; }
+  max-width: 350px; }
+  @media only screen and (max-width: 34.375em) {
+    .hero-content-copy {
+      margin-left: auto;
+      margin-right: auto; } }
+  @media only screen and (min-width: 48em) {
+    .hero-content-copy {
+      max-width: 500px; } }
 
 .with-gradient {
   background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
