@@ -1,0 +1,9 @@
+.why-go {
+  .row {
+    margin-bottom: $spacing-base;
+
+    @media #{$small-desktop-breakpoint} {
+      margin-bottom: $spacing-m;
+    }
+  }
+}

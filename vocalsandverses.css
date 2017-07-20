@@ -1401,4 +1401,23 @@ body.menu-open {
   background-position: center top;
   background-attachment: fixed; }
 
+.section {
+  margin-bottom: 3.2rem; }
+  @media only screen and (min-width: 60em) {
+    .section {
+      margin-bottom: 6.4rem; } }
+
+.why-go .row {
+  margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 60em) {
+    .why-go .row {
+      margin-bottom: 3.2rem; } }
+
+.title-divider {
+  display: block;
+  height: 8px;
+  width: 170px;
+  background-color: #d6bb20;
+  margin-bottom: 1.6rem; }
+
 /*# sourceMappingURL=vocalsandverses.css.map */
