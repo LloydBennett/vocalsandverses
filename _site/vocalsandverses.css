@@ -1039,8 +1039,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 300; }
 
-h1, h2, h3, h4, p, blockquote, ul, li, dl {
-  margin: 0 0 1.6rem 0; }
+h1, h2, h3, h4 {
+  margin: 0 0 0.8rem 0; }
 
 h1 {
   font-size: 3em;
@@ -1081,6 +1081,9 @@ h4 {
     h4 {
       font-size: 1.125em;
       line-height: 0.97778; } }
+
+p, blockquote, ul, li, dl {
+  margin: 0 0 1.6rem 0; }
 
 .light-text {
   font-weight: 300; }
@@ -1411,13 +1414,23 @@ body.menu-open {
   margin-bottom: 1.6rem; }
   @media only screen and (min-width: 60em) {
     .why-go .row {
-      margin-bottom: 3.2rem; } }
+      margin-bottom: 3.2rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 .title-divider {
   display: block;
-  height: 8px;
-  width: 170px;
+  height: 5px;
+  width: 120px;
   background-color: #FED700;
-  margin-bottom: 1.6rem; }
+  margin-bottom: 0.8rem; }
+  @media only screen and (min-width: 60em) {
+    .title-divider {
+      height: 8px;
+      width: 170px; } }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
