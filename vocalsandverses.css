@@ -457,11 +457,11 @@ li {
   list-style: none; }
 
 ::-moz-selection {
-  background: #d6bb20;
+  background: #FED700;
   color: white; }
 
 ::selection {
-  background: #d6bb20;
+  background: #FED700;
   color: white; }
 
 .container {
@@ -1034,7 +1034,7 @@ html {
       font-size: 131.25%; } }
 
 body {
-  color: #414141;
+  color: #808080;
   font-size: 1em;
   font-family: "Montserrat", sans-serif;
   font-weight: 300; }
@@ -1118,13 +1118,13 @@ h4 {
 
 .btn-lrg {
   padding: 0.8rem 3.2rem;
-  background-color: #c0a81d;
+  background-color: #cbac00;
   -webkit-transition: background 300ms ease;
   transition: background 300ms ease; }
   .btn-lrg:hover {
     -webkit-transition: background-color 300ms ease;
     transition: background-color 300ms ease;
-    background-color: #7d6d13; }
+    background-color: #988100; }
 
 .btn-sml {
   padding: 0.8rem 1.6rem;
@@ -1417,7 +1417,7 @@ body.menu-open {
   display: block;
   height: 8px;
   width: 170px;
-  background-color: #d6bb20;
+  background-color: #FED700;
   margin-bottom: 1.6rem; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
