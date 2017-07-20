@@ -1,6 +1,18 @@
 .hero {
 	position: relative;
 
+  @media #{$tablet-breakpoint} {
+    margin-bottom: $spacing-base;
+  }
+
+  @media #{$small-desktop-breakpoint} {
+    margin-bottom: $spacing-m;
+  }
+
+  @media #{$large-desktop-breakpoint} {
+    margin-bottom: $spacing-l;
+  }
+
   &::after {
     content: "";
     position: absolute;

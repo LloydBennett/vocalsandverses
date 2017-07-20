@@ -1317,6 +1317,15 @@ body.menu-open {
 
 .hero {
   position: relative; }
+  @media only screen and (min-width: 48em) {
+    .hero {
+      margin-bottom: 1.6rem; } }
+  @media only screen and (min-width: 60em) {
+    .hero {
+      margin-bottom: 3.2rem; } }
+  @media only screen and (min-width: 75em) {
+    .hero {
+      margin-bottom: 6.4rem; } }
   .hero::after {
     content: "";
     position: absolute;
