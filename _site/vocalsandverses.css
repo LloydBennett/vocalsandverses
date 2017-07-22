@@ -1624,6 +1624,55 @@ body.menu-open {
         padding: 0.8rem 1.6rem;
         width: auto; } }
 
+.gallery {
+  position: relative;
+  padding-top: 1.6rem;
+  background-color: #F2F2F2;
+  margin-bottom: 12.8rem; }
+  @media only screen and (max-width: 34.375em) {
+    .gallery {
+      margin-bottom: 8rem; } }
+  @media only screen and (min-width: 48em) {
+    .gallery {
+      padding-top: 3.2rem;
+      margin-bottom: 16rem; } }
+  @media only screen and (min-width: 60em) {
+    .gallery {
+      margin-bottom: 19.2rem; } }
+  .gallery::before, .gallery::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10%; }
+    @media only screen and (min-width: 60em) {
+      .gallery::before, .gallery::after {
+        height: 20%; } }
+  .gallery::before {
+    background: url("/images/gallery/top-section.png") no-repeat center top/cover;
+    top: -10%; }
+    @media only screen and (min-width: 60em) {
+      .gallery::before {
+        top: -20%; } }
+  .gallery::after {
+    background: url("/images/gallery/bottom-section.png") no-repeat center top/cover;
+    bottom: -20%;
+    height: 20%; }
+    @media only screen and (min-width: 48em) {
+      .gallery::after {
+        bottom: -40%;
+        height: 40%; } }
+  .gallery .thumbnail {
+    display: block;
+    cursor: pointer; }
+  .gallery .row {
+    margin-left: 0;
+    margin-right: 0; }
+  .gallery [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0; }
+  .gallery .ctas {
+    margin-top: 3.2rem; }
+
 .testimonals {
   text-align: center; }
   .testimonals .container {

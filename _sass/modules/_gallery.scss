@@ -2,9 +2,19 @@
   position: relative;
   padding-top: $spacing-base;
   background-color: $swatch-gallery-bg;
+  margin-bottom: $spacing-xl;
+
+  @media #{$small-mobile-breakpoint} {
+    margin-bottom: $spacing-l + $spacing-base;
+  }
 
   @media #{$tablet-breakpoint} {
     padding-top: $spacing-m;
+    margin-bottom: $spacing-xl + $spacing-m;
+  }
+
+  @media #{$small-desktop-breakpoint} {
+    margin-bottom: $spacing-xl + $spacing-l;
   }
 
   &::before,

@@ -1,0 +1,24 @@
+.why-go {
+  @media #{$tablet-breakpoint} {
+    margin-bottom: $spacing-l;
+  }
+
+  @media #{$small-desktop-breakpoint} {
+    margin-bottom: $spacing-l + $spacing-base;
+  }
+
+  .row {
+    margin-bottom: $spacing-base;
+
+    // @media #{$tablet-breakpoint} {
+    //   display: flex;
+    //   align-items: center;
+    // }
+
+    @media #{$small-desktop-breakpoint} {
+      margin-bottom: $spacing-m;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
