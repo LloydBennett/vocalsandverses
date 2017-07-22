@@ -34,16 +34,13 @@
 .btn-sml {
 	padding: $spacing-s $spacing-base;
   font-size: 0.888em;
-}
+  background-color: $swatch-color-blue;
+  transition: background-color 300ms ease;
 
-.btn-blue {
-	background-color: $swatch-color-blue;
-	transition: background-color 300ms ease;
-
-	&:hover {
-		background-color: $swatch-color-darkblue;
-		transition: background-color 300ms ease;
-	}
+  &:hover {
+    background-color: $swatch-color-darkblue;
+    transition: background-color 300ms ease;
+  }
 }
 
 .play-btn {
