@@ -64,3 +64,27 @@
       white-space: nowrap;
   }
 }
+
+@mixin paintBrush($placement, $imagePath, $height) {
+  @if ($placement == 'after') {
+    &::after {
+      content: "";
+      background: url(#{$imagePath}) no-repeat center top/cover;
+      position: absolute;
+      height: $height;
+      width: 100%;
+      bottom: -#{$height - 1};
+      left: 0;
+    }
+  } @else {
+    &::before {
+      content: "";
+      background: url(#{$imagePath}) no-repeat center top/cover;
+      position: absolute;
+      height: $height;
+      width: 100%;
+      top: -#{$height - 1};
+      left: 0;
+    }
+  }
+}

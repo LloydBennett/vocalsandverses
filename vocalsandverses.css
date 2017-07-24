@@ -1104,6 +1104,62 @@ p, blockquote, ul, li, dl {
   .logo img {
     width: 100%; }
 
+footer {
+  position: relative;
+  background-color: #1B1B1B;
+  color: white;
+  padding: 3.2rem 0;
+  text-align: center; }
+  footer::before {
+    content: "";
+    background: url(../images/footer-section-brush.png) no-repeat center top/cover;
+    position: absolute;
+    height: 35%;
+    width: 100%;
+    top: -34%;
+    left: 0; }
+  footer .thumbnail {
+    display: block;
+    margin-bottom: 3.2rem; }
+  @media only screen and (max-width: 34.375em) {
+    footer::before {
+      height: 25%;
+      top: -24%; } }
+
+.footer-icons {
+  margin-bottom: 3.2rem; }
+  .footer-icons a {
+    display: inline-block;
+    margin-right: 3.2rem;
+    height: 28px; }
+    @media only screen and (min-width: 48em) {
+      .footer-icons a {
+        margin-right: 6.4rem;
+        height: auto; } }
+    .footer-icons a svg {
+      height: 100%; }
+      @media only screen and (min-width: 48em) {
+        .footer-icons a svg {
+          height: auto; } }
+    .footer-icons a:last-child {
+      margin-right: 0; }
+
+.copywright {
+  display: block; }
+  @media only screen and (max-width: 34.375em) {
+    .copywright span {
+      display: block; } }
+
+.footer-logo {
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: 48em) {
+    .footer-logo {
+      max-width: 200px; } }
+  .footer-logo svg {
+    fill: white; }
+
 .btn {
   border-radius: 0;
   color: white;

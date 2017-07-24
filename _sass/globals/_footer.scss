@@ -1,27 +1,43 @@
 footer {
+  @include paintBrush(before, '../images/footer-section-brush.png', 35%);
+  position: relative;
 	background-color: $swatch-brand-black;
 	color: white;
-	padding-top: pxtoem(65, 10);
-	padding-bottom: pxtoem(55, 10);
+	padding: $spacing-m 0;
 	text-align: center;
 
 	.thumbnail {
 		display: block;
-		margin-bottom: pxtoem(50, 10);
+		margin-bottom: $spacing-m;
 	}
+
+  &::before {
+    @media #{$small-mobile-breakpoint} {
+			height: 25%;
+      top: -24%;
+		}
+  }
 }
 
 .footer-icons {
-	font-size: 3em;
-	margin-bottom: pxtoem(65, 30);
+	margin-bottom: $spacing-m;
 
 	a {
 		display: inline-block;
-		margin-right: pxtoem(25, 30);
+		margin-right: $spacing-m;
+    height: 28px;
 
-		@media #{tablet-breakpoint} {
-			margin-right: pxtoem(80, 30);
+		@media #{$tablet-breakpoint} {
+			margin-right: $spacing-l;
+      height: auto;
 		}
+
+    svg {
+      height: 100%;
+      @media #{$tablet-breakpoint} {
+  			height: auto;
+  		}
+    }
 
 		&:last-child{
 			margin-right: 0;
@@ -29,12 +45,26 @@ footer {
 	}
 }
 
-#theme-author {
-	font-size: 1.4em;
+.copywright {
+	display: block;
+
+  span {
+    @media #{$small-mobile-breakpoint} {
+      display: block;
+    }
+  }
 }
 
-.copywright {
-	@extend #theme-author;
-	display: block;
-	margin-bottom: pxtoem(10, 14);
+.footer-logo {
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media #{$tablet-breakpoint} {
+    max-width: 200px;
+  }
+
+  svg {
+    fill: white;
+  }
 }
