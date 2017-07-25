@@ -1,6 +1,5 @@
 footer {
   @include paintBrush(before, '../images/footer-section-brush.png', 35%);
-  position: relative;
 	background-color: $swatch-brand-black;
 	color: white;
 	padding: $spacing-m 0;

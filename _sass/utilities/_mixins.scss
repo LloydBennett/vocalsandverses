@@ -66,6 +66,7 @@
 }
 
 @mixin paintBrush($placement, $imagePath, $height) {
+  position: relative;
   @if ($placement == 'after') {
     &::after {
       content: "";

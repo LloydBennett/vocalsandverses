@@ -1499,8 +1499,21 @@ body.menu-open {
       width: 170px; } }
 
 .subscribe {
+  position: relative;
   background-color: #282828;
-  padding: 3.2rem 0 12.8rem; }
+  padding: 0.8rem 0 12.8rem; }
+  .subscribe::before {
+    content: "";
+    background: url(../images/subscribe-section-brush.png) no-repeat center top/cover;
+    position: absolute;
+    height: 35%;
+    width: 100%;
+    top: -34%;
+    left: 0; }
+  @media only screen and (max-width: 34.375em) {
+    .subscribe::before {
+      height: 25%;
+      top: -24%; } }
 
 .subscribe-heading,
 .subscribe-description {
