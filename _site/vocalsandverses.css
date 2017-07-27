@@ -1501,7 +1501,8 @@ body.menu-open {
 .subscribe {
   position: relative;
   background-color: #282828;
-  padding: 0.8rem 0 12.8rem; }
+  padding: 0.8rem 0 12.8rem;
+  margin-top: 12.8rem; }
   .subscribe::before {
     content: "";
     background: url(../images/subscribe-section-brush.png) no-repeat center top/cover;

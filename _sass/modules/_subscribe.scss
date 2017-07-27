@@ -2,6 +2,7 @@
   @include paintBrush(before, '../images/subscribe-section-brush.png', 35%);
   background-color: $swatch-brand-light-black;
   padding: $spacing-s 0 $spacing-xl;
+  margin-top: $spacing-xl;
 
   &::before {
     @media #{$small-mobile-breakpoint} {
