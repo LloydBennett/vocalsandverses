@@ -1523,6 +1523,7 @@ body.menu-open {
   color: white; }
 
 .text-field {
+  border: none;
   padding: 0.8rem 1.6rem;
   margin-bottom: 1.6rem; }
 

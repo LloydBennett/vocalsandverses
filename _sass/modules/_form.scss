@@ -1,5 +1,6 @@
 .text-field {
   @extend .light-text;
+  border: none;
   padding: $spacing-s $spacing-base;
   margin-bottom: $spacing-base;
 }
