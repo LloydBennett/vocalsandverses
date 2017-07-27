@@ -16,7 +16,7 @@
   &::after {
     content: "";
     position: absolute;
-    height: 120px;
+    padding-bottom: 7%;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -24,6 +24,7 @@
 
     @media #{$small-mobile-breakpoint} {
       height: 90px;
+      padding-bottom: 0;
     }
   }
 }

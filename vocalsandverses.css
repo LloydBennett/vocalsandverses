@@ -1385,14 +1385,15 @@ body.menu-open {
   .hero::after {
     content: "";
     position: absolute;
-    height: 120px;
+    padding-bottom: 7%;
     width: 100%;
     bottom: 0;
     left: 0;
     background: url("../images/hero-section-brush.png") no-repeat center top/cover; }
     @media only screen and (max-width: 34.375em) {
       .hero::after {
-        height: 90px; } }
+        height: 90px;
+        padding-bottom: 0; } }
 
 .home-hero {
   display: -webkit-box;
