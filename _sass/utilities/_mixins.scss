@@ -93,3 +93,8 @@
 @mixin dropShadow {
   box-shadow: 0 26px 45px 0 rgba(0, 0, 0, 0.4);
 }
+
+@mixin verticallyAlignChildren {
+  display: flex;
+  align-items: center;
+}

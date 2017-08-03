@@ -3,15 +3,17 @@
 $small-mobile-max: pxtoem(550px);
 $large-mobile-max: pxtoem(767px);
 $tablet: pxtoem(768px);
-$tablet-max: pxtoem(991px);
+$tablet-max: pxtoem(959px);
 $small-desktop: pxtoem(960px);
 $large-desktop: pxtoem(1200px);
+$x-large-desktop: pxtoem(2000px);
 $small-mobile-breakpoint: 'only screen and (max-width: #{$small-mobile-max})';
 $large-mobile-breakpoint: 'only screen and (max-width: #{$large-mobile-max})';
 $tablet-breakpoint: 'only screen and (min-width: #{$tablet})';
 $tablet-max-breakpoint: 'only screen and (max-width: #{$tablet-max})';
 $small-desktop-breakpoint: 'only screen and (min-width: #{$small-desktop})';
 $large-desktop-breakpoint: 'only screen and (min-width: #{$large-desktop})';
+$x-large-desktop-breakpoint: 'only screen and (min-width: #{$x-large-desktop})';
 
 // TYPE //
 

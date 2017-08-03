@@ -1476,17 +1476,62 @@ body.menu-open {
     .section {
       margin-bottom: 6.4rem; } }
 
-.why-go .row {
+.centered-image-block {
   margin-bottom: 1.6rem; }
   @media only screen and (min-width: 60em) {
-    .why-go .row {
-      margin-bottom: 3.2rem;
+    .centered-image-block {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-bottom: 3.2rem; } }
+  .centered-image-block:last-child {
+    margin-bottom: 0; }
+
+.full-bleed-image-block {
+  position: relative;
+  overflow-x: hidden; }
+  @media only screen and (min-width: 60em) {
+    .full-bleed-image-block .container {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; } }
+  @media only screen and (min-width: 60em) {
+    .full-bleed-image-block .content-block {
+      -webkit-box-flex: 1.2;
+          -ms-flex: 1.2;
+              flex: 1.2; } }
+  @media only screen and (max-width: 59.9375em) {
+    .full-bleed-image-block .content-block .content-block-title,
+    .full-bleed-image-block .content-block .content-block-copy {
+      max-width: 620px; } }
+  .full-bleed-image-block .thumbnail {
+    position: relative;
+    right: -10%;
+    margin-top: 1.6rem;
+    width: 150vw;
+    max-width: 800px; }
+    @media only screen and (min-width: 48em) {
+      .full-bleed-image-block .thumbnail {
+        right: -15%; } }
+    @media only screen and (min-width: 60em) {
+      .full-bleed-image-block .thumbnail {
+        -webkit-box-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        margin-top: 0;
+        display: table; } }
+    @media only screen and (min-width: 75em) {
+      .full-bleed-image-block .thumbnail {
+        max-width: 1000px; } }
+    @media only screen and (min-width: 125em) {
+      .full-bleed-image-block .thumbnail {
+        position: static; } }
 
 .title-divider {
   display: block;
