@@ -68,6 +68,39 @@ p, blockquote, ul, li, dl {
   margin: 0 0 $spacing-base 0;
 }
 
+blockquote {
+  q {
+    @extend h3;
+    line-height: 1.3;
+    display: block;
+
+    &::before,
+    &::after {
+      content: "";
+    }
+  }
+
+  .quotee {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    color: $font-display-color;
+    font-weight: $font-weight-bold;
+    font-size: pxtoem(14px);
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 3px;
+      width: 50px;
+      background-color: $swatch-brand-yellow;
+      vertical-align: middle;
+    }
+
+  }
+}
+
 .light-text {
   font-weight: $font-weight-light;
 }

@@ -98,3 +98,15 @@
   display: flex;
   align-items: center;
 }
+
+@mixin quoteMark {
+  &::before {
+    content: open-quote;
+    font-family: $font-testimonals-open-quote;
+    display: block;
+    font-size: pxtoem(70px);
+    line-height: 0;
+    margin-bottom: $spacing-base;
+    color: $swatch-brand-yellow;
+  }
+}
