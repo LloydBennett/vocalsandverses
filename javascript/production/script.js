@@ -39,14 +39,25 @@ var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
 }());
 
 function Carousel(options) {
-    this.options = options;
+    var defaults = {
+      autoplay: true,
+      delay: 3000
+    };
+    this.options = Object.assign(options, defaults);
     this.counter = 0;
     this.init();
 }
 
 Carousel.prototype = {
     init: function(){
+        console.log(this.options);
         this.addEvents();
+
+        if(this.options.autoplay) {
+          setInterval(function(){
+            this.move(1);
+          }.bind(this), this.options.delay)
+        }
     },
     addEvents: function(){
         if(this.options.nextController) {
@@ -84,7 +95,6 @@ Carousel.prototype = {
         elem.classList.remove('active');
       });
 
-      //console.log("previous counter:" + prevCounter, "counter:" + this.counter);
       this.options.progressTabs[this.counter].classList.add('active');
     }
 };
