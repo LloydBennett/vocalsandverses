@@ -1687,5 +1687,9 @@ body.menu-open {
   display: inline-block; }
   .tab:last-child {
     margin-right: 0; }
+  .tab.active .tab-icon {
+    fill: #FED700;
+    -webkit-transition: 300m ease;
+    transition: 300m ease; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

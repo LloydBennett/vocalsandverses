@@ -1,0 +1,82 @@
+.testimonals {
+  text-align: center;
+
+  .container {
+    position: relative;
+    min-height: 300px;
+  }
+}
+
+.testimonals-entry {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.chevrons {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+
+  @media #{$small-mobile-breakpoint} {
+    display: none;
+  }
+}
+
+.controller {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+
+  &.prev {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+}
+
+.testimonals-progress {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testimonals-progress-tabs {
+  display: inline-block;
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.tab {
+  cursor: pointer;
+  margin-bottom: 0;
+  margin-right: $spacing-base;
+  display: inline-block;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    .tab-icon {
+      fill: $swatch-brand-yellow;
+      transition: 300m ease;
+    }
+  }
+}

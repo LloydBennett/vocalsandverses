@@ -26,6 +26,7 @@ Carousel.prototype = {
             slidesMaxLength = $slides.length - 1;
 
         $slides[this.counter].classList.remove('active');
+
         this.counter += direction;
 
         //reset the counter whenever its less than 0 or more than slides length
@@ -36,5 +37,13 @@ Carousel.prototype = {
         }
 
         $slides[this.counter].classList.add('active');
+        this.updateProgressTab();
+    },
+    updateProgressTab: function(){
+      this.options.progressTabs.forEach(function(elem){
+        elem.classList.remove('active');
+      });
+
+      this.options.progressTabs[this.counter].classList.add('active');
     }
 };

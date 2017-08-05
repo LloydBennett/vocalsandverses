@@ -9,23 +9,27 @@
 	$modalOverlay = document.querySelector('.modal-overlay'),
 	$modalWindow = document.querySelectorAll('.modal-content'),
 	$largePlayBtn = document.querySelector('.play-btn-lrg')*/
+var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
+
 
 (function() {
 
 	//initialises all functions that need to be called
 	function init(){
-		var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
+
+		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
 		var testimonialWidget = new Carousel({
 			nextController: document.querySelector('.next'),
 			prevController: document.querySelector('.prev'),
-			slides: document.querySelectorAll('.entry')
+			slides: document.querySelectorAll('.testimonals-entry'),
+      progressTabs: document.querySelectorAll('.testimonals-progress-tabs .tab')
 		});
-		var navMenu = new NavigationMenu({
-			menu: document.querySelector('[data-role="nav-menu"]'),
-			menuTrigger: document.querySelector('[data-role="open-menu"]'),
-			body: document.querySelector('body'),
-			navLinks: document.querySelectorAll('.nav-modal [data-role="nav-menu-links"]')
-		});
+		// var navMenu = new NavigationMenu({
+		// 	menu: document.querySelector('[data-role="nav-menu"]'),
+		// 	menuTrigger: document.querySelector('[data-role="open-menu"]'),
+		// 	body: document.querySelector('body'),
+		// 	navLinks: document.querySelectorAll('.nav-modal [data-role="nav-menu-links"]')
+		// });
 	}
 
 	window.onload = function() {
@@ -33,6 +37,7 @@
 	};
 
 }());
+
 function Carousel(options) {
     this.options = options;
     this.counter = 0;
@@ -61,6 +66,7 @@ Carousel.prototype = {
             slidesMaxLength = $slides.length - 1;
 
         $slides[this.counter].classList.remove('active');
+
         this.counter += direction;
 
         //reset the counter whenever its less than 0 or more than slides length
@@ -71,8 +77,18 @@ Carousel.prototype = {
         }
 
         $slides[this.counter].classList.add('active');
+        this.updateProgressTab();
+    },
+    updateProgressTab: function(){
+      this.options.progressTabs.forEach(function(elem){
+        elem.classList.remove('active');
+      });
+
+      //console.log("previous counter:" + prevCounter, "counter:" + this.counter);
+      this.options.progressTabs[this.counter].classList.add('active');
     }
 };
+
 /*
 var modalOpen = false, player;
 function triggerModal(event) {
@@ -115,7 +131,6 @@ NavigationMenu.prototype = {
    var delay;
    this.options.navLinks.forEach(function(link, index){
        delay = 80 * index;
-       console.log(delay);
        setTimeout(function(){
            link.classList.toggle('appear');
        }, delay);
