@@ -4,6 +4,7 @@
   .container {
     position: relative;
     min-height: 300px;
+    overflow-x: hidden;
   }
 }
 
@@ -17,10 +18,19 @@
   right: 0;
   opacity: 0;
   pointer-events: none;
+  transform: translateX(100%);
+  transition: $animation-base-duration $animation-base-bezier;
 
-  &.active {
+  &.active-slide {
+    transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
+    transition: $animation-base-duration $animation-base-bezier;
+  }
+  &.previous-slide {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: $animation-base-duration $animation-base-bezier;
   }
 }
 

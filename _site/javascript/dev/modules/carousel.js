@@ -5,12 +5,13 @@ function Carousel(options) {
     };
     this.options = Object.assign(options, defaults);
     this.counter = 0;
+    this.previousSlideCounter = this.options.slides.length - 1;
     this.init();
 }
 
 Carousel.prototype = {
     init: function(){
-        console.log(this.options);
+        this.move();
         this.addEvents();
 
         if(this.options.autoplay) {
@@ -36,18 +37,27 @@ Carousel.prototype = {
         var $slides = this.options.slides,
             slidesMaxLength = $slides.length - 1;
 
-        $slides[this.counter].classList.remove('active');
+        if (direction) {
+          this.counter += direction;
+          this.previousSlideCounter += direction;
+        }
 
-        this.counter += direction;
-
-        //reset the counter whenever its less than 0 or more than slides length
-        if (this.counter > slidesMaxLength ||
-            this.counter < 0
-        ) {
+        if (this.counter > slidesMaxLength || this.counter < 0) {
             this.counter = (direction == 1) ? 0 : slidesMaxLength;
         }
 
-        $slides[this.counter].classList.add('active');
+        if (this.previousSlideCounter > slidesMaxLength || this.previousSlideCounter < 0) {
+            this.previousSlideCounter = (direction == 1) ? 0 : slidesMaxLength;
+        }
+
+        console.log("previous slide: " + this.previousSlideCounter, "active slide: " + this.counter);
+
+        $slides.forEach(function(elem){
+          elem.classList.remove('active-slide', 'previous-slide');
+        });
+
+        $slides[this.previousSlideCounter].classList.add('previous-slide');
+        $slides[this.counter].classList.add('active-slide');
         this.updateProgressTab();
     },
     updateProgressTab: function(){
