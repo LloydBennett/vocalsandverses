@@ -11,6 +11,19 @@
 	$largePlayBtn = document.querySelector('.play-btn-lrg')*/
 var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
 
+function removeClassFromNodeList(nodeList, className){
+  if(typeof className === "object") {
+    nodeList.forEach(function(element){
+      for(var index = 0; index < className.length; index++) {
+        element.classList.remove(className[index]);
+      }
+    });
+  } else {
+    nodeList.forEach(function(element){
+      element.classList.remove(className);
+    });
+  }
+}
 
 (function() {
 
