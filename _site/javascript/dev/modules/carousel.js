@@ -15,11 +15,11 @@ Carousel.prototype = {
       this.addEvents();
       this.move();
 
-      // if(this.options.autoplay) {
-      //   setInterval(function(){
-      //     this.move(1);
-      //   }.bind(this), this.options.delay)
-      // }
+      if(this.options.autoplay) {
+        setInterval(function(){
+          if(!this.isAnimating) this.move(1);
+        }.bind(this), this.options.delay)
+      }
   },
   addEvents: function(){
     if(this.options.nextController) {
@@ -43,31 +43,32 @@ Carousel.prototype = {
       });
     }
   },
+  checkCounterLimit: function(n){
+    var slidesMaxLength = this.options.slides.length - 1;
+
+    if (this.counter > slidesMaxLength || this.counter < 0) {
+      this.counter = (n == 1) ? 0 : slidesMaxLength;
+    }
+    if (this.previousSlideCounter > slidesMaxLength || this.previousSlideCounter < 0) {
+      this.previousSlideCounter = (n == 1) ? 0 : slidesMaxLength;
+    }
+  },
   moveViaLink: function(index) {
     var slides = this.options.slides;
+
     this.counter = index;
+    this.previousSlideCounter = index - 1;
+    this.checkCounterLimit(index);
     this.animateSlides(slides[index], slides[this.previousSlideCounter]);
-      ///var targetSlide = this.options.slides[index];
-      // this.animateSlideOut(this.currentSlide);
-      // this.animateSlideIn(targetSlide);
   },
   move: function(direction) {
-    var slides = this.options.slides,
-        slidesMaxLength = slides.length - 1;
+    var slides = this.options.slides;
 
     if (!direction) direction = 0;
 
     this.counter += direction;
     this.previousSlideCounter += direction;
-
-    if (this.counter > slidesMaxLength || this.counter < 0) {
-      this.counter = (direction == 1) ? 0 : slidesMaxLength;
-    }
-
-    if (this.previousSlideCounter > slidesMaxLength || this.previousSlideCounter < 0) {
-      this.previousSlideCounter = (direction == 1) ? 0 : slidesMaxLength;
-    }
-
+    this.checkCounterLimit(direction);
     this.animateSlides(slides[this.counter], slides[this.previousSlideCounter]);
   },
   animateSlides: function(slideIn, slideOut) {
