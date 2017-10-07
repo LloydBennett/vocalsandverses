@@ -38,9 +38,8 @@ gulp.task("compileSass", function(){
 //fix browser reload
 
 gulp.task("watchFiles", function(){
-
   gulp.watch('_sass/**/*.scss', ['compileSass']);
-  gulp.watch('javascript/dev/*.js', ['concatJS']);
+  gulp.watch('javascript/dev/**/*.js', ['concatJS']);
 });
 
 gulp.task("serve", ['watchFiles']);

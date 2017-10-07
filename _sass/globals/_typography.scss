@@ -19,8 +19,9 @@ body {
   font-weight: $font-weight-light;
 }
 
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3 {
   margin: 0 0 $spacing-s 0;
 }
 
@@ -40,23 +41,14 @@ h2 {
 	color: darken($font-display-color, 20%);
 
   @media #{$small-mobile-breakpoint} {
-    @include setVerticalRhythmn(24px);
+    @include setVerticalRhythmn(21px);
+    line-height: 1.2;
   }
 }
 
 h3 {
   @include setVerticalRhythmn(24px);
 	color: $font-display-color;
-  font-weight: $font-weight-semi-bold;
-
-  @media #{$small-mobile-breakpoint} {
-    @include setVerticalRhythmn(21px);
-  }
-}
-
-h4 {
-  @include setVerticalRhythmn(21px);
-  color: lighten($font-display-color, 20%);
   font-weight: $font-weight-semi-bold;
 
   @media #{$small-mobile-breakpoint} {
@@ -97,7 +89,6 @@ blockquote {
       background-color: $swatch-brand-yellow;
       vertical-align: middle;
     }
-
   }
 }
 

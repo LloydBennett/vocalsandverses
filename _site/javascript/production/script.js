@@ -54,12 +54,13 @@ function removeClassFromNodeList(nodeList, className){
 function Carousel(options) {
   var defaults = {
     autoplay: true,
-    delay: 6000
+    delay: 10000
   };
   this.options = Object.assign(options, defaults);
   this.counter = 0;
   this.previousSlideCounter = this.options.slides.length - 1;
   this.isAnimating = false;
+  this.timer;
   this.init();
 }
 
@@ -67,17 +68,17 @@ Carousel.prototype = {
   init: function(){
       this.addEvents();
       this.move();
-
-      if(this.options.autoplay) {
-        setInterval(function(){
-          if(!this.isAnimating) this.move(1);
-        }.bind(this), this.options.delay)
-      }
+      this.setSlideTimeLimit();
   },
   addEvents: function(){
+    // find a way to make nextController and prevController one event handler
     if(this.options.nextController) {
         this.options.nextController.onclick = function(){
-            if(!this.isAnimating) this.move(1);
+            if(!this.isAnimating) {
+              this.move(1);
+              clearInterval(this.timer);
+              this.setSlideTimeLimit();
+            }
         }.bind(this);
     }
 
@@ -92,8 +93,17 @@ Carousel.prototype = {
       this.options.progressTabs.forEach(function(element, index) {
         element.onclick = function(){
           _this.moveViaLink(index);
+          clearInterval(this.timer);
+          this.setSlideTimeLimit();
         }
       });
+    }
+  },
+  setSlideTimeLimit: function(){
+    if(this.options.autoplay) {
+      this.timer = setInterval(function(){
+        if(!this.isAnimating) this.move(1);
+      }.bind(this), this.options.delay);
     }
   },
   checkCounterLimit: function(n){

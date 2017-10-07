@@ -90,7 +90,8 @@
   }
 }
 
-.hero-content-title, .hero-content-copy {
+.hero-content-title,
+.hero-content-copy {
   color: white;
 }
 
@@ -104,6 +105,7 @@
   max-width: 350px;
 
   @media #{$small-mobile-breakpoint} {
+    padding: 0 $spacing-s;
     margin-left: auto;
     margin-right: auto;
   }

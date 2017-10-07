@@ -12,4 +12,17 @@
 	}
 }
 
-
+@keyframes bounce-arrow-next {
+  // 0%, 50%, 100%  {
+  //   transform: translateX(0);
+  // }
+  // 25%, 75% {
+  //   transform: translateX(-80px);
+  // }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-80px);
+  }
+}
