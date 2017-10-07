@@ -1,6 +1,6 @@
 function Carousel(options) {
   var defaults = {
-    autoplay: true,
+    autoplay: false,
     delay: 10000
   };
   this.options = Object.assign(options, defaults);
@@ -8,6 +8,9 @@ function Carousel(options) {
   this.previousSlideCounter = this.options.slides.length - 1;
   this.isAnimating = false;
   this.timer;
+  this.slidesWidth = 1440; // width of the inner carousel wrapper container
+  //this.slidesWidth = this.options.wrapper.getBoundingClientRect().width;
+  console.log(this.options.wrapper);
   this.init();
 }
 
@@ -69,7 +72,7 @@ Carousel.prototype = {
     this.counter = index;
     this.previousSlideCounter = index - 1;
     this.checkCounterLimit(index);
-    this.animateSlides(slides[index], slides[this.previousSlideCounter]);
+    this.animateSlides();
   },
   move: function(direction) {
     var slides = this.options.slides;
@@ -79,16 +82,14 @@ Carousel.prototype = {
     this.counter += direction;
     this.previousSlideCounter += direction;
     this.checkCounterLimit(direction);
-    this.animateSlides(slides[this.counter], slides[this.previousSlideCounter]);
+    this.animateSlides();
   },
-  animateSlides: function(slideIn, slideOut) {
+  animateSlides: function() {
+    var translateAmount = -this.slidesWidth * this.counter;
     this.isAnimating = true;
-    removeClassFromNodeList(this.options.slides, ['previous-slide', 'active-slide']);
-    slideOut.classList.add('previous-slide');
-    slideIn.classList.add('active-slide');
     this.updateProgressTab();
-
-    slideIn.addEventListener('webkitTransitionEnd', function(){
+    this.options.wrapper.style.transform = "translateX(" + translateAmount + "px)"
+    this.options.wrapper.addEventListener('webkitTransitionEnd', function(){
       this.isAnimating = false;
     }.bind(this));
   },

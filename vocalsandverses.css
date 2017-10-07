@@ -1630,36 +1630,30 @@ body.menu-open {
   text-align: center; }
   .testimonals .container {
     position: relative;
-    min-height: 300px;
     overflow-x: hidden; }
 
+.testimonals-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
+
 .testimonals-entry {
-  float: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
   pointer-events: none;
-  -webkit-transform: translateX(80%);
-          transform: translateX(80%);
   -webkit-transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-  transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
-  .testimonals-entry.active-slide {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-    -webkit-transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-    transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
-  .testimonals-entry.previous-slide {
-    -webkit-transform: translateX(-80%);
-            transform: translateX(-80%);
-    opacity: 0;
-    -webkit-transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-    transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
+  transition: 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  width: 100%; }
+
+.testimonals-entry-wrapper {
+  margin: 0 auto;
+  max-width: 600px; }
 
 .chevrons {
   position: absolute;
@@ -1683,28 +1677,7 @@ body.menu-open {
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg); }
   .controller.next {
-    right: 0;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-    transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-    transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-    transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
-    .controller.next:hover {
-      -webkit-transform: translateX(-80px);
-              transform: translateX(-80px);
-      -webkit-transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-      transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-      transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-      transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
-
-.testimonals-progress {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 100%; }
+    right: 0; }
 
 .testimonals-progress-tabs {
   display: inline-block;

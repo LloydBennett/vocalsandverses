@@ -34,6 +34,7 @@ function removeClassFromNodeList(nodeList, className){
 		var testimonialWidget = new Carousel({
 			nextController: document.querySelector('.next'),
 			prevController: document.querySelector('.prev'),
+      wrapper: document.querySelector('.testimonals-wrapper'),
 			slides: document.querySelectorAll('.testimonals-entry'),
       progressTabs: document.querySelectorAll('.testimonals-progress-tabs .tab')
 		});
