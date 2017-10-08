@@ -93,7 +93,6 @@ Carousel.prototype = {
   },
   setCarouselWidth: function() {
     this.slidesWidth = document.querySelector('[data-carousel-wrapper]').getBoundingClientRect().width;
-    console.log(this);
   },
   moveViaLink: function(index) {
     /* This is a separate move method especially for

@@ -32,10 +32,6 @@
   top: 30%;
   width: 100%;
 
-  @media #{$small-mobile-breakpoint} {
-    display: none;
-  }
-
   img {
     display: block;
     width: 100%;

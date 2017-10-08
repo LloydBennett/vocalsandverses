@@ -1660,9 +1660,6 @@ body.menu-open {
   left: 0;
   top: 30%;
   width: 100%; }
-  @media only screen and (max-width: 34.375em) {
-    .chevrons {
-      display: none; } }
   .chevrons img {
     display: block;
     width: 100%; }
