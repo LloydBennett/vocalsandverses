@@ -9,7 +9,7 @@
 	$modalOverlay = document.querySelector('.modal-overlay'),
 	$modalWindow = document.querySelectorAll('.modal-content'),
 	$largePlayBtn = document.querySelector('.play-btn-lrg')*/
-var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
+//var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
 
 function removeClassFromNodeList(nodeList, className){
   if(typeof className === "object") {
@@ -25,19 +25,18 @@ function removeClassFromNodeList(nodeList, className){
   }
 }
 
+function bindEventToAll(nodeList, eventHandler){
+  nodeList.forEach(function(element, index){
+    element.onclick = eventHandler;
+  });
+}
+
 (function() {
 
 	//initialises all functions that need to be called
 	function init(){
-
+    var testimonialWidget = new Carousel();
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
-		var testimonialWidget = new Carousel({
-			nextController: document.querySelector('.next'),
-			prevController: document.querySelector('.prev'),
-      wrapper: document.querySelector('.testimonals-wrapper'),
-			slides: document.querySelectorAll('.testimonals-entry'),
-      progressTabs: document.querySelectorAll('.testimonals-progress-tabs .tab')
-		});
 		// var navMenu = new NavigationMenu({
 		// 	menu: document.querySelector('[data-role="nav-menu"]'),
 		// 	menuTrigger: document.querySelector('[data-role="open-menu"]'),
@@ -57,51 +56,77 @@ function Carousel(options) {
     autoplay: false,
     delay: 10000
   };
+  this.domElements;
+
+  options = options ? options : {};
   this.options = Object.assign(options, defaults);
   this.counter = 0;
-  this.previousSlideCounter = this.options.slides.length - 1;
   this.isAnimating = false;
   this.timer;
-  this.slidesWidth = 1440; // width of the inner carousel wrapper container
-  //this.slidesWidth = this.options.wrapper.getBoundingClientRect().width;
-  console.log(this.options.wrapper);
+  this.slidesWidth;
+
+  this.cacheDomElements = function() {
+    this.domElements = {
+      nextController: document.querySelectorAll('[data-carousel-controller-next]'),
+      prevController: document.querySelectorAll('[data-carousel-controller-prev]'),
+      progressTabs: document.querySelectorAll('[data-carousel-progress-tab]'),
+      slides: document.querySelectorAll('[data-carousel-slides]'),
+      wrapper: document.querySelector('[data-carousel-wrapper]')
+    }
+    /* we need to set the width of the carousel so that
+      the carousel wrapper moves in relation the width of
+      the slides. Slides are 100% of the carousel width
+    */
+    this.setCarouselWidth();
+  }
+
   this.init();
 }
 
 Carousel.prototype = {
   init: function(){
-      this.addEvents();
-      this.move();
-      this.setSlideTimeLimit();
+    this.cacheDomElements();
+    this.addEvents();
+    this.move();
+    this.setSlideTimeLimit();
   },
   addEvents: function(){
-    // find a way to make nextController and prevController one event handler
-    if(this.options.nextController) {
-        this.options.nextController.onclick = function(){
-            if(!this.isAnimating) {
-              this.move(1);
-              clearInterval(this.timer);
-              this.setSlideTimeLimit();
-            }
-        }.bind(this);
+    var _this = this;
+
+    if(this.domElements.nextController) {
+      this.carouselController(this.domElements.nextController, 1);
     }
 
-    if(this.options.prevController) {
-        this.options.prevController.onclick = function() {
-            if(!this.isAnimating) this.move(-1);
-        }.bind(this);
+    if(this.domElements.prevController) {
+      this.carouselController(this.domElements.prevController, -1);
     }
 
-    if(this.options.progressTabs) {
-      var _this = this;
-      this.options.progressTabs.forEach(function(element, index) {
+    if(this.domElements.progressTabs) {
+      this.domElements.progressTabs.forEach(function(element, index) {
         element.onclick = function(){
           _this.moveViaLink(index);
-          clearInterval(this.timer);
-          this.setSlideTimeLimit();
+          if(_this.options.autoplay) {
+            clearInterval(_this.timer);
+            _this.setSlideTimeLimit();
+          }
         }
       });
     }
+    /* This helps us to have a responsive carousel */
+    window.addEventListener('resize', function() {
+      this.setCarouselWidth();
+    }.bind(_this));
+  },
+  carouselController: function(nodeList, direction){
+    bindEventToAll(nodeList, function() {
+      if(!this.isAnimating) {
+        this.move(direction);
+        if(this.options.autoplay) {
+          clearInterval(this.timer);
+          this.setSlideTimeLimit();
+        }
+      }
+    }.bind(this));
   },
   setSlideTimeLimit: function(){
     if(this.options.autoplay) {
@@ -110,31 +135,30 @@ Carousel.prototype = {
       }.bind(this), this.options.delay);
     }
   },
-  checkCounterLimit: function(n){
-    var slidesMaxLength = this.options.slides.length - 1;
+  checkCounterLimit: function(n) {
+    /* We check to see whether the counter (n) is
+    within the scope of how many slides there are */
+    var slidesMaxLength = this.domElements.slides.length - 1;
 
     if (this.counter > slidesMaxLength || this.counter < 0) {
       this.counter = (n == 1) ? 0 : slidesMaxLength;
     }
-    if (this.previousSlideCounter > slidesMaxLength || this.previousSlideCounter < 0) {
-      this.previousSlideCounter = (n == 1) ? 0 : slidesMaxLength;
-    }
+  },
+  setCarouselWidth: function() {
+    this.slidesWidth = document.querySelector('[data-carousel-wrapper]').getBoundingClientRect().width;
+    console.log(this);
   },
   moveViaLink: function(index) {
-    var slides = this.options.slides;
-
+    /* This is a separate move method especially for
+      carousel tabs */
     this.counter = index;
-    this.previousSlideCounter = index - 1;
     this.checkCounterLimit(index);
     this.animateSlides();
   },
   move: function(direction) {
-    var slides = this.options.slides;
-
     if (!direction) direction = 0;
 
     this.counter += direction;
-    this.previousSlideCounter += direction;
     this.checkCounterLimit(direction);
     this.animateSlides();
   },
@@ -142,14 +166,14 @@ Carousel.prototype = {
     var translateAmount = -this.slidesWidth * this.counter;
     this.isAnimating = true;
     this.updateProgressTab();
-    this.options.wrapper.style.transform = "translateX(" + translateAmount + "px)"
-    this.options.wrapper.addEventListener('webkitTransitionEnd', function(){
+    this.domElements.wrapper.style.transform = "translateX(" + translateAmount + "px)"
+    this.domElements.wrapper.addEventListener('webkitTransitionEnd', function(){
       this.isAnimating = false;
     }.bind(this));
   },
-  updateProgressTab: function(){
-    removeClassFromNodeList(this.options.progressTabs, 'active');
-    this.options.progressTabs[this.counter].classList.add('active');
+  updateProgressTab: function() {
+    removeClassFromNodeList(this.domElements.progressTabs, 'active');
+    this.domElements.progressTabs[this.counter].classList.add('active');
   }
 };
 

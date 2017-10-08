@@ -1,7 +1,7 @@
 <section class="section testimonals quote-mark" data-carousel="testimonal">
   <div class="container">
-    <div class="testimonals-wrapper">
-      <div class="testimonals-entry">
+    <div class="testimonals-wrapper" data-carousel-wrapper>
+      <div class="testimonals-entry" data-carousel-slides>
         <div class="testimonals-entry-wrapper">
           <blockquote>
             <q>Everytime I go a #VocalsAndVerses my
@@ -14,7 +14,7 @@
           </blockquote>
         </div>
       </div>
-      <div class="testimonals-entry">
+      <div class="testimonals-entry" data-carousel-slides>
         <div class="testimonals-entry-wrapper">
           <blockquote>
             <q>Testing One</q>
@@ -24,7 +24,7 @@
           </blockquote>
         </div>
       </div>
-      <div class="testimonals-entry">
+      <div class="testimonals-entry" data-carousel-slides>
         <div class="testimonals-entry-wrapper">
           <blockquote>
             <q>Testing Two</q>
@@ -36,18 +36,24 @@
       </div>
     </div>
     <div class="chevrons">
-      <div class="prev controller">
+      <div class="prev controller" data-carousel-controller-prev>
         <img src="../images/arrow-chervon.svg" alt="Previous Slide">
       </div>
-      <div class="next controller">
+      <div class="next controller" data-carousel-controller-next>
         <img src="../images/arrow-chervon.svg" alt="Next Slide">
       </div>
     </div>
     <nav class="testimonals-progress">
       <ul class="testimonals-progress-tabs">
-        <li class="tab">{% include icons/carousel-progress.html %}</li>
-        <li class="tab">{% include icons/carousel-progress.html %}</li>
-        <li class="tab">{% include icons/carousel-progress.html %}</li>
+        <li class="tab" data-carousel-progress-tab>
+          {% include icons/carousel-progress.html %}
+        </li>
+        <li class="tab" data-carousel-progress-tab>
+          {% include icons/carousel-progress.html %}
+        </li>
+        <li class="tab" data-carousel-progress-tab>
+          {% include icons/carousel-progress.html %}
+        </li>
       </ul>
     </nav>
   </div>

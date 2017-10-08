@@ -9,7 +9,7 @@
 	$modalOverlay = document.querySelector('.modal-overlay'),
 	$modalWindow = document.querySelectorAll('.modal-content'),
 	$largePlayBtn = document.querySelector('.play-btn-lrg')*/
-var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
+//var $testimonals = document.querySelectorAll('[data-carousel="testimonal"]');
 
 function removeClassFromNodeList(nodeList, className){
   if(typeof className === "object") {
@@ -25,19 +25,18 @@ function removeClassFromNodeList(nodeList, className){
   }
 }
 
+function bindEventToAll(nodeList, eventHandler){
+  nodeList.forEach(function(element, index){
+    element.onclick = eventHandler;
+  });
+}
+
 (function() {
 
 	//initialises all functions that need to be called
 	function init(){
-
+    var testimonialWidget = new Carousel();
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
-		var testimonialWidget = new Carousel({
-			nextController: document.querySelector('.next'),
-			prevController: document.querySelector('.prev'),
-      wrapper: document.querySelector('.testimonals-wrapper'),
-			slides: document.querySelectorAll('.testimonals-entry'),
-      progressTabs: document.querySelectorAll('.testimonals-progress-tabs .tab')
-		});
 		// var navMenu = new NavigationMenu({
 		// 	menu: document.querySelector('[data-role="nav-menu"]'),
 		// 	menuTrigger: document.querySelector('[data-role="open-menu"]'),

@@ -3,7 +3,6 @@
 
   .container {
     position: relative;
-    //min-height: 300px;
     overflow-x: hidden;
   }
 }
@@ -17,28 +16,9 @@
   flex-shrink: 0;
   margin-left: auto;
   margin-right: auto;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  //opacity: 0;
   pointer-events: none;
-  //transform: translateX(80%);
   transition: $animation-base-duration $animation-base-bezier;
   width: 100%;
-
-  // &.active-slide {
-  //   transform: translateX(0);
-  //   opacity: 1;
-  //   pointer-events: auto;
-  //   transition: $animation-base-duration $animation-base-bezier;
-  // }
-
-  // &.previous-slide {
-  //   transform: translateX(-200%);
-  //   opacity: 0;
-  //   transition: $animation-base-duration $animation-base-bezier;
-  // }
 }
 
 .testimonals-entry-wrapper {
@@ -75,26 +55,8 @@
 
   &.next {
     right: 0;
-    // animation-name: bounce-arrow-next;
-    // animation-duration: $animation-base-duration;
-    // animation-timing-function: $animation-base-bezier;
-    // animation-iteration-count: infinite;
-    // transform: translateX(0);
-    // transition: transform $animation-base-duration $animation-base-bezier;
-    // &:hover {
-    //   transform: translateX(-80px);
-    //   transition: transform $animation-base-duration $animation-base-bezier;
-    // }
   }
 }
-
-// .testimonals-progress {
-//   position: absolute;
-//   bottom: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 100%;
-// }
 
 .testimonals-progress-tabs {
   display: inline-block;
