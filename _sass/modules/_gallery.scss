@@ -1,4 +1,4 @@
-.gallery {
+.gallery-grid {
   position: relative;
   padding-top: $spacing-base;
   background-color: $swatch-gallery-bg;
@@ -66,5 +66,29 @@
 
   .ctas {
     margin-top: $spacing-m;
+  }
+}
+
+.gallery-modal {
+  //width: 100%;
+  width: 90%;
+  max-width: 700px;
+  height: 500px;
+  background-color: gray;
+
+  .carousel-chevrons {
+    top: 45%;
+
+    .prev {
+      left: -10%;
+    }
+
+    .next {
+      right: -10%;
+    }
+  }
+
+  .icon-stroke {
+    fill: $white;
   }
 }

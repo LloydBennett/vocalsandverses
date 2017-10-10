@@ -35,7 +35,9 @@ function bindEventToAll(nodeList, eventHandler){
 
 	//initialises all functions that need to be called
 	function init(){
-    var testimonialWidget = new Carousel();
+    var testimonialWidget = new Carousel(),
+        modal = new Modal();
+
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
 		// var navMenu = new NavigationMenu({
 		// 	menu: document.querySelector('[data-role="nav-menu"]'),
@@ -176,25 +178,44 @@ Carousel.prototype = {
   }
 };
 
-/*
-var modalOpen = false, player;
-function triggerModal(event) {
-    if(!modalOpen) {
-        var modalName = (event.target.getAttribute('data-trigger-modal')) ?
-                event.target.getAttribute('data-trigger-modal') : event.target.parentNode.getAttribute('data-trigger-modal'),
-            $modal = document.querySelectorAll('[data-modal-name="' +  modalName + '"]');
+function Modal() {
+  this.openModal = false;
+  this.domElements;
+  this.cacheDomElements = function() {
+    this.domElements = {
+      trigger: document.querySelectorAll('[data-trigger-modal]'),
+      modalOverlay: document.querySelector('[data-modal-overlay]'),
+      closeModal: document.querySelectorAll('[data-close-modal]')
+    };
+  }
+  this.init();
+}
 
-        $modalOverlay.classList.add('visible');
-        $modal[0].classList.add('open');
-        modalOpen = true;
-    } else {
-        $modalOverlay.classList.remove('visible');
-        $modalWindow.forEach(function($elem) {
-            $elem.classList.remove('open');
-        });
-        modalOpen = false;
-    }
-}*/
+Modal.prototype = {
+  init: function() {
+    this.cacheDomElements();
+    this.addEvents();
+  },
+  addEvents: function() {
+    var _this = this;
+    bindEventToAll(this.domElements.trigger, function() {
+      if(!this.openModal) {
+        var modalName = (event.target.getAttribute('data-trigger-modal')) ?
+                event.target.getAttribute('data-trigger-modal') : event.target.parentNode.getAttribute('data-trigger-modal');
+
+        var $modal = document.querySelector('[data-modal-name="' +  modalName + '"]');
+
+        _this.domElements.modalOverlay.classList.add('visible');
+        $modal.classList.add('open');
+        this.openModal = true;
+      } else {
+        _this.domElements.modalOverlay.classList.remove('visible');
+        $modal.classList.remove('open');
+        this.openModal = false;
+      }
+    });
+  }
+}
 
 function NavigationMenu(options){
     this.options = options;

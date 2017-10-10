@@ -6,9 +6,12 @@
   <body>
 
     <div id="page-wrapper">
-        {{ content }}
+      {{ content }}
 
-        {% include footer.html %}
+      {% include footer.html %}
+    </div>
+    <div class="modal-overlay" data-modal-overlay>
+      {% include modals/gallery-modal.html %}
     </div>
     <script src="javascript/production/script.js"></script>
   </body>

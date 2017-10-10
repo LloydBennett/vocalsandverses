@@ -1,0 +1,27 @@
+.carousel-chevrons {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.carousel-controller {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+
+  &.prev {
+    left: 0;
+    transform: rotate(-180deg);
+  }
+
+  &.next {
+    right: 0;
+  }
+}

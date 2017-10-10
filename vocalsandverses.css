@@ -1,7 +1,7 @@
 .nowrap {
   white-space: nowrap; }
 
-.overlay {
+.overlay, .modal-overlay {
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
@@ -1624,54 +1624,68 @@ body.menu-open {
         padding: 0.8rem 1.6rem;
         width: auto; } }
 
-.gallery {
+.gallery-grid {
   position: relative;
   padding-top: 1.6rem;
   background-color: #F2F2F2;
   margin-bottom: 12.8rem; }
   @media only screen and (max-width: 34.375em) {
-    .gallery {
+    .gallery-grid {
       margin-bottom: 8rem; } }
   @media only screen and (min-width: 48em) {
-    .gallery {
+    .gallery-grid {
       padding-top: 3.2rem;
       margin-bottom: 16rem; } }
   @media only screen and (min-width: 60em) {
-    .gallery {
+    .gallery-grid {
       margin-bottom: 19.2rem; } }
-  .gallery::before, .gallery::after {
+  .gallery-grid::before, .gallery-grid::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 10%; }
     @media only screen and (min-width: 60em) {
-      .gallery::before, .gallery::after {
+      .gallery-grid::before, .gallery-grid::after {
         height: 20%; } }
-  .gallery::before {
+  .gallery-grid::before {
     background: url("/images/gallery/top-section.png") no-repeat center top/cover;
     top: -10%; }
     @media only screen and (min-width: 60em) {
-      .gallery::before {
+      .gallery-grid::before {
         top: -20%; } }
-  .gallery::after {
+  .gallery-grid::after {
     background: url("/images/gallery/bottom-section.png") no-repeat center top/cover;
     bottom: -20%;
     height: 20%; }
     @media only screen and (min-width: 48em) {
-      .gallery::after {
+      .gallery-grid::after {
         bottom: -40%;
         height: 40%; } }
-  .gallery .thumbnail {
+  .gallery-grid .thumbnail {
     display: block;
     cursor: pointer; }
-  .gallery .row {
+  .gallery-grid .row {
     margin-left: 0;
     margin-right: 0; }
-  .gallery [class^="col-"] {
+  .gallery-grid [class^="col-"] {
     padding-left: 0;
     padding-right: 0; }
-  .gallery .ctas {
+  .gallery-grid .ctas {
     margin-top: 3.2rem; }
+
+.gallery-modal {
+  width: 90%;
+  max-width: 700px;
+  height: 500px;
+  background-color: gray; }
+  .gallery-modal .carousel-chevrons {
+    top: 45%; }
+    .gallery-modal .carousel-chevrons .prev {
+      left: -10%; }
+    .gallery-modal .carousel-chevrons .next {
+      right: -10%; }
+  .gallery-modal .icon-stroke {
+    fill: #fff; }
 
 .testimonals {
   text-align: center; }
@@ -1702,27 +1716,6 @@ body.menu-open {
   margin: 0 auto;
   max-width: 600px; }
 
-.chevrons {
-  position: absolute;
-  left: 0;
-  top: 30%;
-  width: 100%; }
-  .chevrons img {
-    display: block;
-    width: 100%; }
-
-.controller {
-  display: inline-block;
-  position: absolute;
-  cursor: pointer;
-  width: 40px; }
-  .controller.prev {
-    left: 0;
-    -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg); }
-  .controller.next {
-    right: 0; }
-
 .testimonals-progress-tabs {
   display: inline-block;
   text-align: center;
@@ -1740,5 +1733,92 @@ body.menu-open {
     fill: #FED700;
     -webkit-transition: 300ms ease;
     transition: 300ms ease; }
+
+.carousel-chevrons {
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%; }
+  .carousel-chevrons img {
+    display: block;
+    width: 100%; }
+
+.carousel-controller {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  width: 40px; }
+  .carousel-controller.prev {
+    left: 0;
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg); }
+  .carousel-controller.next {
+    right: 0; }
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  -webkit-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
+  z-index: 1000; }
+  .modal-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transition: opacity 500ms ease;
+    transition: opacity 500ms ease; }
+
+.modal-content {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: opacity 500ms ease, -webkit-transform 600ms ease 100ms;
+  transition: opacity 500ms ease, -webkit-transform 600ms ease 100ms;
+  transition: transform 600ms ease 100ms, opacity 500ms ease;
+  transition: transform 600ms ease 100ms, opacity 500ms ease, -webkit-transform 600ms ease 100ms;
+  -webkit-transform: translateY(80%);
+          transform: translateY(80%);
+  opacity: 0; }
+  .modal-content.open {
+    -webkit-transition: opacity 500ms ease 100ms, -webkit-transform 500ms ease;
+    transition: opacity 500ms ease 100ms, -webkit-transform 500ms ease;
+    transition: transform 500ms ease, opacity 500ms ease 100ms;
+    transition: transform 500ms ease, opacity 500ms ease 100ms, -webkit-transform 500ms ease;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; }
+
+.close-modal {
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  right: 0;
+  text-transform: uppercase;
+  top: -20px;
+  z-index: 3000;
+  width: 25px; }
+  .close-modal span {
+    vertical-align: middle;
+    position: absolute;
+    height: 2px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    width: 100%;
+    background-color: #fff; }
+    .close-modal span:last-child {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
