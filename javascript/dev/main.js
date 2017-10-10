@@ -35,8 +35,13 @@ function bindEventToAll(nodeList, eventHandler){
 
 	//initialises all functions that need to be called
 	function init(){
-    var testimonialWidget = new Carousel(),
-        modal = new Modal();
+    document.querySelectorAll('[data-carousel]').forEach(function (element) {
+      new Carousel(element);
+    });
+
+    document.querySelectorAll('[data-carousel]').forEach(function (element) {
+      new Modal(element);
+    });
 
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
 		// var navMenu = new NavigationMenu({

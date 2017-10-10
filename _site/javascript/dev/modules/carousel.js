@@ -1,4 +1,4 @@
-function Carousel(options) {
+function Carousel(parentWrapper, options) {
   var defaults = {
     autoplay: false,
     delay: 10000
@@ -14,11 +14,11 @@ function Carousel(options) {
 
   this.cacheDomElements = function() {
     this.domElements = {
-      nextController: document.querySelectorAll('[data-carousel-controller-next]'),
-      prevController: document.querySelectorAll('[data-carousel-controller-prev]'),
-      progressTabs: document.querySelectorAll('[data-carousel-progress-tab]'),
-      slides: document.querySelectorAll('[data-carousel-slides]'),
-      wrapper: document.querySelector('[data-carousel-wrapper]')
+      nextController: parentWrapper.querySelectorAll('[data-carousel-controller-next]'),
+      prevController: parentWrapper.querySelectorAll('[data-carousel-controller-prev]'),
+      progressTabs: parentWrapper.querySelectorAll('[data-carousel-progress-tab]'),
+      slides: parentWrapper.querySelectorAll('[data-carousel-slides]'),
+      wrapper: parentWrapper.querySelector('[data-carousel-wrapper]')
     }
     /* we need to set the width of the carousel so that
       the carousel wrapper moves in relation the width of
