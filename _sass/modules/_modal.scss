@@ -16,6 +16,20 @@
     pointer-events: auto;
     transition: opacity 500ms ease;
 
+    .close-modal {
+      opacity: 1;
+      transition: opacity 600ms ease 500ms;
+    }
+
+    .carousel-chevrons {
+      opacity: 1;
+      transition: opacity 500ms ease 500ms;
+    }
+  }
+
+  .carousel-chevrons {
+    opacity: 0;
+    transition: opacity 500ms ease;
   }
 }
 
@@ -23,39 +37,47 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  transition: transform 600ms ease 100ms,
-              opacity 500ms ease;
-  transform: translateY(80%);
-  opacity: 0;
-
-  &.open {
-    transition: transform 500ms ease,
-                opacity 500ms ease 100ms;
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .close-modal {
+  background-color: red;
   color: $white;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   right: 0;
+  opacity: 0;
   text-transform: uppercase;
-  top: -20px;
+  top: -25px;
+  transition: opacity 500ms ease;
   z-index: 3000;
   width: 25px;
+  height: 25px;
 
   span {
-    vertical-align: middle;
-    position: absolute;
-    height: 2px;
-    transform: rotate(45deg);
-    width: 100%;
     background-color: $white;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    vertical-align: middle;
+    width: 100%;
 
     &:last-child {
       transform: rotate(-45deg);
     }
+  }
+}
+
+.modal-window {
+  transition: transform 500ms $animation-base-bezier 100ms,
+              opacity 400ms $animation-base-bezier;
+  transform: translateY(80%);
+  opacity: 0;
+
+  &.open {
+    transition: transform 500ms $animation-base-bezier,
+                opacity 400ms $animation-base-bezier 100ms;
+    transform: translateY(0);
+    opacity: 1;
   }
 }

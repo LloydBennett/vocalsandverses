@@ -10,8 +10,14 @@
 
       {% include footer.html %}
     </div>
-    <div class="modal-overlay" data-modal-overlay>
-      {% include modals/gallery-modal.html %}
+    <div class="modal-overlay" data-modal-overlay data-trigger-modal>
+      <div class="modal-content">
+        <div class="close-modal" data-trigger-modal>
+          <span></span>
+          <span></span>
+        </div>
+        {% include modals/gallery-modal.html %}
+      </div>
     </div>
     <script src="javascript/production/script.js"></script>
   </body>

@@ -39,9 +39,7 @@ function bindEventToAll(nodeList, eventHandler){
       new Carousel(element);
     });
 
-    document.querySelectorAll('[data-carousel]').forEach(function (element) {
-      new Modal(element);
-    });
+    var modal = new Modal();
 
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
 		// var navMenu = new NavigationMenu({
@@ -183,6 +181,25 @@ Carousel.prototype = {
   }
 };
 
+function ImageGallery(){
+
+}
+
+ImageGallery.prototype = Object.create(Carousel.prototype);
+
+
+/*
+
+//Modal Part
+1) When the user clicks on an image in the gallery a modal window should appear
+2) The modal window adjust to the size of the image clicked.
+3) The image clicked on should appear in the modal.
+
+//Carousel Part
+1) When the user clicks on an arrow on the modal window the next image should appear
+
+*/
+
 function Modal() {
   this.openModal = false;
   this.domElements;
@@ -190,7 +207,7 @@ function Modal() {
     this.domElements = {
       trigger: document.querySelectorAll('[data-trigger-modal]'),
       modalOverlay: document.querySelector('[data-modal-overlay]'),
-      closeModal: document.querySelectorAll('[data-close-modal]')
+      modals: document.querySelectorAll('[data-modal]')
     };
   }
   this.init();
@@ -204,21 +221,30 @@ Modal.prototype = {
   addEvents: function() {
     var _this = this;
     bindEventToAll(this.domElements.trigger, function() {
-      if(!this.openModal) {
-        var modalName = (event.target.getAttribute('data-trigger-modal')) ?
-                event.target.getAttribute('data-trigger-modal') : event.target.parentNode.getAttribute('data-trigger-modal');
-
-        var $modal = document.querySelector('[data-modal-name="' +  modalName + '"]');
-
-        _this.domElements.modalOverlay.classList.add('visible');
-        $modal.classList.add('open');
-        this.openModal = true;
-      } else {
-        _this.domElements.modalOverlay.classList.remove('visible');
-        $modal.classList.remove('open');
-        this.openModal = false;
-      }
+      _this.toggleModal.call(_this, event);
     });
+  },
+  toggleModal: function(event, callback){
+    event.stopPropagation();
+
+    if(!this.openModal) {
+      var target = event.target;
+      var targetParent = target.parentNode;
+      var modalName = (target.getAttribute('data-trigger-modal')) ?
+      target.getAttribute('data-trigger-modal') : targetParent.getAttribute('data-trigger-modal');
+      var $modal = document.querySelector('[data-modal="' +  modalName + '"]');
+
+      this.domElements.modalOverlay.classList.add('visible');
+      $modal.classList.add('open');
+      this.openModal = true;
+      console.log(this.openModal);
+    } else {
+      this.domElements.modalOverlay.classList.remove('visible');
+      removeClassFromNodeList(this.domElements.modals, 'open');
+      this.openModal = false;
+    }
+
+    if(callback && typeof callback === "function") callback(this.openModal);
   }
 }
 

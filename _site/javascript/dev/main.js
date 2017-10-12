@@ -39,9 +39,7 @@ function bindEventToAll(nodeList, eventHandler){
       new Carousel(element);
     });
 
-    document.querySelectorAll('[data-carousel]').forEach(function (element) {
-      new Modal(element);
-    });
+    var modal = new Modal();
 
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
 		// var navMenu = new NavigationMenu({

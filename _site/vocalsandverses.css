@@ -1674,12 +1674,23 @@ body.menu-open {
     margin-top: 3.2rem; }
 
 .gallery-modal {
-  width: 90%;
-  max-width: 700px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
   background-color: gray; }
+  .gallery-modal .carousel-controller {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .gallery-modal .carousel-chevrons {
-    top: 45%; }
+    position: static; }
     .gallery-modal .carousel-chevrons .prev {
       left: -10%; }
     .gallery-modal .carousel-chevrons .next {
@@ -1779,46 +1790,66 @@ body.menu-open {
     pointer-events: auto;
     -webkit-transition: opacity 500ms ease;
     transition: opacity 500ms ease; }
+    .modal-overlay.visible .close-modal {
+      opacity: 1;
+      -webkit-transition: opacity 600ms ease 500ms;
+      transition: opacity 600ms ease 500ms; }
+    .modal-overlay.visible .carousel-chevrons {
+      opacity: 1;
+      -webkit-transition: opacity 500ms ease 500ms;
+      transition: opacity 500ms ease 500ms; }
+  .modal-overlay .carousel-chevrons {
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease;
+    transition: opacity 500ms ease; }
 
 .modal-content {
   position: relative;
   margin-left: auto;
-  margin-right: auto;
-  -webkit-transition: opacity 500ms ease, -webkit-transform 600ms ease 100ms;
-  transition: opacity 500ms ease, -webkit-transform 600ms ease 100ms;
-  transition: transform 600ms ease 100ms, opacity 500ms ease;
-  transition: transform 600ms ease 100ms, opacity 500ms ease, -webkit-transform 600ms ease 100ms;
-  -webkit-transform: translateY(80%);
-          transform: translateY(80%);
-  opacity: 0; }
-  .modal-content.open {
-    -webkit-transition: opacity 500ms ease 100ms, -webkit-transform 500ms ease;
-    transition: opacity 500ms ease 100ms, -webkit-transform 500ms ease;
-    transition: transform 500ms ease, opacity 500ms ease 100ms;
-    transition: transform 500ms ease, opacity 500ms ease 100ms, -webkit-transform 500ms ease;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1; }
+  margin-right: auto; }
 
 .close-modal {
+  background-color: red;
   color: #fff;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   right: 0;
+  opacity: 0;
   text-transform: uppercase;
-  top: -20px;
+  top: -25px;
+  -webkit-transition: opacity 500ms ease;
+  transition: opacity 500ms ease;
   z-index: 3000;
-  width: 25px; }
+  width: 25px;
+  height: 25px; }
   .close-modal span {
-    vertical-align: middle;
-    position: absolute;
+    background-color: #fff;
     height: 2px;
+    position: absolute;
+    top: 50%;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    width: 100%;
-    background-color: #fff; }
+    vertical-align: middle;
+    width: 100%; }
     .close-modal span:last-child {
       -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg); }
+
+.modal-window {
+  -webkit-transition: opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms;
+  transition: opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms;
+  transition: transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms, opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms, opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms;
+  -webkit-transform: translateY(80%);
+          transform: translateY(80%);
+  opacity: 0; }
+  .modal-window.open {
+    -webkit-transition: opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms, -webkit-transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+    transition: opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms, -webkit-transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+    transition: transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04), opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms;
+    transition: transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04), opacity 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04) 100ms, -webkit-transform 500ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
