@@ -2,7 +2,7 @@
   <div class="row">
     {% for counter in (0..11)%}
     <div class="col-xs-3 col-sm-2">
-      <div class="thumbnail" data-trigger-modal="gallery-modal" data-lightbox-thumbnail-url="../images/gallery/" data-carousel-slides>
+      <div class="thumbnail" data-trigger-modal="gallery-modal" data-index="{{ counter }}" data-lightbox-thumbnail-url="../images/gallery/">
         <img src="../images/gallery/gallery-image-one.jpg" alt="Gallery Image">
       </div>
     </div>

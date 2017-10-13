@@ -1,5 +1,11 @@
-<div class="modal-window gallery-modal" data-modal="gallery-modal">
-  <div class="gallery-modal-lightbox"></div>
+<div class="modal-window gallery-modal" data-modal="gallery-modal" data-carousel="gallery-modal">
+  <div class="gallery-modal-lightbox" data-carousel-wrapper>
+    {% for counter in (0..11)%}
+      <div class="thumbnail" data-carousel-slides>
+        <img src="../images/gallery/gallery-image-one.jpg" alt="Gallery Image">
+      </div>
+    {% endfor %}
+  </div>
   <div class="carousel-chevrons">
     <div class="prev carousel-controller" data-carousel-controller-prev>
       {% include icons/gallery-chervon.html %}

@@ -31,15 +31,43 @@ function bindEventToAll(nodeList, eventHandler){
   });
 }
 
+function setupGalleryModal() {
+  var modal = document.querySelectorAll('[data-modal="gallery-modal"]');
+  //var modalTrigger = document.querySelectorAll('[data-trigger-modal="gallery-modal"]');
+  var carouselEl = document.querySelectorAll('[data-carousel="gallery-modal"]');
+  var carousel;
+  var carouselArray = [];
+
+  carouselEl.forEach(function(element){
+    carousel = new Carousel(element);
+    carouselArray.push(carousel);
+  });
+
+  modal.forEach(function(element, index) {
+    new Modal(element, '[data-trigger-modal="gallery-modal"]', function(isOpen, target) {
+      if(isOpen) {
+        // carouselInModal.onChange(function() {
+        //   m.setSize(carouselInModal.getSizeOfCurrentImage())
+        // });
+        carouselArray[index].showImage(target.getAttribute('data-index'));
+      }
+    });
+  });
+}
+
+function setupDefaultCarousels() {
+  document.querySelectorAll('[data-carousel="default"]').forEach(function(el) {
+    new Carousel(el);
+  });
+}
+
 (function() {
 
 	//initialises all functions that need to be called
 	function init(){
-    document.querySelectorAll('[data-carousel]').forEach(function (element) {
-      new Carousel(element);
-    });
 
-    var modal = new Modal();
+    setupGalleryModal();
+    setupDefaultCarousels();
 
 		// var pageTransition = new PageTransition(document.querySelectorAll('[data-page-transition]'));
 		// var navMenu = new NavigationMenu({
@@ -98,15 +126,15 @@ Carousel.prototype = {
   addEvents: function(){
     var _this = this;
 
-    if(this.domElements.nextController) {
+    if(this.domElements.nextController.length) {
       this.carouselController(this.domElements.nextController, 1);
     }
 
-    if(this.domElements.prevController) {
+    if(this.domElements.prevController.length) {
       this.carouselController(this.domElements.prevController, -1);
     }
 
-    if(this.domElements.progressTabs) {
+    if(this.domElements.progressTabs.length) {
       this.domElements.progressTabs.forEach(function(element, index) {
         element.onclick = function(){
           _this.moveViaLink(index);
@@ -176,8 +204,14 @@ Carousel.prototype = {
     }.bind(this));
   },
   updateProgressTab: function() {
-    removeClassFromNodeList(this.domElements.progressTabs, 'active');
-    this.domElements.progressTabs[this.counter].classList.add('active');
+    if(this.domElements.progressTabs.length !== 0) {
+      removeClassFromNodeList(this.domElements.progressTabs, 'active');
+      this.domElements.progressTabs[this.counter].classList.add('active');
+    }
+  },
+  showImage: function(index){
+    this.counter = index;
+    this.animateSlides();
   }
 };
 
@@ -200,14 +234,15 @@ ImageGallery.prototype = Object.create(Carousel.prototype);
 
 */
 
-function Modal() {
+function Modal(selector, triggerSelector, openHandler) {
   this.openModal = false;
   this.domElements;
+  this.base = typeof selector === "string" ? document.querySelector(selector) : selector;
+  this.openHandler = openHandler;
   this.cacheDomElements = function() {
     this.domElements = {
-      trigger: document.querySelectorAll('[data-trigger-modal]'),
-      modalOverlay: document.querySelector('[data-modal-overlay]'),
-      modals: document.querySelectorAll('[data-modal]')
+      trigger: document.querySelectorAll(triggerSelector),
+      modalOverlay: document.querySelector('[data-modal-overlay]')
     };
   }
   this.init();
@@ -220,31 +255,35 @@ Modal.prototype = {
   },
   addEvents: function() {
     var _this = this;
+    console.log(this.domElements);
     bindEventToAll(this.domElements.trigger, function() {
       _this.toggleModal.call(_this, event);
     });
   },
-  toggleModal: function(event, callback){
+  openModal: function(){
+    this.domElements.modalOverlay.classList.add('visible');
+    this.base.classList.add('open');
+    this.openModal = true;
+  },
+  toggleModal: function(event){
     event.stopPropagation();
 
     if(!this.openModal) {
-      var target = event.target;
-      var targetParent = target.parentNode;
-      var modalName = (target.getAttribute('data-trigger-modal')) ?
-      target.getAttribute('data-trigger-modal') : targetParent.getAttribute('data-trigger-modal');
-      var $modal = document.querySelector('[data-modal="' +  modalName + '"]');
+      var target = (event.target.getAttribute('data-trigger-modal')) ?
+      event.target : event.target.parentNode;
+      var modalName = target.getAttribute('data-trigger-modal');
 
       this.domElements.modalOverlay.classList.add('visible');
-      $modal.classList.add('open');
+      this.base.classList.add('open');
       this.openModal = true;
-      console.log(this.openModal);
+
     } else {
       this.domElements.modalOverlay.classList.remove('visible');
-      removeClassFromNodeList(this.domElements.modals, 'open');
+      this.base.classList.remove('open');
       this.openModal = false;
     }
-
-    if(callback && typeof callback === "function") callback(this.openModal);
+    
+    if(this.openHandler && typeof this.openHandler === "function") this.openHandler(this.openModal, target);
   }
 }
 

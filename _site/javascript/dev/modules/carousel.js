@@ -40,15 +40,15 @@ Carousel.prototype = {
   addEvents: function(){
     var _this = this;
 
-    if(this.domElements.nextController) {
+    if(this.domElements.nextController.length) {
       this.carouselController(this.domElements.nextController, 1);
     }
 
-    if(this.domElements.prevController) {
+    if(this.domElements.prevController.length) {
       this.carouselController(this.domElements.prevController, -1);
     }
 
-    if(this.domElements.progressTabs) {
+    if(this.domElements.progressTabs.length) {
       this.domElements.progressTabs.forEach(function(element, index) {
         element.onclick = function(){
           _this.moveViaLink(index);
@@ -118,7 +118,13 @@ Carousel.prototype = {
     }.bind(this));
   },
   updateProgressTab: function() {
-    removeClassFromNodeList(this.domElements.progressTabs, 'active');
-    this.domElements.progressTabs[this.counter].classList.add('active');
+    if(this.domElements.progressTabs.length !== 0) {
+      removeClassFromNodeList(this.domElements.progressTabs, 'active');
+      this.domElements.progressTabs[this.counter].classList.add('active');
+    }
+  },
+  showImage: function(index){
+    this.counter = index;
+    this.animateSlides();
   }
 };

@@ -1,11 +1,12 @@
-function Modal() {
+function Modal(selector, triggerSelector, openHandler) {
   this.openModal = false;
   this.domElements;
+  this.base = typeof selector === "string" ? document.querySelector(selector) : selector;
+  this.openHandler = openHandler;
   this.cacheDomElements = function() {
     this.domElements = {
-      trigger: document.querySelectorAll('[data-trigger-modal]'),
-      modalOverlay: document.querySelector('[data-modal-overlay]'),
-      modals: document.querySelectorAll('[data-modal]')
+      trigger: document.querySelectorAll(triggerSelector),
+      modalOverlay: document.querySelector('[data-modal-overlay]')
     };
   }
   this.init();
@@ -18,30 +19,34 @@ Modal.prototype = {
   },
   addEvents: function() {
     var _this = this;
+    console.log(this.domElements);
     bindEventToAll(this.domElements.trigger, function() {
       _this.toggleModal.call(_this, event);
     });
   },
-  toggleModal: function(event, callback){
+  openModal: function(){
+    this.domElements.modalOverlay.classList.add('visible');
+    this.base.classList.add('open');
+    this.openModal = true;
+  },
+  toggleModal: function(event){
     event.stopPropagation();
 
     if(!this.openModal) {
-      var target = event.target;
-      var targetParent = target.parentNode;
-      var modalName = (target.getAttribute('data-trigger-modal')) ?
-      target.getAttribute('data-trigger-modal') : targetParent.getAttribute('data-trigger-modal');
-      var $modal = document.querySelector('[data-modal="' +  modalName + '"]');
+      var target = (event.target.getAttribute('data-trigger-modal')) ?
+      event.target : event.target.parentNode;
+      var modalName = target.getAttribute('data-trigger-modal');
 
       this.domElements.modalOverlay.classList.add('visible');
-      $modal.classList.add('open');
+      this.base.classList.add('open');
       this.openModal = true;
-      console.log(this.openModal);
+
     } else {
       this.domElements.modalOverlay.classList.remove('visible');
-      removeClassFromNodeList(this.domElements.modals, 'open');
+      this.base.classList.remove('open');
       this.openModal = false;
     }
-
-    if(callback && typeof callback === "function") callback(this.openModal);
+    
+    if(this.openHandler && typeof this.openHandler === "function") this.openHandler(this.openModal, target);
   }
 }
