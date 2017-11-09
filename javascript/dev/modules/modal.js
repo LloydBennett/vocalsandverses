@@ -1,11 +1,11 @@
-function Modal(selector, triggerSelector, openHandler) {
+function Modal(selector, openHandler) {
   this.openModal = false;
   this.domElements;
   this.base = typeof selector === "string" ? document.querySelector(selector) : selector;
   this.openHandler = openHandler;
   this.cacheDomElements = function() {
     this.domElements = {
-      trigger: document.querySelectorAll(triggerSelector),
+      trigger: document.querySelectorAll('[data-trigger-modal]'),
       modalOverlay: document.querySelector('[data-modal-overlay]')
     };
   }
@@ -19,15 +19,9 @@ Modal.prototype = {
   },
   addEvents: function() {
     var _this = this;
-    console.log(this.domElements);
     bindEventToAll(this.domElements.trigger, function() {
       _this.toggleModal.call(_this, event);
     });
-  },
-  openModal: function(){
-    this.domElements.modalOverlay.classList.add('visible');
-    this.base.classList.add('open');
-    this.openModal = true;
   },
   toggleModal: function(event){
     event.stopPropagation();
@@ -46,7 +40,10 @@ Modal.prototype = {
       this.base.classList.remove('open');
       this.openModal = false;
     }
-    
+
     if(this.openHandler && typeof this.openHandler === "function") this.openHandler(this.openModal, target);
+  },
+  setModalWidth: function(width){
+    this.base.style.width = width + "px";
   }
 }

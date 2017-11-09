@@ -7,11 +7,6 @@
   }
 }
 
-.testimonals-wrapper {
-  display: flex;
-  transition: transform $animation-base-duration $animation-base-bezier;
-}
-
 .testimonals-entry {
   flex-shrink: 0;
   margin-left: auto;

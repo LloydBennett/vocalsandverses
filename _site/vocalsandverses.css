@@ -1674,27 +1674,13 @@ body.menu-open {
     margin-top: 3.2rem; }
 
 .gallery-modal {
-  width: 900px;
-  height: 600px;
   background-color: gray; }
   .gallery-modal .carousel-controller {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    width: 80px; }
   .gallery-modal .carousel-chevrons {
-    position: static; }
-    .gallery-modal .carousel-chevrons .prev {
-      left: -10%; }
-    .gallery-modal .carousel-chevrons .next {
-      right: -10%; }
+    top: 50%; }
+    .gallery-modal .carousel-chevrons svg {
+      height: 100%; }
   .gallery-modal .icon-stroke {
     fill: #fff; }
 
@@ -1703,15 +1689,6 @@ body.menu-open {
   .testimonals .container {
     position: relative;
     overflow-x: hidden; }
-
-.testimonals-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-  transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-  transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
-  transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
 
 .testimonals-entry {
   -ms-flex-negative: 0;
@@ -1744,6 +1721,25 @@ body.menu-open {
     fill: #FED700;
     -webkit-transition: 300ms ease;
     transition: 300ms ease; }
+
+.carousel-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04);
+  transition: transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04), -webkit-transform 400ms cubic-bezier(0.46, 0.09, 0.48, 1.04); }
+
+.carousel-frame {
+  overflow: hidden; }
+
+.carousel-slide {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none; }
 
 .carousel-chevrons {
   position: absolute;
@@ -1809,14 +1805,13 @@ body.menu-open {
   margin-right: auto; }
 
 .close-modal {
-  background-color: red;
   color: #fff;
   cursor: pointer;
   position: absolute;
   right: 0;
   opacity: 0;
   text-transform: uppercase;
-  top: -25px;
+  top: -1.6rem;
   -webkit-transition: opacity 500ms ease;
   transition: opacity 500ms ease;
   z-index: 3000;

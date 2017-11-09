@@ -1,3 +1,9 @@
+// Helper functions
+
+/* This loop through an array of Dom
+elements and remove the className that is passed in
+when envoked. jQuery normally takes care of this issue */
+
 function removeClassFromNodeList(nodeList, className){
   if(typeof className === "object") {
     nodeList.forEach(function(element){
@@ -12,31 +18,40 @@ function removeClassFromNodeList(nodeList, className){
   }
 }
 
+/* This also loops through an array of Dom
+elements and attaches specified eventhandler to each
+to it. */
+
 function bindEventToAll(nodeList, eventHandler){
   nodeList.forEach(function(element, index){
     element.onclick = eventHandler;
   });
 }
 
+// End of Helper functions
+
+/*
+  This function sets the communication between the modal class
+  and the carousel class. The Gallery modal has a combination of both
+  carousel and modal functionality.
+*/
 function setupGalleryModal() {
   var modal = document.querySelectorAll('[data-modal="gallery-modal"]');
-  //var modalTrigger = document.querySelectorAll('[data-trigger-modal="gallery-modal"]');
   var carouselEl = document.querySelectorAll('[data-carousel="gallery-modal"]');
   var carousel;
   var carouselArray = [];
 
   carouselEl.forEach(function(element){
-    carousel = new Carousel(element);
+    carousel = new Carousel(element, {
+      autoResizeToFitSlide: true
+    });
     carouselArray.push(carousel);
   });
 
   modal.forEach(function(element, index) {
-    new Modal(element, '[data-trigger-modal="gallery-modal"]', function(isOpen, target) {
+    new Modal(element, function(isOpen, target) {
       if(isOpen) {
-        // carouselInModal.onChange(function() {
-        //   m.setSize(carouselInModal.getSizeOfCurrentImage())
-        // });
-        carouselArray[index].showImage(target.getAttribute('data-index'));
+        carouselArray[index].moveViaLink(target.getAttribute('data-index'));
       }
     });
   });

@@ -1,3 +1,9 @@
+// Helper functions
+
+/* This loop through an array of Dom
+elements and remove the className that is passed in
+when envoked. jQuery normally takes care of this issue */
+
 function removeClassFromNodeList(nodeList, className){
   if(typeof className === "object") {
     nodeList.forEach(function(element){
@@ -12,31 +18,40 @@ function removeClassFromNodeList(nodeList, className){
   }
 }
 
+/* This also loops through an array of Dom
+elements and attaches specified eventhandler to each
+to it. */
+
 function bindEventToAll(nodeList, eventHandler){
   nodeList.forEach(function(element, index){
     element.onclick = eventHandler;
   });
 }
 
+// End of Helper functions
+
+/*
+  This function sets the communication between the modal class
+  and the carousel class. The Gallery modal has a combination of both
+  carousel and modal functionality.
+*/
 function setupGalleryModal() {
   var modal = document.querySelectorAll('[data-modal="gallery-modal"]');
-  //var modalTrigger = document.querySelectorAll('[data-trigger-modal="gallery-modal"]');
   var carouselEl = document.querySelectorAll('[data-carousel="gallery-modal"]');
   var carousel;
   var carouselArray = [];
 
   carouselEl.forEach(function(element){
-    carousel = new Carousel(element);
+    carousel = new Carousel(element, {
+      autoResizeToFitSlide: true
+    });
     carouselArray.push(carousel);
   });
 
   modal.forEach(function(element, index) {
-    new Modal(element, '[data-trigger-modal="gallery-modal"]', function(isOpen, target) {
+    new Modal(element, function(isOpen, target) {
       if(isOpen) {
-        // carouselInModal.onChange(function() {
-        //   m.setSize(carouselInModal.getSizeOfCurrentImage())
-        // });
-        carouselArray[index].showImage(target.getAttribute('data-index'));
+        carouselArray[index].moveViaLink(target.getAttribute('data-index'));
       }
     });
   });
@@ -65,22 +80,25 @@ function setupDefaultCarousels() {
 function Carousel(parentWrapper, options) {
   var defaults = {
     autoplay: false,
+    autoResizeToFitSlide: false,
     delay: 10000
   };
   this.domElements;
-
+  //console.log(options);
   options = options ? options : {};
-  this.options = Object.assign(options, defaults);
+  this.options = Object.assign(defaults, options);
+  console.log(this.options);
   this.counter = 0;
   this.isAnimating = false;
   this.timer;
-  this.slidesWidth;
 
   this.cacheDomElements = function() {
     this.domElements = {
+      frame: parentWrapper.querySelector('[data-carousel-frame]'),
       nextController: parentWrapper.querySelectorAll('[data-carousel-controller-next]'),
       prevController: parentWrapper.querySelectorAll('[data-carousel-controller-prev]'),
-      progressTabs: parentWrapper.querySelectorAll('[data-carousel-progress-tab]'),
+      tabs: parentWrapper.querySelectorAll('[data-carousel-tab]'),
+      progressTabs: parentWrapper.querySelectorAll('[data-carousel-tab="progress"]'),
       slides: parentWrapper.querySelectorAll('[data-carousel-slides]'),
       wrapper: parentWrapper.querySelector('[data-carousel-wrapper]')
     }
@@ -88,7 +106,7 @@ function Carousel(parentWrapper, options) {
       the carousel wrapper moves in relation the width of
       the slides. Slides are 100% of the carousel width
     */
-    this.setCarouselWidth();
+    //this.setCarouselWidth();
   }
 
   this.init();
@@ -112,7 +130,7 @@ Carousel.prototype = {
       this.carouselController(this.domElements.prevController, -1);
     }
 
-    if(this.domElements.progressTabs.length) {
+    if(this.domElements.tabs.length) {
       this.domElements.progressTabs.forEach(function(element, index) {
         element.onclick = function(){
           _this.moveViaLink(index);
@@ -124,9 +142,9 @@ Carousel.prototype = {
       });
     }
     /* This helps us to have a responsive carousel */
-    window.addEventListener('resize', function() {
-      this.setCarouselWidth();
-    }.bind(_this));
+    // window.addEventListener('resize', function() {
+    //   this.setCarouselWidth();
+    // }.bind(_this));
   },
   carouselController: function(nodeList, direction){
     bindEventToAll(nodeList, function() {
@@ -155,8 +173,8 @@ Carousel.prototype = {
       this.counter = (n == 1) ? 0 : slidesMaxLength;
     }
   },
-  setCarouselWidth: function() {
-    this.slidesWidth = document.querySelector('[data-carousel-wrapper]').getBoundingClientRect().width;
+  getCarouselWidth: function() {
+    return this.domElements.slides[this.counter].getBoundingClientRect().width;
   },
   moveViaLink: function(index) {
     /* This is a separate move method especially for
@@ -173,9 +191,14 @@ Carousel.prototype = {
     this.animateSlides();
   },
   animateSlides: function() {
-    var translateAmount = -this.slidesWidth * this.counter;
+    var slideWidth = this.getCarouselWidth();
+    var translateAmount = -slideWidth * this.counter;
     this.isAnimating = true;
     this.updateProgressTab();
+
+    if(this.options.autoResizeToFitSlide) {
+      this.domElements.frame.style.width = slideWidth + "px";
+    }
     this.domElements.wrapper.style.transform = "translateX(" + translateAmount + "px)"
     this.domElements.wrapper.addEventListener('webkitTransitionEnd', function(){
       this.isAnimating = false;
@@ -186,10 +209,6 @@ Carousel.prototype = {
       removeClassFromNodeList(this.domElements.progressTabs, 'active');
       this.domElements.progressTabs[this.counter].classList.add('active');
     }
-  },
-  showImage: function(index){
-    this.counter = index;
-    this.animateSlides();
   }
 };
 
@@ -212,14 +231,14 @@ ImageGallery.prototype = Object.create(Carousel.prototype);
 
 */
 
-function Modal(selector, triggerSelector, openHandler) {
+function Modal(selector, openHandler) {
   this.openModal = false;
   this.domElements;
   this.base = typeof selector === "string" ? document.querySelector(selector) : selector;
   this.openHandler = openHandler;
   this.cacheDomElements = function() {
     this.domElements = {
-      trigger: document.querySelectorAll(triggerSelector),
+      trigger: document.querySelectorAll('[data-trigger-modal]'),
       modalOverlay: document.querySelector('[data-modal-overlay]')
     };
   }
@@ -233,15 +252,9 @@ Modal.prototype = {
   },
   addEvents: function() {
     var _this = this;
-    console.log(this.domElements);
     bindEventToAll(this.domElements.trigger, function() {
       _this.toggleModal.call(_this, event);
     });
-  },
-  openModal: function(){
-    this.domElements.modalOverlay.classList.add('visible');
-    this.base.classList.add('open');
-    this.openModal = true;
   },
   toggleModal: function(event){
     event.stopPropagation();
@@ -260,8 +273,11 @@ Modal.prototype = {
       this.base.classList.remove('open');
       this.openModal = false;
     }
-    
+
     if(this.openHandler && typeof this.openHandler === "function") this.openHandler(this.openModal, target);
+  },
+  setModalWidth: function(width){
+    this.base.style.width = width + "px";
   }
 }
 

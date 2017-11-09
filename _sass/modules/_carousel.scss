@@ -1,3 +1,19 @@
+.carousel-wrapper {
+  display: flex;
+  transition: transform $animation-base-duration $animation-base-bezier;
+}
+
+.carousel-frame {
+  overflow: hidden;
+}
+
+.carousel-slide {
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none;
+}
+
 .carousel-chevrons {
   position: absolute;
   left: 0;
