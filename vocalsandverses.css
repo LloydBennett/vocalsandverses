@@ -1392,7 +1392,7 @@ footer {
                 transform: rotate(-45deg);
         top: -8px; }
 
-body.menu-open {
+body.no-scrolling {
   overflow: hidden; }
 
 .hero {
@@ -1761,6 +1761,27 @@ body.menu-open {
             transform: rotate(-180deg); }
   .carousel-controller.next {
     right: 0; }
+
+.carousel-gallery-frame {
+  background-color: grey;
+  min-height: 400px;
+  min-width: 600px;
+  overflow: hidden;
+  -webkit-transition: width 400ms ease;
+  transition: width 400ms ease; }
+
+.carousel-gallery-wrapper {
+  position: relative; }
+
+.carousel-gallery-slide {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease;
+  transition: opacity 400ms ease; }
+  .carousel-gallery-slide.show-slide {
+    opacity: 1;
+    -webkit-transition: opacity 400ms ease;
+    transition: opacity 400ms ease; }
 
 .modal-overlay {
   background: rgba(0, 0, 0, 0.6);

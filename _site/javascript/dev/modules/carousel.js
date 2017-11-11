@@ -1,14 +1,11 @@
 function Carousel(parentWrapper, options) {
   var defaults = {
     autoplay: false,
-    autoResizeToFitSlide: false,
     delay: 10000
   };
   this.domElements;
-  //console.log(options);
   options = options ? options : {};
   this.options = Object.assign(defaults, options);
-  console.log(this.options);
   this.counter = 0;
   this.isAnimating = false;
   this.timer;
@@ -117,10 +114,8 @@ Carousel.prototype = {
     this.isAnimating = true;
     this.updateProgressTab();
 
-    if(this.options.autoResizeToFitSlide) {
-      this.domElements.frame.style.width = slideWidth + "px";
-    }
-    this.domElements.wrapper.style.transform = "translateX(" + translateAmount + "px)"
+    this.domElements.wrapper.style.transform = "translateX(" + translateAmount + "px)";
+
     this.domElements.wrapper.addEventListener('webkitTransitionEnd', function(){
       this.isAnimating = false;
     }.bind(this));

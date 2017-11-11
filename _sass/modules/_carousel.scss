@@ -41,3 +41,26 @@
     right: 0;
   }
 }
+
+.carousel-gallery-frame {
+  background-color: grey;
+  min-height: 400px;
+  min-width: 600px;
+  overflow: hidden;
+  transition: width 400ms ease;
+}
+
+.carousel-gallery-wrapper {
+  position: relative;
+}
+
+.carousel-gallery-slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 400ms ease;
+
+  &.show-slide {
+    opacity: 1;
+    transition: opacity 400ms ease;
+  }
+}

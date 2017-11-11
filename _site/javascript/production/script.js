@@ -37,14 +37,12 @@ function bindEventToAll(nodeList, eventHandler){
 */
 function setupGalleryModal() {
   var modal = document.querySelectorAll('[data-modal="gallery-modal"]');
-  var carouselEl = document.querySelectorAll('[data-carousel="gallery-modal"]');
+  var carouselEl = document.querySelectorAll('[data-carousel="gallery"]');
   var carousel;
   var carouselArray = [];
 
   carouselEl.forEach(function(element){
-    carousel = new Carousel(element, {
-      autoResizeToFitSlide: true
-    });
+    carousel = new GalleryCarousel(element);
     carouselArray.push(carousel);
   });
 
@@ -80,14 +78,11 @@ function setupDefaultCarousels() {
 function Carousel(parentWrapper, options) {
   var defaults = {
     autoplay: false,
-    autoResizeToFitSlide: false,
     delay: 10000
   };
   this.domElements;
-  //console.log(options);
   options = options ? options : {};
   this.options = Object.assign(defaults, options);
-  console.log(this.options);
   this.counter = 0;
   this.isAnimating = false;
   this.timer;
@@ -196,10 +191,8 @@ Carousel.prototype = {
     this.isAnimating = true;
     this.updateProgressTab();
 
-    if(this.options.autoResizeToFitSlide) {
-      this.domElements.frame.style.width = slideWidth + "px";
-    }
-    this.domElements.wrapper.style.transform = "translateX(" + translateAmount + "px)"
+    this.domElements.wrapper.style.transform = "translateX(" + translateAmount + "px)";
+
     this.domElements.wrapper.addEventListener('webkitTransitionEnd', function(){
       this.isAnimating = false;
     }.bind(this));
@@ -212,24 +205,34 @@ Carousel.prototype = {
   }
 };
 
-function ImageGallery(){
-
+function GalleryCarousel(base, options) {
+  this.base = base;
+  Carousel.call(this, this.base, options);
 }
 
-ImageGallery.prototype = Object.create(Carousel.prototype);
+GalleryCarousel.prototype = Object.create(Carousel.prototype);
+GalleryCarousel.prototype.constructor = GalleryCarousel;
 
+GalleryCarousel.prototype.animateSlides = function(){
+  var counterImage = this.domElements.slides[this.counter].querySelector('img');
+  var naturalWidth = counterImage.naturalWidth;
+  var naturalHeight = counterImage.naturalHeight;
 
-/*
+  this.domElements.frame.style.width = naturalWidth + "px";
+  this.domElements.frame.style.height = naturalHeight + "px";
+  // setTimeout(function(){
+  // }, 6000);
+  //removeClassFromNodeList(this.domElements.slides, 'show-slide');
 
-//Modal Part
-1) When the user clicks on an image in the gallery a modal window should appear
-2) The modal window adjust to the size of the image clicked.
-3) The image clicked on should appear in the modal.
+  // setTimeout(function(){
+  //   this.domElements.slides[this.counter].classList.add('show-slide');
+  // }, 3000);
 
-//Carousel Part
-1) When the user clicks on an arrow on the modal window the next image should appear
-
-*/
+  //this.domElements.frame.style.width = slideWidth + "px";
+  this.domElements.wrapper.addEventListener('webkitTransitionEnd', function(){
+    this.isAnimating = false;
+  }.bind(this));
+}
 
 function Modal(selector, openHandler) {
   this.openModal = false;
@@ -239,7 +242,8 @@ function Modal(selector, openHandler) {
   this.cacheDomElements = function() {
     this.domElements = {
       trigger: document.querySelectorAll('[data-trigger-modal]'),
-      modalOverlay: document.querySelector('[data-modal-overlay]')
+      modalOverlay: document.querySelector('[data-modal-overlay]'),
+      body: document.querySelector('body')
     };
   }
   this.init();
@@ -265,11 +269,13 @@ Modal.prototype = {
       var modalName = target.getAttribute('data-trigger-modal');
 
       this.domElements.modalOverlay.classList.add('visible');
+      this.domElements.body.classList.add('no-scrolling');
       this.base.classList.add('open');
       this.openModal = true;
 
     } else {
       this.domElements.modalOverlay.classList.remove('visible');
+      this.domElements.body.classList.remove('no-scrolling');
       this.base.classList.remove('open');
       this.openModal = false;
     }

@@ -37,14 +37,12 @@ function bindEventToAll(nodeList, eventHandler){
 */
 function setupGalleryModal() {
   var modal = document.querySelectorAll('[data-modal="gallery-modal"]');
-  var carouselEl = document.querySelectorAll('[data-carousel="gallery-modal"]');
+  var carouselEl = document.querySelectorAll('[data-carousel="gallery"]');
   var carousel;
   var carouselArray = [];
 
   carouselEl.forEach(function(element){
-    carousel = new Carousel(element, {
-      autoResizeToFitSlide: true
-    });
+    carousel = new GalleryCarousel(element);
     carouselArray.push(carousel);
   });
 
