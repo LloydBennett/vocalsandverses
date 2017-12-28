@@ -6,6 +6,27 @@
 	}
 }
 
+.nav-bar-icons {
+  text-align: right;
+
+  a {
+    display: inline-block;
+    margin-right: $spacing-s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  svg {
+    width: 20px;
+
+    @media #{$tablet-breakpoint}{
+  		width: 26px;
+  	}
+  }
+}
+
 .logo {
 	width: 80px;
 	display: inline-block;

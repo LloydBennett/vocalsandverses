@@ -1120,6 +1120,19 @@ blockquote .quotee {
     .nav-bar {
       padding: 1.6rem 0; } }
 
+.nav-bar-icons {
+  text-align: right; }
+  .nav-bar-icons a {
+    display: inline-block;
+    margin-right: 0.8rem; }
+    .nav-bar-icons a:last-child {
+      margin-right: 0; }
+  .nav-bar-icons svg {
+    width: 20px; }
+    @media only screen and (min-width: 48em) {
+      .nav-bar-icons svg {
+        width: 26px; } }
+
 .logo {
   width: 80px;
   display: inline-block; }
