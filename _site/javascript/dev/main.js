@@ -30,6 +30,22 @@ function bindEventToAll(nodeList, eventHandler){
 
 // End of Helper functions
 
+
+function setupVideoModal(){
+  var modal = document.querySelectorAll('[data-modal="video-modal"]'),
+      modalVideo;
+
+  modal.forEach(function(element, index) {
+    new Modal(element, function(isOpen, target) {
+      if (isOpen) {
+        element.querySelector('video').play();
+      } else {
+        element.querySelector('video').load();
+      }
+    });
+  });
+
+}
 /*
   This function sets the communication between the modal class
   and the carousel class. The Gallery modal has a combination of both
@@ -65,6 +81,7 @@ function setupDefaultCarousels() {
 
 	//initialises all functions that need to be called
 	function init(){
+    setupVideoModal();
     setupGalleryModal();
     setupDefaultCarousels();
 	}
