@@ -19,30 +19,26 @@ body {
   font-weight: $font-weight-light;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0 0 $spacing-s 0;
-}
-
 h1 {
   @include setVerticalRhythmn(48px);
   color: darken($font-display-color, 40%);
+  font-size: pxtoem(48px);
   font-weight: $font-weight-bold;
   line-height: 1;
 
   @media #{$small-mobile-breakpoint} {
-    @include setVerticalRhythmn(36px);
+    font-size: pxtoem(36px);
+    line-height: 1.1;
   }
 }
 
 h2 {
-	@include setVerticalRhythmn(36px);
 	color: darken($font-display-color, 20%);
+  font-size: pxtoem(36px);
+  line-height: 1.2;
 
   @media #{$small-mobile-breakpoint} {
-    @include setVerticalRhythmn(21px);
-    line-height: 1.2;
+    font-size: pxtoem(21px);
   }
 }
 
@@ -56,7 +52,14 @@ h3 {
   }
 }
 
-p, blockquote, ul, li, dl {
+h1,
+h2,
+h3,
+p,
+blockquote,
+ul,
+li,
+dl {
   margin: 0 0 $spacing-base 0;
 }
 
