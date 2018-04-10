@@ -20,25 +20,28 @@ body {
 }
 
 h1 {
-  @include setVerticalRhythmn(48px);
   color: darken($font-display-color, 40%);
-  font-size: pxtoem(48px);
+  font-size: pxtoem(36px);
   font-weight: $font-weight-bold;
-  line-height: 1;
+  line-height: 1.1;
 
-  @media #{$small-mobile-breakpoint} {
-    font-size: pxtoem(36px);
-    line-height: 1.1;
+  @media #{$tablet-breakpoint} {
+    font-size: pxtoem(48px);
+    line-height: 1;
+  }
+
+  @media #{$large-desktop-breakpoint} {
+    font-size: pxtoem(55px);
   }
 }
 
 h2 {
 	color: darken($font-display-color, 20%);
-  font-size: pxtoem(36px);
+  font-size: pxtoem(21px);
   line-height: 1.2;
 
-  @media #{$small-mobile-breakpoint} {
-    font-size: pxtoem(21px);
+  @media #{$tablet-breakpoint} {
+    font-size: pxtoem(28px);
   }
 }
 

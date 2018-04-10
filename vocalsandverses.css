@@ -479,7 +479,7 @@ li {
   margin-right: auto;
   margin-left: auto;
   width: 90%;
-  max-width: 1600px; }
+  max-width: 1800px; }
   .container::before, .container::after {
     content: "";
     display: table;
@@ -1049,24 +1049,25 @@ body {
   font-weight: 300; }
 
 h1 {
-  font-size: 3em;
-  line-height: 1;
   color: black;
-  font-size: 3em;
+  font-size: 2.25em;
   font-weight: 700;
-  line-height: 1; }
-  @media only screen and (max-width: 34.375em) {
+  line-height: 1.1; }
+  @media only screen and (min-width: 48em) {
     h1 {
-      font-size: 2.25em;
-      line-height: 1.1; } }
+      font-size: 3em;
+      line-height: 1; } }
+  @media only screen and (min-width: 75em) {
+    h1 {
+      font-size: 3.4375em; } }
 
 h2 {
   color: #0d0d0d;
-  font-size: 2.25em;
+  font-size: 1.3125em;
   line-height: 1.2; }
-  @media only screen and (max-width: 34.375em) {
+  @media only screen and (min-width: 48em) {
     h2 {
-      font-size: 1.3125em; } }
+      font-size: 1.75em; } }
 
 h3, blockquote q {
   font-size: 1.5em;
@@ -1442,7 +1443,8 @@ body.no-scrolling {
   overflow-x: hidden; }
   @media only screen and (min-width: 75em) {
     .home-hero {
-      min-height: 800px; } }
+      min-height: 800px;
+      height: 95vh; } }
   @media only screen and (min-width: 75em) {
     .home-hero > .container {
       position: relative; } }
@@ -1467,20 +1469,20 @@ body.no-scrolling {
       margin-top: 1.6rem; }
 
 .home-hero-image {
-  background: url("../images/artist-hero.png") no-repeat center top/cover;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 85%;
-  max-width: 800px; }
+  height: 100%;
+  max-width: 800px;
+  /*@media only screen and (min-width: 75em) {
+    height: 100%;
+    width: 80%;
+  }*/ }
   @media only screen and (max-width: 34.375em) {
     .home-hero-image {
       display: none; } }
-  @media only screen and (min-width: 75em) {
-    .home-hero-image {
-      height: 100%;
-      width: 80%; } }
+  .home-hero-image img {
+    height: 100%; }
 
 .hero-content-title,
 .hero-content-copy {
@@ -1881,5 +1883,8 @@ body.no-scrolling {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1; }
+
+.paragraph-block {
+  max-width: 600px; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
