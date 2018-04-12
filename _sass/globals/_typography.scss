@@ -21,17 +21,17 @@ body {
 
 h1 {
   color: darken($font-display-color, 40%);
-  font-size: pxtoem(36px);
+  font-size: pxtoem(48px);
   font-weight: $font-weight-bold;
   line-height: 1.1;
 
-  @media #{$tablet-breakpoint} {
-    font-size: pxtoem(48px);
-    line-height: 1;
+  @media #{$small-mobile-breakpoint} {
+    font-size: pxtoem(36px);
   }
 
-  @media #{$large-desktop-breakpoint} {
+  @media #{$tablet-breakpoint} {
     font-size: pxtoem(55px);
+    line-height: 1;
   }
 }
 

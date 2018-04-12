@@ -1050,16 +1050,16 @@ body {
 
 h1 {
   color: black;
-  font-size: 2.25em;
+  font-size: 3em;
   font-weight: 700;
   line-height: 1.1; }
+  @media only screen and (max-width: 34.375em) {
+    h1 {
+      font-size: 2.25em; } }
   @media only screen and (min-width: 48em) {
     h1 {
-      font-size: 3em;
+      font-size: 3.4375em;
       line-height: 1; } }
-  @media only screen and (min-width: 75em) {
-    h1 {
-      font-size: 3.4375em; } }
 
 h2 {
   color: #0d0d0d;
@@ -1441,22 +1441,33 @@ body.no-scrolling {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow-x: hidden; }
-  @media only screen and (min-width: 75em) {
-    .home-hero {
+  @media only screen and (min-width: 48em) {
+    .home-hero > .container {
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
       min-height: 800px;
-      height: 95vh; } }
+      position: relative; } }
   @media only screen and (min-width: 75em) {
     .home-hero > .container {
-      position: relative; } }
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 .home-hero-content {
-  padding: 12.8rem 0 9.6rem;
+  padding: 16rem 0 6.4rem;
   position: relative;
   z-index: 2; }
   @media only screen and (max-width: 34.375em) {
     .home-hero-content {
       text-align: center;
       padding: 4.8rem 0 8rem; } }
+  @media only screen and (min-width: 48em) {
+    .home-hero-content {
+      padding: 0 0 6.4rem; } }
   @media only screen and (min-width: 75em) {
     .home-hero-content {
       padding: 6.4rem 0; } }
@@ -1474,15 +1485,20 @@ body.no-scrolling {
   bottom: 0;
   height: 100%;
   max-width: 800px;
-  /*@media only screen and (min-width: 75em) {
-    height: 100%;
-    width: 80%;
-  }*/ }
+  max-height: 650px; }
   @media only screen and (max-width: 34.375em) {
     .home-hero-image {
       display: none; } }
+  @media only screen and (min-width: 48em) {
+    .home-hero-image {
+      max-height: 750px;
+      right: 15%; } }
+  @media only screen and (min-width: 75em) {
+    .home-hero-image {
+      max-height: none; } }
   .home-hero-image img {
-    height: 100%; }
+    height: 100%;
+    display: block; }
 
 .hero-content-title,
 .hero-content-copy {
@@ -1502,6 +1518,9 @@ body.no-scrolling {
   @media only screen and (min-width: 48em) {
     .hero-content-copy {
       max-width: 500px; } }
+  @media only screen and (min-width: 60em) {
+    .hero-content-copy {
+      max-width: 700px; } }
 
 .with-gradient {
   background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
