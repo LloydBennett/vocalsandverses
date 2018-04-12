@@ -1,24 +1,23 @@
 .why-go {
-  @media #{$tablet-breakpoint} {
-    margin-bottom: $spacing-l;
+  .thumbnail {
+    max-width: 800px;
   }
 
-  @media #{$small-desktop-breakpoint} {
-    margin-bottom: $spacing-l + $spacing-base;
-  }
-
-  .row {
-    margin-bottom: $spacing-base;
-
-    // @media #{$tablet-breakpoint} {
-    //   display: flex;
-    //   align-items: center;
-    // }
-
-    @media #{$small-desktop-breakpoint} {
-      margin-bottom: $spacing-m;
-      display: flex;
-      align-items: center;
+  .image-block {
+    @media screen and (min-width: 1440px) {
+      width: 50%;
     }
+  }
+
+  .paragraph-block {
+    @media screen and (min-width: 1440px) {
+      width: 40%;
+    }
+  }
+}
+
+.why-go-align-right {
+  @media #{$tablet-breakpoint} {
+    text-align: right;
   }
 }

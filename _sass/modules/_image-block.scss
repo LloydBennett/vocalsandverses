@@ -1,9 +1,14 @@
+.image-block {
+  width: 100%;
+}
+
 .centered-image-block {
   margin-bottom: $spacing-base;
 
   @media #{$small-desktop-breakpoint} {
     @include verticallyAlignChildren;
     margin-bottom: $spacing-m;
+    flex-wrap: wrap;
   }
 
   &:last-child {

@@ -1,3 +1,7 @@
 .paragraph-block {
   max-width: 600px;
+
+  @media #{$large-desktop-breakpoint} {
+    max-width: 700px;
+  }
 }

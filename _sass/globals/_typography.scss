@@ -37,11 +37,11 @@ h1 {
 
 h2 {
 	color: darken($font-display-color, 20%);
-  font-size: pxtoem(21px);
+  font-size: pxtoem(28px);
   line-height: 1.2;
 
   @media #{$tablet-breakpoint} {
-    font-size: pxtoem(28px);
+    font-size: pxtoem(32px);
   }
 }
 
@@ -100,4 +100,8 @@ blockquote {
 
 .light-text {
   font-weight: $font-weight-light;
+}
+
+.no-wrap-break {
+  @include nowrap(null, true);
 }
