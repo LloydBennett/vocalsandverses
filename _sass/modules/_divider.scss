@@ -3,10 +3,9 @@
   height: 5px;
   width: 120px;
   background-color: $swatch-brand-yellow;
-  margin-bottom: $spacing-s;
+  margin-bottom: $spacing-base;
 
   @media #{$small-desktop-breakpoint} {
     height: 8px;
-    width: 170px;
   }
 }

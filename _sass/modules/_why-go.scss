@@ -2,16 +2,44 @@
   .thumbnail {
     max-width: 800px;
   }
+}
+
+.why-go-style-1 {
+  @media #{$small-desktop-breakpoint} {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: $spacing-m;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    justify-content: flex-end;
+    margin-top: 0;
+  }
 
   .image-block {
-    @media screen and (min-width: 1440px) {
-      width: 50%;
+    @media #{$small-desktop-breakpoint} {
+      width: 80%;
+      position: absolute;
+      left: -40%;
+      text-align: right;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 52.5%;
+      margin-right: 2.5%;
+      position: static;
+      left: 0;
+      text-align: left;
     }
   }
 
   .paragraph-block {
-    @media screen and (min-width: 1440px) {
-      width: 40%;
+    @media #{$small-desktop-breakpoint} {
+      width: 55%;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 45%;
     }
   }
 }
