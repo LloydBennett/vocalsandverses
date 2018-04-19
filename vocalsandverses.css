@@ -1920,7 +1920,32 @@ body.no-scrolling {
   max-width: 800px; }
 
 @media only screen and (min-width: 60em) {
-  .why-go-style-1 {
+  .why-go .centered-image-block {
+    margin-bottom: 6.4rem;
+    position: relative; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go .image-block {
+    width: 80%;
+    position: absolute;
+    text-align: right; } }
+
+@media only screen and (min-width: 1440px) {
+  .why-go .image-block {
+    width: 52.5%;
+    position: static;
+    left: 0; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go .paragraph-block {
+    width: 55%; } }
+
+@media only screen and (min-width: 1440px) {
+  .why-go .paragraph-block {
+    width: 45%; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go-style-left {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -1931,34 +1956,32 @@ body.no-scrolling {
     margin-top: 3.2rem; } }
 
 @media only screen and (min-width: 1440px) {
-  .why-go-style-1 {
+  .why-go-style-left {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
     margin-top: 0; } }
 
 @media only screen and (min-width: 60em) {
-  .why-go-style-1 .image-block {
-    width: 80%;
-    position: absolute;
-    left: -40%;
-    text-align: right; } }
+  .why-go-style-left .image-block {
+    left: -40%; } }
 
 @media only screen and (min-width: 1440px) {
-  .why-go-style-1 .image-block {
-    width: 52.5%;
+  .why-go-style-left .image-block {
     margin-right: 2.5%;
-    position: static;
-    left: 0;
     text-align: left; } }
 
 @media only screen and (min-width: 60em) {
-  .why-go-style-1 .paragraph-block {
-    width: 55%; } }
+  .why-go-style-right .image-block {
+    right: -40%; } }
+
+@media only screen and (min-width: 75em) {
+  .why-go-style-right .image-block {
+    right: -25%; } }
 
 @media only screen and (min-width: 1440px) {
-  .why-go-style-1 .paragraph-block {
-    width: 45%; } }
+  .why-go-style-right .image-block {
+    margin-left: 2.5%; } }
 
 @media only screen and (min-width: 48em) {
   .why-go-align-right {

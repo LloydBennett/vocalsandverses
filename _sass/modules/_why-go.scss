@@ -2,9 +2,40 @@
   .thumbnail {
     max-width: 800px;
   }
+
+  .centered-image-block {
+    @media #{$small-desktop-breakpoint} {
+      margin-bottom: $spacing-l;
+      position: relative;
+    }
+  }
+
+  .image-block {
+    @media #{$small-desktop-breakpoint} {
+      width: 80%;
+      position: absolute;
+      text-align: right;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 52.5%;
+      position: static;
+      left: 0;
+    }
+  }
+
+  .paragraph-block {
+    @media #{$small-desktop-breakpoint} {
+      width: 55%;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      width: 45%;
+    }
+  }
 }
 
-.why-go-style-1 {
+.why-go-style-left {
   @media #{$small-desktop-breakpoint} {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -18,28 +49,28 @@
 
   .image-block {
     @media #{$small-desktop-breakpoint} {
-      width: 80%;
-      position: absolute;
       left: -40%;
-      text-align: right;
     }
 
     @media only screen and (min-width: 1440px) {
-      width: 52.5%;
       margin-right: 2.5%;
-      position: static;
-      left: 0;
       text-align: left;
     }
   }
+}
 
-  .paragraph-block {
+.why-go-style-right {
+  .image-block {
     @media #{$small-desktop-breakpoint} {
-      width: 55%;
+      right: -40%;
+    }
+
+    @media #{$large-desktop-breakpoint} {
+      right: -25%;
     }
 
     @media only screen and (min-width: 1440px) {
-      width: 45%;
+      margin-left: 2.5%;
     }
   }
 }
