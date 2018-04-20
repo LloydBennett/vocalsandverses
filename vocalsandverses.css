@@ -479,7 +479,7 @@ li {
   margin-right: auto;
   margin-left: auto;
   width: 95%;
-  max-width: 1800px; }
+  max-width: 1600px; }
   .container::before, .container::after {
     content: "";
     display: table;
@@ -1208,13 +1208,19 @@ footer {
 
 .btn {
   border-radius: 0;
-  color: white;
   border: none;
-  text-align: center;
+  color: white;
   cursor: pointer;
   display: inline-block;
-  font-weight: 400; }
+  text-align: center;
+  background-color: #6890CA;
+  font-weight: 400;
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease; }
   .btn:hover {
+    background-color: #3B5070;
+    -webkit-transition: background-color 300ms ease;
+    transition: background-color 300ms ease;
     text-decoration: none; }
   .btn:focus {
     outline: none; }
@@ -1222,25 +1228,11 @@ footer {
     margin-left: 3.2rem; }
 
 .btn-lrg {
-  padding: 0.8rem 3.2rem;
-  background-color: #cbac00;
-  -webkit-transition: background 300ms ease;
-  transition: background 300ms ease; }
-  .btn-lrg:hover {
-    -webkit-transition: background-color 300ms ease;
-    transition: background-color 300ms ease;
-    background-color: #988100; }
+  padding: 0.8rem 3.2rem; }
 
 .btn-sml {
   padding: 0.8rem 1.6rem;
-  font-size: 0.888em;
-  background-color: #6890CA;
-  -webkit-transition: background-color 300ms ease;
-  transition: background-color 300ms ease; }
-  .btn-sml:hover {
-    background-color: #3B5070;
-    -webkit-transition: background-color 300ms ease;
-    transition: background-color 300ms ease; }
+  font-size: 0.888em; }
 
 .play-btn {
   display: inline-block;

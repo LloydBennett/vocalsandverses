@@ -1,15 +1,19 @@
 .btn {
 	border-radius: 0;
-	color: white;
 	border: none;
-	text-align: center;
+	color: white;
 	cursor: pointer;
 	display: inline-block;
+	text-align: center;
+  background-color: $swatch-color-blue;
   font-weight: $font-weight-regular;
+  transition: background-color 300ms ease;
 
-	&:hover {
-		text-decoration: none;
-	}
+  &:hover {
+    background-color: $swatch-color-darkblue;
+    transition: background-color 300ms ease;
+    text-decoration: none;
+  }
 
 	&:focus {
     outline: none;
@@ -22,25 +26,11 @@
 
 .btn-lrg {
 	padding: $spacing-s $spacing-m;
-	background-color: darken($swatch-brand-yellow, 10%);
-	transition: background 300ms ease;
-
-	&:hover {
-		transition: background-color 300ms ease;
-		background-color: darken($swatch-brand-yellow, 20%);
-	}
 }
 
 .btn-sml {
 	padding: $spacing-s $spacing-base;
   font-size: 0.888em;
-  background-color: $swatch-color-blue;
-  transition: background-color 300ms ease;
-
-  &:hover {
-    background-color: $swatch-color-darkblue;
-    transition: background-color 300ms ease;
-  }
 }
 
 .play-btn {
