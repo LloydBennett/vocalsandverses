@@ -1,9 +1,9 @@
 <section class="section gallery-grid">
   <div class="row">
-    {% for counter in (0..11)%}
-    <div class="col-xs-3 col-sm-2">
+    {% for counter in (1..12)%}
+    <div class="col-xs-4 col-sm-3 col-md-2">
       <div class="thumbnail" data-trigger-modal="gallery-modal" data-index="{{ counter }}" data-carousel-tab>
-        <img src="../images/gallery/gallery-image-one.jpg" alt="Gallery Image">
+        <img src="../images/gallery/gallery-image-{{ counter }}.jpg" alt="Gallery Image">
       </div>
     </div>
     {% endfor %}

@@ -9,6 +9,9 @@
   top: 0;
   left: 0; }
 
+.overflow {
+  overflow: hidden; }
+
 .no-col-padding {
   padding-left: 0 !important;
   padding-right: 0 !important; }
@@ -1913,10 +1916,7 @@ body.no-scrolling {
   max-width: 600px; }
 
 .why-go + .gallery-grid {
-  margin-top: 4.8rem; }
-  @media screen and (min-width: 500px) {
-    .why-go + .gallery-grid {
-      margin-top: 8rem; } }
+  margin-top: 8rem; }
   @media only screen and (min-width: 60em) {
     .why-go + .gallery-grid {
       margin-top: 12.8rem; } }

@@ -1,10 +1,10 @@
 .why-go {
   & + .gallery-grid {
-    margin-top: $spacing-m + $spacing-base;
+    margin-top: $spacing-l + $spacing-base;
 
-    @media screen and (min-width: 500px) {
-      margin-top: $spacing-l + $spacing-base;
-    }
+    // @media screen and (min-width: 500px) {
+    //   margin-top: $spacing-l + $spacing-base;
+    // }
 
     @media #{$small-desktop-breakpoint} {
       margin-top: $spacing-xl;
