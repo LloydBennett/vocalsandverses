@@ -1,12 +1,32 @@
 .why-go {
+  & + .gallery-grid {
+    margin-top: $spacing-m + $spacing-base;
+
+    @media screen and (min-width: 500px) {
+      margin-top: $spacing-l + $spacing-base;
+    }
+
+    @media #{$small-desktop-breakpoint} {
+      margin-top: $spacing-xl;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      margin-top: 0;
+    }
+  }
+
   .thumbnail {
     max-width: 800px;
   }
 
   .centered-image-block {
     @media #{$small-desktop-breakpoint} {
-      margin-bottom: $spacing-l;
+      margin-bottom: $spacing-l + $spacing-m;
       position: relative;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      margin-bottom: $spacing-l;
     }
   }
 
@@ -72,6 +92,26 @@
     @media only screen and (min-width: 1440px) {
       margin-left: 2.5%;
     }
+  }
+}
+
+.why-go-tall-image {
+  @media #{$small-desktop-breakpoint} {
+    margin-top: $spacing-xl + $spacing-m;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    margin-top: 0;
+  }
+
+  .image-block {
+    @media #{$small-desktop-breakpoint} {
+      left: -35%;
+    }
+  }
+
+  .thumbnail {
+    max-width: 700px;
   }
 }
 

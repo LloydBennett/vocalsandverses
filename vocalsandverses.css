@@ -1232,7 +1232,9 @@ footer {
 
 .btn-sml {
   padding: 0.8rem 1.6rem;
-  font-size: 0.888em; }
+  font-size: 0.888em;
+  -webkit-box-shadow: 0 2px 40px 0 rgba(104, 144, 202, 0.5);
+          box-shadow: 0 2px 40px 0 rgba(104, 144, 202, 0.5); }
 
 .play-btn {
   display: inline-block;
@@ -1537,6 +1539,9 @@ body.no-scrolling {
 
 .centered-image-block {
   margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 48em) {
+    .centered-image-block {
+      margin-bottom: 3.2rem; } }
   @media only screen and (min-width: 60em) {
     .centered-image-block {
       display: -webkit-box;
@@ -1545,7 +1550,6 @@ body.no-scrolling {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      margin-bottom: 3.2rem;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; } }
   .centered-image-block:last-child {
@@ -1908,13 +1912,29 @@ body.no-scrolling {
 .paragraph-block {
   max-width: 600px; }
 
+.why-go + .gallery-grid {
+  margin-top: 4.8rem; }
+  @media screen and (min-width: 500px) {
+    .why-go + .gallery-grid {
+      margin-top: 8rem; } }
+  @media only screen and (min-width: 60em) {
+    .why-go + .gallery-grid {
+      margin-top: 12.8rem; } }
+  @media only screen and (min-width: 1440px) {
+    .why-go + .gallery-grid {
+      margin-top: 0; } }
+
 .why-go .thumbnail {
   max-width: 800px; }
 
 @media only screen and (min-width: 60em) {
   .why-go .centered-image-block {
-    margin-bottom: 6.4rem;
+    margin-bottom: 9.6rem;
     position: relative; } }
+
+@media only screen and (min-width: 1440px) {
+  .why-go .centered-image-block {
+    margin-bottom: 6.4rem; } }
 
 @media only screen and (min-width: 60em) {
   .why-go .image-block {
@@ -1974,6 +1994,21 @@ body.no-scrolling {
 @media only screen and (min-width: 1440px) {
   .why-go-style-right .image-block {
     margin-left: 2.5%; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go-tall-image {
+    margin-top: 16rem; } }
+
+@media only screen and (min-width: 1440px) {
+  .why-go-tall-image {
+    margin-top: 0; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go-tall-image .image-block {
+    left: -35%; } }
+
+.why-go-tall-image .thumbnail {
+  max-width: 700px; }
 
 @media only screen and (min-width: 48em) {
   .why-go-align-right {

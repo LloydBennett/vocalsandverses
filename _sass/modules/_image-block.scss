@@ -5,9 +5,12 @@
 .centered-image-block {
   margin-bottom: $spacing-base;
 
+  @media #{$tablet-breakpoint} {
+    margin-bottom: $spacing-m;
+  }
+
   @media #{$small-desktop-breakpoint} {
     @include verticallyAlignChildren;
-    margin-bottom: $spacing-m;
     flex-wrap: wrap;
   }
 
