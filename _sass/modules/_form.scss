@@ -1,8 +1,9 @@
 .text-field {
   @extend .light-text;
   border: none;
-  padding: $spacing-s $spacing-base;
+  box-shadow: $box-shadow;
   margin-bottom: $spacing-base;
+  padding: $spacing-s + $spacing-xs $spacing-base;
 }
 
 .subscription-form {
@@ -29,7 +30,7 @@
     width: 100%;
     padding: $spacing-s + $spacing-xs 0;
     @media #{$small-desktop-breakpoint} {
-      padding: $spacing-s $spacing-base;
+      padding: $spacing-s $spacing-base + $spacing-s;
       width: auto;
     }
   }

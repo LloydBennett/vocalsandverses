@@ -52,6 +52,7 @@ $swatch-brand-light-black: lighten($swatch-brand-black, 5%);
 $swatch-color-blue: #6890CA;
 $swatch-color-darkblue: #3B5070;
 $white: #fff;
+$black: #000;
 
 // Blog Post Categories //
 $swatch-category-general: #C081FF;
@@ -78,3 +79,6 @@ $spacing-xxl: $spacing-xl * 2;
 //ANIMATION
 $animation-base-bezier: cubic-bezier(.46,.09,.48,1.04);
 $animation-base-duration: 400ms;
+
+//BOX SHADOW
+$box-shadow: 0 2px 40px 0 transparentize($black, 0.75);

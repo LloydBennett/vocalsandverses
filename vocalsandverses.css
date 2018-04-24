@@ -1219,7 +1219,9 @@ footer {
   background-color: #6890CA;
   font-weight: 400;
   -webkit-transition: background-color 300ms ease;
-  transition: background-color 300ms ease; }
+  transition: background-color 300ms ease;
+  -webkit-box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.25); }
   .btn:hover {
     background-color: #3B5070;
     -webkit-transition: background-color 300ms ease;
@@ -1235,9 +1237,7 @@ footer {
 
 .btn-sml {
   padding: 0.8rem 1.6rem;
-  font-size: 0.888em;
-  -webkit-box-shadow: 0 2px 40px 0 rgba(104, 144, 202, 0.5);
-          box-shadow: 0 2px 40px 0 rgba(104, 144, 202, 0.5); }
+  font-size: 0.888em; }
 
 .play-btn {
   display: inline-block;
@@ -1639,8 +1639,10 @@ body.no-scrolling {
 
 .text-field {
   border: none;
-  padding: 0.8rem 1.6rem;
-  margin-bottom: 1.6rem; }
+  -webkit-box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.6rem;
+  padding: 1.2rem 1.6rem; }
 
 .subscription-form {
   max-width: 550px;
@@ -1665,7 +1667,7 @@ body.no-scrolling {
     padding: 1.2rem 0; }
     @media only screen and (min-width: 60em) {
       .subscription-form .btn {
-        padding: 0.8rem 1.6rem;
+        padding: 0.8rem 2.4rem;
         width: auto; } }
 
 .gallery-grid {

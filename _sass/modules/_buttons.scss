@@ -8,6 +8,7 @@
   background-color: $swatch-color-blue;
   font-weight: $font-weight-regular;
   transition: background-color 300ms ease;
+  box-shadow: $box-shadow;
 
   &:hover {
     background-color: $swatch-color-darkblue;
@@ -31,7 +32,6 @@
 .btn-sml {
 	padding: $spacing-s $spacing-base;
   font-size: 0.888em;
-  box-shadow: 0 2px 40px 0 transparentize($swatch-color-blue, 0.5);
 }
 
 .play-btn {
