@@ -1532,10 +1532,10 @@ body.no-scrolling {
   background-attachment: fixed; }
 
 .section {
-  margin-bottom: 3.2rem; }
-  @media only screen and (min-width: 60em) {
+  margin-bottom: 6.4rem; }
+  @media only screen and (max-width: 34.375em) {
     .section {
-      margin-bottom: 6.4rem; } }
+      margin-bottom: 3.2rem; } }
 
 .image-block {
   width: 100%; }
@@ -1558,49 +1558,6 @@ body.no-scrolling {
   .centered-image-block:last-child {
     margin-bottom: 0; }
 
-.full-bleed-image-block {
-  position: relative;
-  overflow-x: hidden; }
-  @media only screen and (min-width: 60em) {
-    .full-bleed-image-block .container {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; } }
-  @media only screen and (min-width: 60em) {
-    .full-bleed-image-block .content-block {
-      -webkit-box-flex: 1.2;
-          -ms-flex: 1.2;
-              flex: 1.2; } }
-  @media only screen and (max-width: 59.9375em) {
-    .full-bleed-image-block .content-block .content-block-title,
-    .full-bleed-image-block .content-block .content-block-copy {
-      max-width: 620px; } }
-  .full-bleed-image-block .thumbnail {
-    position: relative;
-    right: -10%;
-    margin-top: 1.6rem;
-    width: 150vw;
-    max-width: 800px; }
-    @media only screen and (min-width: 48em) {
-      .full-bleed-image-block .thumbnail {
-        right: -15%; } }
-    @media only screen and (min-width: 60em) {
-      .full-bleed-image-block .thumbnail {
-        -webkit-box-flex: 2;
-            -ms-flex: 2;
-                flex: 2;
-        margin-top: 0;
-        display: table; } }
-    @media only screen and (min-width: 75em) {
-      .full-bleed-image-block .thumbnail {
-        max-width: 1000px; } }
-    @media only screen and (min-width: 125em) {
-      .full-bleed-image-block .thumbnail {
-        position: static; } }
-
 .title-divider {
   display: block;
   height: 5px;
@@ -1615,7 +1572,7 @@ body.no-scrolling {
   position: relative;
   background-color: #282828;
   padding: 0.8rem 0 12.8rem;
-  margin-top: 12.8rem; }
+  margin-top: 19.2rem; }
   .subscribe::before {
     content: "";
     background: url(../images/subscribe-section-brush.png) no-repeat center top/cover;
@@ -1624,6 +1581,12 @@ body.no-scrolling {
     width: 100%;
     top: -34%;
     left: 0; }
+  @media only screen and (max-width: 34.375em) {
+    .subscribe {
+      margin-top: 12.8rem; } }
+  @media only screen and (min-width: 60em) {
+    .subscribe {
+      margin-top: 12.8rem; } }
   @media only screen and (max-width: 34.375em) {
     .subscribe::before {
       height: 25%;
@@ -1922,7 +1885,7 @@ body.no-scrolling {
   @media only screen and (min-width: 60em) {
     .why-go + .gallery-grid {
       margin-top: 12.8rem; } }
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: 90em) {
     .why-go + .gallery-grid {
       margin-top: 0; } }
 
@@ -1934,7 +1897,7 @@ body.no-scrolling {
     margin-bottom: 9.6rem;
     position: relative; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go .centered-image-block {
     margin-bottom: 6.4rem; } }
 
@@ -1944,7 +1907,7 @@ body.no-scrolling {
     position: absolute;
     text-align: right; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go .image-block {
     width: 52.5%;
     position: static;
@@ -1954,7 +1917,7 @@ body.no-scrolling {
   .why-go .paragraph-block {
     width: 55%; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go .paragraph-block {
     width: 45%; } }
 
@@ -1969,7 +1932,7 @@ body.no-scrolling {
             justify-content: space-between;
     margin-top: 3.2rem; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go-style-left {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -1980,7 +1943,7 @@ body.no-scrolling {
   .why-go-style-left .image-block {
     left: -40%; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go-style-left .image-block {
     margin-right: 2.5%;
     text-align: left; } }
@@ -1993,7 +1956,7 @@ body.no-scrolling {
   .why-go-style-right .image-block {
     right: -25%; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go-style-right .image-block {
     margin-left: 2.5%; } }
 
@@ -2001,7 +1964,7 @@ body.no-scrolling {
   .why-go-tall-image {
     margin-top: 16rem; } }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 90em) {
   .why-go-tall-image {
     margin-top: 0; } }
 
@@ -2015,5 +1978,55 @@ body.no-scrolling {
 @media only screen and (min-width: 48em) {
   .why-go-align-right {
     text-align: right; } }
+
+.get-tickets {
+  position: relative; }
+  @media only screen and (min-width: 60em) {
+    .get-tickets {
+      margin-top: 12.8rem;
+      margin-bottom: 25.6rem; } }
+  @media only screen and (min-width: 75em) {
+    .get-tickets {
+      margin-top: 19.2rem;
+      margin-bottom: 28.8rem; } }
+  @media screen and (min-width: 1600px) {
+    .get-tickets {
+      margin-top: 0;
+      margin-bottom: 6.4rem; } }
+  .get-tickets .image-block {
+    position: relative;
+    right: -10%;
+    margin-top: 1.6rem;
+    width: 150vw;
+    max-width: 800px; }
+    @media only screen and (min-width: 48em) {
+      .get-tickets .image-block {
+        right: -30%; } }
+    @media only screen and (min-width: 60em) {
+      .get-tickets .image-block {
+        position: absolute; } }
+    @media only screen and (min-width: 75em) {
+      .get-tickets .image-block {
+        max-width: 1000px; } }
+    @media only screen and (min-width: 90em) {
+      .get-tickets .image-block {
+        right: -20%; } }
+    @media screen and (min-width: 1600px) {
+      .get-tickets .image-block {
+        position: relative;
+        -webkit-box-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        right: -10%;
+        margin-top: 0;
+        display: table; } }
+  .get-tickets .paragraph-block {
+    max-width: 500px; }
+    @media only screen and (min-width: 60em) {
+      .get-tickets .paragraph-block {
+        max-width: 400px; } }
+    @media screen and (min-width: 1100px) {
+      .get-tickets .paragraph-block {
+        max-width: 500px; } }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

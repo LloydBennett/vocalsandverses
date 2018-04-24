@@ -1,0 +1,62 @@
+.get-tickets {
+  position: relative;
+
+  @media #{$small-desktop-breakpoint} {
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-xxl;
+  }
+
+  @media #{$large-desktop-breakpoint} {
+    margin-top: $spacing-xl + $spacing-l;
+    margin-bottom: $spacing-xxl + $spacing-m;
+  }
+
+  @media screen and (min-width: 1600px) {
+    margin-top: 0;
+    margin-bottom: $spacing-l;
+  }
+
+  .image-block {
+    position: relative;
+    right: -10%;
+    margin-top: $spacing-base;
+    width: 150vw;
+    max-width: 800px;
+
+    @media #{$tablet-breakpoint} {
+      right: -30%;
+    }
+
+    @media #{$small-desktop-breakpoint} {
+      position: absolute;
+    }
+
+    @media #{$large-desktop-breakpoint} {
+      max-width: 1000px;
+    }
+
+    @media #{$x-large-desktop-breakpoint} {
+      right: -20%;
+    }
+
+    @media screen and (min-width: 1600px) {
+      position: relative;
+      flex: 2;
+      right: -10%;
+      margin-top: 0;
+      display: table;
+    }
+  }
+
+  .paragraph-block {
+    max-width: 500px;
+
+    @media #{$small-desktop-breakpoint} {
+      max-width: 400px;
+    }
+
+    @media screen and (min-width: 1100px) {
+      max-width: 500px;
+    }
+  }
+}
