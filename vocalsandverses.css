@@ -1251,12 +1251,20 @@ footer {
   vertical-align: middle;
   border-radius: 100%;
   color: white; }
+  .play-btn:hover .play-btn-icon {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    -webkit-transition: 250ms ease;
+    transition: 250ms ease; }
   .play-btn .play-btn-icon {
+    position: relative;
     display: inline-block;
-    margin-right: 0.4rem;
-    width: 30px;
     height: 30px;
-    vertical-align: middle; }
+    margin-right: 0.4rem;
+    -webkit-transition: 250ms ease;
+    transition: 250ms ease;
+    vertical-align: middle;
+    width: 30px; }
     @media only screen and (min-width: 48em) {
       .play-btn .play-btn-icon {
         width: 40px;
@@ -1264,6 +1272,19 @@ footer {
     .play-btn .play-btn-icon svg {
       width: 100%;
       height: 100%; }
+    .play-btn .play-btn-icon::before {
+      content: '';
+      background-color: red;
+      border-radius: 100%;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: none; }
+    .play-btn .play-btn-icon.video-is-playing::before {
+      width: 400%;
+      height: 400%; }
   .play-btn .play-btn-label {
     font-weight: 400;
     vertical-align: middle; }
