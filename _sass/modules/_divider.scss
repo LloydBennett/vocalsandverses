@@ -1,11 +1,12 @@
-.title-divider {
-  display: block;
-  height: 5px;
-  width: 120px;
-  background-color: $swatch-brand-yellow;
-  margin-bottom: $spacing-base;
+.title-with-divider {
+  margin-bottom: $spacing-s;
+}
 
-  @media #{$small-desktop-breakpoint} {
-    height: 8px;
-  }
+.title-divider {
+  display: inline-block;
+  margin-bottom: $spacing-base;
+}
+
+.title-divider-icon {
+  width: 100%;
 }

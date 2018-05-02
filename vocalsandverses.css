@@ -1585,15 +1585,15 @@ body.no-scrolling {
   .centered-image-block:last-child {
     margin-bottom: 0; }
 
+.title-with-divider {
+  margin-bottom: 0.8rem; }
+
 .title-divider {
-  display: block;
-  height: 5px;
-  width: 120px;
-  background-color: #FED700;
+  display: inline-block;
   margin-bottom: 1.6rem; }
-  @media only screen and (min-width: 60em) {
-    .title-divider {
-      height: 8px; } }
+
+.title-divider-icon {
+  width: 100%; }
 
 .subscribe {
   position: relative;
