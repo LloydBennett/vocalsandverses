@@ -2060,7 +2060,13 @@ body.no-scrolling {
   -webkit-box-shadow: 0 26px 45px 0 rgba(0, 0, 0, 0.4);
           box-shadow: 0 26px 45px 0 rgba(0, 0, 0, 0.4);
   position: relative;
-  display: inline-block; }
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 380px; }
+  @media only screen and (min-width: 48em) {
+    .artist-card {
+      display: inline-block; } }
   .artist-card .thumbnail {
     display: block; }
 
@@ -2071,6 +2077,9 @@ body.no-scrolling {
   bottom: -10%;
   left: -10%;
   padding: 1.2rem 2.4rem; }
+  @media only screen and (max-width: 34.375em) {
+    .artist-card-strap {
+      left: 0; } }
 
 .artist-card-name {
   margin-bottom: 0.4rem;
@@ -2079,5 +2088,17 @@ body.no-scrolling {
 
 .artist-card-title {
   color: #FED700; }
+
+@media only screen and (min-width: 48em) {
+  .featured-artists-list {
+    margin-top: 3.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap; } }
+
+.featured-artists-list .artist-card {
+  width: 18%; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
