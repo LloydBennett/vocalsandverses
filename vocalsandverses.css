@@ -501,6 +501,12 @@ body {
   font-weight: 400; }
   body.dark-theme {
     background-color: #222222; }
+    body.dark-theme h1,
+    body.dark-theme h2,
+    body.dark-theme h3 {
+      color: white; }
+    body.dark-theme p {
+      color: #BCBCBC; }
 
 h1,
 h2,

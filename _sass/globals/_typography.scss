@@ -15,7 +15,19 @@ body {
   font-weight: $font-weight-regular;
 
   &.dark-theme {
+    $paragraph-color: #BCBCBC;
+
     background-color: $color-eclipse;
+
+    h1,
+    h2,
+    h3 {
+      color: white;
+    }
+
+    p {
+      color: $paragraph-color;
+    }
   }
 }
 
