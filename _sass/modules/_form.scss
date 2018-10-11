@@ -10,8 +10,8 @@
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
-  
-  @media #{$small-desktop-breakpoint} {
+
+  @media #{$small-large-breakpoint} {
     display: flex;
     max-width: 950px;
   }
@@ -20,7 +20,7 @@
     display: block;
     width: 100%;
 
-    @media #{$small-desktop-breakpoint} {
+    @media #{$small-large-breakpoint} {
       display: inline-block;
       margin-bottom: 0;
       margin-right: $spacing-base;
@@ -30,7 +30,7 @@
   .btn {
     width: 100%;
     padding: $spacing-s + $spacing-xs 0;
-    @media #{$small-desktop-breakpoint} {
+    @media #{$small-large-breakpoint} {
       padding: $spacing-s $spacing-base + $spacing-s;
       width: auto;
     }

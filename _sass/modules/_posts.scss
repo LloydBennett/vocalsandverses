@@ -1,6 +1,6 @@
 .posts {
 	&.latest-posts {
-		@media #{$large-mobile-breakpoint} {
+		@media #{$small-breakpoint} {
 			margin-top: 10em;
 			margin-bottom: 8em;
 		}
@@ -8,7 +8,7 @@
 
 	&.full-list {
 		.post-thumbnail{
-			@media #{$tablet-breakpoint} {
+			@media #{$medium-breakpoint} {
 				margin-bottom: 10em;
 			}
 		}
@@ -23,7 +23,7 @@
 	}
 
 	.col-xs-6 {
-		@media #{$small-mobile-breakpoint} {
+		@media #{$small-breakpoint} {
 			padding-left: 8px;
 			padding-right: 8px;
 		}
@@ -41,7 +41,7 @@
 }
 
 .lop-side {
-	@media #{$tablet-breakpoint} {
+	@media #{$medium-breakpoint} {
 		margin-top: 6em;
 	}
 }
@@ -58,7 +58,7 @@
 	&:after {
 		@extend .overlay;
 
-		@media #{$tablet-breakpoint} {
+		@media #{$medium-breakpoint} {
 			content: "";
 			background: linear-gradient(-180deg, transparent, rgba(0, 0, 0, 0.7) 65%);
 			transition: 600ms ease;
@@ -77,11 +77,8 @@
 			height: 100px;
 		}
 
-		@media screen and (min-width: 401px) and (max-width: $large-mobile-max) {
-			height: 150px;
-		}
 
-		@media #{$tablet-breakpoint} {
+		@media #{$medium-breakpoint} {
 			height: 100%;
 		}
  	}
@@ -91,17 +88,17 @@
 		display: inline-block;
 	}
 
-	@media #{$large-mobile-breakpoint} {
+	@media #{$small-breakpoint} {
 		max-width: 220px;
 		padding-bottom: 0;
 		box-shadow: 0 1px 20px 0 rgba(0,0,0, 0.2);
 	}
 
-	@media #{$tablet-breakpoint} {
+	@media #{$medium-breakpoint} {
 		height: 230px;
 	}
 
-	@media #{$small-desktop-breakpoint} {
+	@media #{$small-large-breakpoint} {
 		height: 322px;
 	}
 }
@@ -110,7 +107,7 @@
 	padding: 1em;
 	z-index: 2;
 
-	@media #{$tablet-breakpoint}{
+	@media #{$medium-breakpoint}{
 		transition: 400ms ease;
 		transform: translateY(40%);
 		position: absolute;
@@ -122,7 +119,7 @@
 }
 
 .hide-post-sm {
-	@media #{$large-mobile-breakpoint} {
+	@media #{$small-breakpoint} {
 		display: none;
 	}
 }
@@ -130,11 +127,11 @@
 .readmore {
 	font-size: 1.2em;
 
-	@media #{$small-mobile-breakpoint} {
+	@media #{$small-breakpoint} {
 		font-size: 1em;
 	}
 
-	@media #{$tablet-breakpoint} {
+	@media #{$medium-breakpoint} {
 		font-size: 1.4em;
 		opacity: 0;
 		transition: opacity 400ms ease 200ms;
@@ -145,12 +142,12 @@
 	font-size: 1.5rem;
 	font-weight: 300;
 
-	@media #{$large-mobile-breakpoint} {
+	@media #{$small-breakpoint} {
 		margin-bottom: 0;
 		display: none;
 	}
 
-	@media #{$tablet-breakpoint} {
+	@media #{$medium-breakpoint} {
 		color: white;
 		opacity: 0;
 		transition: 300ms ease;
@@ -166,18 +163,18 @@
 	margin-top: 0.555em;
 	color: lighten($display-font-color, 10%);
 
-	@media #{$small-mobile-breakpoint} {
+	@media #{$small-breakpoint} {
 		font-size: 1.4em;
 		line-height: 1.4;
 	}
 
-	@media #{$tablet-breakpoint} {
+	@media #{$medium-breakpoint} {
 		color: white;
 		margin-top: pxtoem(10, 18);
 		margin-bottom: 0;
 	}
 
-	@media #{$small-desktop-breakpoint} {
+	@media #{$small-large-breakpoint} {
 		font-size: 2em;
 		margin-top: 1em;
 	}
@@ -194,7 +191,7 @@
 	font-size: 0.5em;
 	color: white;
 
-	@media #{$tablet-breakpoint} {
+	@media #{$medium-breakpoint} {
 		font-size: 1em;
 	}
 }
@@ -274,7 +271,7 @@
 			max-height: 220px;
 		}
 
-		@media #{$tablet-breakpoint} {
+		@media #{$medium-breakpoint} {
 			width: 640px;
 		}
 	}
@@ -313,7 +310,7 @@
 	.post-thumbnail{
 		&:hover {
 			&:after {
-				@media #{$tablet-breakpoint} {
+				@media #{$medium-breakpoint} {
 					transition: 400ms ease;
 					transform: translateY(-50%);
 					height: 200%;
@@ -321,21 +318,21 @@
 			}
 
 			.post-details {
-				@media #{$tablet-breakpoint} {
+				@media #{$medium-breakpoint} {
 					transform: translateY(0%);
 					transition: 300ms ease;
 				}
 			}
 
 			.post-excerpt {
-				@media #{$tablet-breakpoint} {
+				@media #{$medium-breakpoint} {
 					opacity: 1;
 					transition: 300ms ease;
 				}
 			}
 
 			.readmore {
-				@media #{$tablet-breakpoint} {
+				@media #{$medium-breakpoint} {
 					opacity: 1;
 					transition: 300ms ease 100ms;
 				}

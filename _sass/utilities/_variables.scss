@@ -1,26 +1,25 @@
 // RESPONSIVE BREAKPOINTS //
 
-$small-mobile-max: pxtoem(550px);
-$large-mobile-max: pxtoem(767px);
-$tablet: pxtoem(768px);
-$tablet-max: pxtoem(959px);
-$small-desktop: pxtoem(960px);
-$large-desktop: pxtoem(1200px);
-$x-large-desktop: pxtoem(1440px);
-$xx-large-desktop: pxtoem(2000px);
-$small-mobile-breakpoint: 'only screen and (max-width: #{$small-mobile-max})';
-$large-mobile-breakpoint: 'only screen and (max-width: #{$large-mobile-max})';
-$tablet-breakpoint: 'only screen and (min-width: #{$tablet})';
-$tablet-max-breakpoint: 'only screen and (max-width: #{$tablet-max})';
-$small-desktop-breakpoint: 'only screen and (min-width: #{$small-desktop})';
-$large-desktop-breakpoint: 'only screen and (min-width: #{$large-desktop})';
-$x-large-desktop-breakpoint: 'only screen and (min-width: #{$x-large-desktop})';
-$xx-large-desktop-breakpoint: 'only screen and (min-width: #{$xx-large-desktop})';
+$small-device: pxtoem(550px);
+$medium-device: pxtoem(768px);
+$small-large-device: pxtoem(960px);
+$large-device: pxtoem(1200px);
+$x-large-device: pxtoem(1440px);
+$huge-device: pxtoem(2000px);
+
+
+$small-breakpoint: 'only screen and (min-width: #{$small-device})';
+$medium-breakpoint: 'only screen and (min-width: #{$medium-device})';
+$small-large-breakpoint: 'only screen and (min-width: #{$small-large-device})';
+$large-breakpoint: 'only screen and (min-width: #{$large-device})';
+$x-large-breakpoint: 'only screen and (min-width: #{$x-large-device})';
+$huge-breakpoint: 'only screen and (min-width: #{$huge-device})';
 
 // TYPE //
 
 //family
-$font-base-family: "Montserrat", sans-serif;
+$font-display-family: "Montserrat", sans-serif;
+$font-base-family: "Droid Serif", serif;
 $font-testimonals-open-quote: "Arial Black", sans-serif;
 
 //size
@@ -46,13 +45,13 @@ $font-base-color: #808080;
 // SWATCHES //
 
 // Brand Colours //
-$swatch-brand-yellow: #FED700;
-$swatch-brand-black: #1B1B1B;
-$swatch-brand-light-black: lighten($swatch-brand-black, 5%);
+
+$color-eclipse: #222222;
+$color-sunrise: #FED700;
+$color-dawn: #6890CA;
+$color-darkness: #1B1B1B;
 
 // Secondary Colours //
-$swatch-color-blue: #6890CA;
-$swatch-color-darkblue: #3B5070;
 $white: #fff;
 $black: #000;
 

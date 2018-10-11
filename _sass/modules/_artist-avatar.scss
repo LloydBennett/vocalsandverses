@@ -7,7 +7,7 @@
   display: inline-block;
   z-index: 2;
 
-  @media #{$small-mobile-breakpoint} {
+  @media #{$small-breakpoint} {
     max-width: 130px;
     height: 130px;
   }

@@ -1,6 +1,6 @@
 footer {
   @include paintBrush(before, '../images/footer-section-brush.png', 35%);
-	background-color: $swatch-brand-black;
+	//background-color: $swatch-brand-black;
 	color: white;
 	padding: $spacing-m 0;
 	text-align: center;
@@ -11,7 +11,7 @@ footer {
 	}
 
   &::before {
-    @media #{$small-mobile-breakpoint} {
+    @media #{$small-breakpoint} {
 			height: 25%;
       top: -24%;
 		}
@@ -26,14 +26,14 @@ footer {
 		margin-right: $spacing-m;
     height: 28px;
 
-		@media #{$tablet-breakpoint} {
+		@media #{$medium-breakpoint} {
 			margin-right: $spacing-l;
       height: auto;
 		}
 
     svg {
       height: 100%;
-      @media #{$tablet-breakpoint} {
+      @media #{$medium-breakpoint} {
   			height: auto;
   		}
     }
@@ -49,7 +49,7 @@ footer {
   font-size: 14px;
 
   span {
-    @media #{$small-mobile-breakpoint} {
+    @media #{$small-breakpoint} {
       display: block;
     }
   }
@@ -60,7 +60,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
 
-  @media #{$tablet-breakpoint} {
+  @media #{$medium-breakpoint} {
     max-width: 200px;
   }
 

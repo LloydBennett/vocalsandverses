@@ -4,16 +4,16 @@
   padding: $spacing-s 0 $spacing-xl;
   margin-top: $spacing-xl + $spacing-l;
 
-  @media #{$small-mobile-breakpoint} {
+  @media #{$small-breakpoint} {
     margin-top: $spacing-xl;
   }
 
-  @media #{$small-desktop-breakpoint} {
+  @media #{$small-large-breakpoint} {
     margin-top: $spacing-xl;
   }
 
   &::before {
-    @media #{$small-mobile-breakpoint} {
+    @media #{$small-breakpoint} {
 			height: 25%;
       top: -24%;
 		}

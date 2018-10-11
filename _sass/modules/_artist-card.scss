@@ -6,7 +6,7 @@
   margin-right: auto;
   max-width: 380px;
 
-  @media #{$tablet-breakpoint} {
+  @media #{$medium-breakpoint} {
     display: inline-block;
   }
 
@@ -23,7 +23,7 @@
   left: -10%;
   padding: $spacing-s + $spacing-xs $spacing-base + $spacing-s;
 
-  @media #{$small-mobile-breakpoint} {
+  @media #{$small-breakpoint} {
     left: 0;
   }
 }
@@ -36,5 +36,5 @@
 
 
 .artist-card-title {
-  color: $swatch-brand-yellow;
+  color: $color-sunrise;
 }

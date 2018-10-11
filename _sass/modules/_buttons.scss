@@ -5,13 +5,11 @@
 	cursor: pointer;
 	display: inline-block;
 	text-align: center;
-  background-color: $swatch-color-blue;
   font-weight: $font-weight-regular;
   transition: background-color 300ms ease;
   box-shadow: $box-shadow;
 
   &:hover {
-    background-color: $swatch-color-darkblue;
     transition: background-color 300ms ease;
     text-decoration: none;
   }
@@ -57,7 +55,7 @@
     vertical-align: middle;
     width: 30px;
 
-    @media #{$tablet-breakpoint} {
+    @media #{$medium-breakpoint} {
       width: 40px;
       height: 40px;
     }
@@ -94,6 +92,5 @@
 }
 
 .link {
-	color: $swatch-color-blue;
 	font-size: inherit;
 }

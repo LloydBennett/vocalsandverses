@@ -1,5 +1,5 @@
 .featured-artists-list {
-  @media #{$tablet-breakpoint} {
+  @media #{$medium-breakpoint} {
     margin-top: $spacing-m;
     display: flex;
     flex-wrap: nowrap;

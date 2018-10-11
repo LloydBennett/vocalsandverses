@@ -1,12 +1,12 @@
 .get-tickets {
   position: relative;
 
-  @media #{$small-desktop-breakpoint} {
+  @media #{$small-large-breakpoint} {
     margin-top: $spacing-xl;
     margin-bottom: $spacing-xxl;
   }
 
-  @media #{$large-desktop-breakpoint} {
+  @media #{$large-breakpoint} {
     margin-top: $spacing-xl + $spacing-l;
     margin-bottom: $spacing-xxl + $spacing-m;
   }
@@ -23,19 +23,19 @@
     width: 150vw;
     max-width: 800px;
 
-    @media #{$tablet-breakpoint} {
+    @media #{$medium-breakpoint} {
       right: -30%;
     }
 
-    @media #{$small-desktop-breakpoint} {
+    @media #{$small-large-breakpoint} {
       position: absolute;
     }
 
-    @media #{$large-desktop-breakpoint} {
+    @media #{$large-breakpoint} {
       max-width: 1000px;
     }
 
-    @media #{$x-large-desktop-breakpoint} {
+    @media #{$x-large-breakpoint} {
       right: -20%;
     }
 
@@ -51,7 +51,7 @@
   .paragraph-block {
     max-width: 500px;
 
-    @media #{$small-desktop-breakpoint} {
+    @media #{$small-large-breakpoint} {
       max-width: 400px;
     }
 
