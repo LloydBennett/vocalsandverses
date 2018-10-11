@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100vh;
   margin-bottom: $spacing-m + $spacing-base;
 
   @media #{$small-breakpoint} {
@@ -11,93 +12,6 @@
 
   @media #{$medium-breakpoint} {
     margin-bottom: $spacing-l;
-  }
-}
-
-.home-hero {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-x: hidden;
-
-  & > .container {
-    @media #{$medium-breakpoint} {
-      align-items: flex-end;
-      display: flex;
-      min-height: 800px;
-      position: relative;
-    }
-
-    @media #{$large-breakpoint} {
-      align-items: center;
-    }
-  }
-}
-
-.home-hero-content {
-  padding: $spacing-xl + $spacing-m 0 $spacing-l;
-  position: relative;
-  z-index: 2;
-
-  @media #{$small-breakpoint} {
-    text-align: center;
-    padding: $spacing-m + $spacing-base 0 $spacing-l + $spacing-base;
-  }
-
-  @media #{$medium-breakpoint} {
-    padding: 0 0 $spacing-l;
-  }
-
-  @media #{$large-breakpoint} {
-    padding: $spacing-l 0;
-  }
-
-  .btn {
-    display: table;
-    @media #{$small-breakpoint} {
-      margin: 0 auto;
-    }
-
-    & + .play-btn {
-      margin-top: $spacing-base;
-    }
-  }
-}
-
-.home-hero-image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  max-width: 800px;
-  max-height: 650px;
-
-  @media #{$small-breakpoint} {
-    display: none;
-  }
-
-  @media #{$medium-breakpoint} {
-    max-height: 750px;
-    right: 15%;
-  }
-
-  @media #{$large-breakpoint} {
-    max-height: none;
-  }
-
-  img {
-    height: 100%;
-    display: block;
-  }
-}
-
-.hero-content-title,
-.hero-content-copy {
-  color: white;
-}
-
-.hero-content-title {
-  span {
-    @include nowrap;
   }
 }
 

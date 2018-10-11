@@ -1,9 +1,16 @@
 .nav-bar {
   padding: $spacing-s 0;
   width: 100%;
+  
   @media #{$medium-breakpoint}{
 		padding: $spacing-base 0;
 	}
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .nav-bar-icons {
@@ -30,11 +37,13 @@
 .logo {
 	width: 80px;
 	display: inline-block;
+
 	@media #{$medium-breakpoint}{
-		width: 120px;
+		width: 100px;
 	}
 
 	img {
 		width: 100%;
+    display: block;
 	}
 }
