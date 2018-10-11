@@ -6,10 +6,14 @@
   <body {% if page.layout == "home" %} class="dark-theme" {% endif %}>
 
     <div id="page-wrapper" class="overflow">
-      {{ content }}
+      {% include hero.html %}
+      <div class="content">
+        {{ content }}
 
-      {% include footer.html %}
+        {% include footer.html %}
+      </div>
     </div>
+    
     <div class="modal-overlay" data-modal-overlay>
       <div class="modal-content">
         <div class="close-modal" data-trigger-modal>
@@ -22,5 +26,4 @@
     </div>
     <script src="javascript/production/script.js"></script>
   </body>
-
 </html>

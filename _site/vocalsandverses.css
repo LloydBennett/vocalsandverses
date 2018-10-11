@@ -759,4 +759,131 @@ footer {
 .link {
   font-size: inherit; }
 
+.hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 4.8rem; }
+  @media only screen and (min-width: 34.375em) {
+    .hero {
+      margin-bottom: 1.6rem; } }
+  @media only screen and (min-width: 48em) {
+    .hero {
+      margin-bottom: 6.4rem; } }
+
+.home-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-x: hidden; }
+  @media only screen and (min-width: 48em) {
+    .home-hero > .container {
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      min-height: 800px;
+      position: relative; } }
+  @media only screen and (min-width: 75em) {
+    .home-hero > .container {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+.home-hero-content {
+  padding: 16rem 0 6.4rem;
+  position: relative;
+  z-index: 2; }
+  @media only screen and (min-width: 34.375em) {
+    .home-hero-content {
+      text-align: center;
+      padding: 4.8rem 0 8rem; } }
+  @media only screen and (min-width: 48em) {
+    .home-hero-content {
+      padding: 0 0 6.4rem; } }
+  @media only screen and (min-width: 75em) {
+    .home-hero-content {
+      padding: 6.4rem 0; } }
+  .home-hero-content .btn {
+    display: table; }
+    @media only screen and (min-width: 34.375em) {
+      .home-hero-content .btn {
+        margin: 0 auto; } }
+    .home-hero-content .btn + .play-btn {
+      margin-top: 1.6rem; }
+
+.home-hero-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  max-width: 800px;
+  max-height: 650px; }
+  @media only screen and (min-width: 34.375em) {
+    .home-hero-image {
+      display: none; } }
+  @media only screen and (min-width: 48em) {
+    .home-hero-image {
+      max-height: 750px;
+      right: 15%; } }
+  @media only screen and (min-width: 75em) {
+    .home-hero-image {
+      max-height: none; } }
+  .home-hero-image img {
+    height: 100%;
+    display: block; }
+
+.hero-content-title,
+.hero-content-copy {
+  color: white; }
+
+.hero-content-title span {
+  display: block;
+  white-space: nowrap; }
+
+.hero-content-copy {
+  max-width: 350px; }
+  @media only screen and (min-width: 34.375em) {
+    .hero-content-copy {
+      padding: 0 0.8rem;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media only screen and (min-width: 48em) {
+    .hero-content-copy {
+      max-width: 500px; } }
+  @media only screen and (min-width: 60em) {
+    .hero-content-copy {
+      max-width: 700px;
+      font-size: 21px; } }
+
+.with-gradient {
+  background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
+
+.with-bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed; }
+
+.content {
+  position: relative;
+  z-index: 2;
+  margin-top: 90vh;
+  background-color: #222222; }
+  .content::before {
+    content: "";
+    position: absolute;
+    padding-bottom: 7%;
+    width: 100%;
+    bottom: 0;
+    left: 0; }
+    @media only screen and (min-width: 34.375em) {
+      .content::before {
+        padding-bottom: 15%; } }
+
 /*# sourceMappingURL=vocalsandverses.css.map */
