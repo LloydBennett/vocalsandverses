@@ -47,6 +47,10 @@ h1 {
     font-size: pxtoem(48px);
   }
 
+  @media #{$medium-breakpoint} {
+    font-size: pxtoem(60px);
+  }
+
   @media #{$large-breakpoint} {
     font-size: pxtoem(75px); //84
     line-height: 1.1;

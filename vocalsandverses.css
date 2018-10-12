@@ -480,7 +480,7 @@ li {
   margin-right: auto;
   margin-left: auto;
   width: 95%;
-  max-width: 1600px; }
+  max-width: 1400px; }
 
 /* Typography */
 html {
@@ -517,6 +517,9 @@ h1 {
   @media only screen and (min-width: 34.375em) {
     h1 {
       font-size: 3em; } }
+  @media only screen and (min-width: 48em) {
+    h1 {
+      font-size: 3.75em; } }
   @media only screen and (min-width: 75em) {
     h1 {
       font-size: 4.6875em;
@@ -789,28 +792,27 @@ footer {
   left: 0;
   width: 100%;
   height: 100vh;
-  margin-bottom: 4.8rem; }
-  @media only screen and (min-width: 34.375em) {
-    .hero {
-      margin-bottom: 1.6rem; } }
-  @media only screen and (min-width: 48em) {
-    .hero {
-      margin-bottom: 6.4rem; } }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
-.hero-content-copy {
-  max-width: 350px; }
-  @media only screen and (min-width: 34.375em) {
-    .hero-content-copy {
-      padding: 0 0.8rem;
-      margin-left: auto;
-      margin-right: auto; } }
-  @media only screen and (min-width: 48em) {
-    .hero-content-copy {
-      max-width: 500px; } }
-  @media only screen and (min-width: 60em) {
-    .hero-content-copy {
-      max-width: 700px;
-      font-size: 21px; } }
+.hero-content {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+@media only screen and (min-width: 48em) {
+  .hero-content-inner {
+    display: inline-block;
+    margin-left: 10%; } }
 
 .with-gradient {
   background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
@@ -824,7 +826,7 @@ footer {
 .content {
   position: relative;
   z-index: 2;
-  margin-top: 90vh;
+  margin-top: 100vh;
   background-color: #222222; }
   .content::before {
     content: "";
