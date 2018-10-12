@@ -1,35 +1,38 @@
-.btn {
+.button {
+  position: relative;
 	border-radius: 0;
 	border: none;
-	color: white;
 	cursor: pointer;
 	display: inline-block;
 	text-align: center;
-  font-weight: $font-weight-regular;
-  transition: background-color 300ms ease;
-  box-shadow: $box-shadow;
+  font-family: $font-display-family;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: $font-weight-semi-bold;
+  padding: 0 $spacing-s $spacing-s;
 
-  &:hover {
-    transition: background-color 300ms ease;
-    text-decoration: none;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: $color-dawn;
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
 
 	&:focus {
     outline: none;
 	}
 
-  & + & {
+  & + &,
+  & + .play-btn {
     margin-left: $spacing-m;
   }
-}
 
-.btn-lrg {
-	padding: $spacing-s $spacing-m;
-}
-
-.btn-sml {
-	padding: $spacing-s $spacing-base;
-  font-size: 0.888em;
+  &.button-dark {
+    color: $white;
+  }
 }
 
 .play-btn {
@@ -56,8 +59,8 @@
     width: 30px;
 
     @media #{$medium-breakpoint} {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
     }
 
     svg {
@@ -83,11 +86,6 @@
         height: 400%;
       }
     }
-  }
-
-  .play-btn-label {
-    font-weight: $font-weight-regular;
-    vertical-align: middle;
   }
 }
 

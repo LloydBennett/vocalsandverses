@@ -711,33 +711,33 @@ footer {
   .footer-logo svg {
     fill: white; }
 
-.btn {
+.button {
+  position: relative;
   border-radius: 0;
   border: none;
-  color: white;
   cursor: pointer;
   display: inline-block;
   text-align: center;
-  font-weight: 400;
-  -webkit-transition: background-color 300ms ease;
-  transition: background-color 300ms ease;
-  -webkit-box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.25); }
-  .btn:hover {
-    -webkit-transition: background-color 300ms ease;
-    transition: background-color 300ms ease;
-    text-decoration: none; }
-  .btn:focus {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 0 0.8rem 0.8rem; }
+  .button::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #6890CA;
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+  .button:focus {
     outline: none; }
-  .btn + .btn {
+  .button + .button,
+  .button + .play-btn {
     margin-left: 3.2rem; }
-
-.btn-lrg {
-  padding: 0.8rem 3.2rem; }
-
-.btn-sml {
-  padding: 0.8rem 1.6rem;
-  font-size: 0.888em; }
+  .button.button-dark {
+    color: #fff; }
 
 .play-btn {
   display: inline-block;
@@ -761,8 +761,8 @@ footer {
     width: 30px; }
     @media only screen and (min-width: 48em) {
       .play-btn .play-btn-icon {
-        width: 40px;
-        height: 40px; } }
+        width: 48px;
+        height: 48px; } }
     .play-btn .play-btn-icon svg {
       width: 100%;
       height: 100%; }
@@ -779,9 +779,6 @@ footer {
     .play-btn .play-btn-icon.video-is-playing::before {
       width: 400%;
       height: 400%; }
-  .play-btn .play-btn-label {
-    font-weight: 400;
-    vertical-align: middle; }
 
 .link {
   font-size: inherit; }
@@ -808,6 +805,9 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+
+.hero-content-title + .ctas {
+  margin-top: 3.2rem; }
 
 @media only screen and (min-width: 48em) {
   .hero-content-inner {

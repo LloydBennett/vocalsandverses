@@ -14,6 +14,12 @@
   align-items: center;
 }
 
+.hero-content-title {
+  & + .ctas {
+    margin-top: $spacing-m;
+  }
+}
+
 .hero-content-inner {
   @media #{$medium-breakpoint} {
     display: inline-block;
