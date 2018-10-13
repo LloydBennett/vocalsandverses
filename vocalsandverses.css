@@ -24,11 +24,9 @@
     margin-right: 0; } }
 
 .thumbnail {
-  display: inline-block;
-  background-color: grey; }
-  .thumbnail.transparent {
-    background-color: transparent; }
-  .thumbnail img {
+  display: inline-block; }
+  .thumbnail img,
+  .thumbnail svg {
     width: 100%;
     display: block; }
 
@@ -977,5 +975,14 @@ footer {
     text-decoration: underline dotted; }
   .tweet .emoji {
     font-style: normal; }
+
+.usp .underline {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  max-width: 300px; }
+  @media only screen and (min-width: 75em) {
+    .usp .underline {
+      max-width: none; } }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

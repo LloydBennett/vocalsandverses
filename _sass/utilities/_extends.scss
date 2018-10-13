@@ -67,13 +67,9 @@
 
 .thumbnail {
   display: inline-block;
-  background-color: grey;
 
-  &.transparent {
-    background-color: transparent;
-  }
-
-  img {
+  img,
+  svg {
     width: 100%;
     display: block;
   }

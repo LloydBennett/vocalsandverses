@@ -1,0 +1,12 @@
+.usp {
+  .underline {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    max-width: 300px;
+
+    @media #{$large-breakpoint} {
+      max-width: none;
+    }
+  }
+}
