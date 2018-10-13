@@ -1,9 +1,10 @@
 <div class="artist-card">
   <div class="thumbnail">
-    <img src="images/artists/{{ include.directory }}/{{ include.avatar-image }}" alt="{{ include.name }}">
+    <img src="images/artists/{{ include.directory }}/{{ include.image }}" alt="{{ include.name }}">
   </div>
   <div class="artist-card-strap">
     <h3 class="artist-card-name">{{ include.name }}</h3>
-    <span class="artist-card-title">{{ include.title }}</span>
+    <span class="artist-card-title">{{ include.jobtitle }}</span>
+    <a href="{{ include.website }}" target="_blank" class="button button-small button-dark">Learn More</a>
   </div>
 </div>

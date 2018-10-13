@@ -11,22 +11,10 @@
     <div class="featured-artists-list">
       {% for artist in site.artists %}
         {% if artist.featured %}
-        fkfkfjfjkk
-        
-        <!-- <div class="artist-card">
-          <div class="thumbnail">
-            <img src="../images/artists/{{ artist.directory }}/{{ artist.avatar-image }}"
-            alt="{{ artist.name }}">
-          </div>
-          <div class="artist-card-strap">
-            <h3 class="artist-card-name">{{ artist.title }}</h3>
-            <span class="artist-card-title">{{ artist.jobtitle }}</span>
-            <a href="#" class="button button-small button-dark">Learn More</a>
-          </div>
-        </div> -->
+          {% include artist-card.html name= artist.title directory= artist.directory
+            image= artist.avatar-image jobtitle= artist.jobtitle website= artist.website %}
         {% endif %}
       {% endfor %}
     </div>
   </div>
-
 </div>
