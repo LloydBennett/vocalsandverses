@@ -30,15 +30,19 @@
 
 .hero-content-title {
   & + .ctas {
-    margin-top: $spacing-m;
+    margin-top: $spacing-base + $spacing-s;
   }
 }
 
 .hero-content-inner {
   z-index: 2;
+  text-align: center;
+  width: 100%;
 
   @media #{$medium-breakpoint} {
     display: inline-block;
+    width: auto;
+    text-align: left;
   }
 
   @media #{$large-breakpoint} {

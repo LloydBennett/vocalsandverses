@@ -647,7 +647,7 @@ blockquote .quotee {
         width: 26px; } }
 
 .logo {
-  width: 80px;
+  width: 70px;
   display: inline-block; }
   @media only screen and (min-width: 48em) {
     .logo {
@@ -717,13 +717,20 @@ footer {
   border-radius: 0;
   border: none;
   cursor: pointer;
-  display: inline-block;
+  display: table;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
   padding: 0 0.8rem 0.8rem; }
+  @media screen and (max-width: 47em) {
+    .button {
+      margin-left: auto;
+      margin-right: auto; } }
+  @media only screen and (min-width: 48em) {
+    .button {
+      display: inline-block; } }
   .button::after {
     content: "";
     width: 100%;
@@ -734,9 +741,15 @@ footer {
     bottom: 0; }
   .button:focus {
     outline: none; }
-  .button + .button,
-  .button + .play-btn {
-    margin-left: 3.2rem; }
+  @media screen and (max-width: 47em) {
+    .button + .button,
+    .button + .play-btn {
+      display: table;
+      margin: 1.6rem auto 0; } }
+  @media only screen and (min-width: 48em) {
+    .button + .button,
+    .button + .play-btn {
+      margin-left: 3.2rem; } }
   .button.button-dark {
     color: #fff; }
 
@@ -754,16 +767,12 @@ footer {
   .play-btn .play-btn-icon {
     position: relative;
     display: inline-block;
-    height: 30px;
     margin-right: 0.4rem;
     -webkit-transition: 250ms ease;
     transition: 250ms ease;
     vertical-align: middle;
-    width: 30px; }
-    @media only screen and (min-width: 48em) {
-      .play-btn .play-btn-icon {
-        width: 48px;
-        height: 48px; } }
+    width: 48px;
+    height: 48px; }
     .play-btn .play-btn-icon svg {
       width: 100%;
       height: 100%; }
@@ -818,13 +827,17 @@ footer {
             align-items: center; }
 
 .hero-content-title + .ctas {
-  margin-top: 3.2rem; }
+  margin-top: 2.4rem; }
 
 .hero-content-inner {
-  z-index: 2; }
+  z-index: 2;
+  text-align: center;
+  width: 100%; }
   @media only screen and (min-width: 48em) {
     .hero-content-inner {
-      display: inline-block; } }
+      display: inline-block;
+      width: auto;
+      text-align: left; } }
   @media only screen and (min-width: 75em) {
     .hero-content-inner {
       margin-left: 10%; } }
@@ -868,10 +881,8 @@ footer {
     position: absolute;
     padding-bottom: 7%;
     width: 100%;
-    bottom: 0;
-    left: 0; }
-    @media only screen and (min-width: 34.375em) {
-      .content::before {
-        padding-bottom: 15%; } }
+    top: -10%;
+    left: 0;
+    background: url("../images/paintbrush-top.svg") no-repeat center top/cover; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

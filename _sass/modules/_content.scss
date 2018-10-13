@@ -13,12 +13,12 @@
     position: absolute;
     padding-bottom: 7%;
     width: 100%;
-    bottom: 0;
+    top: -10%;
     left: 0;
-    //background: url('../images/hero-section-brush.png') no-repeat center top/cover;
-
-    @media #{$small-breakpoint} {
-      padding-bottom: 15%;
-    }
+    background: url('../images/paintbrush-top.svg') no-repeat center top/cover;
+    //height: 200px;
+    // @media #{$small-breakpoint} {
+    //   padding-bottom: 15%;
+    // }
   }
 }
