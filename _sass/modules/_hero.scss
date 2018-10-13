@@ -35,6 +35,7 @@
 }
 
 .hero-content-inner {
+  @include offsetContentBlock;
   z-index: 2;
   text-align: center;
   width: 100%;
@@ -43,11 +44,7 @@
     display: inline-block;
     width: auto;
     text-align: left;
-  }
-
-  @media #{$large-breakpoint} {
-    margin-left: 10%;
-  }
+  }  
 }
 
 .home-hero-image {

@@ -1,5 +1,4 @@
 .artist-card {
-  @include dropShadow;
   position: relative;
   display: table;
   margin-left: auto;
@@ -16,25 +15,24 @@
 }
 
 .artist-card-strap {
-  background: url('../images/name-strap-bg.svg') center/cover no-repeat;
-  position: absolute;
-  min-width: 80%;
-  bottom: -10%;
-  left: -10%;
-  padding: $spacing-s + $spacing-xs $spacing-base + $spacing-s;
+  margin-top: $spacing-s;
+  text-align: center;
 
-  @media #{$small-breakpoint} {
-    left: 0;
+  .button {
+    display: table;
+    margin: $spacing-base auto 0;
   }
 }
 
 .artist-card-name {
-  margin-bottom: $spacing-xs;
+  margin-bottom: $spacing-xxs;
   color: $white;
-  font-size: 2em;
+  margin-top: 0;
+  font-weight: $font-weight-medium;
 }
 
 
 .artist-card-title {
-  color: $color-sunrise;
+  font-size: 1em;
+  font-style: italic;
 }

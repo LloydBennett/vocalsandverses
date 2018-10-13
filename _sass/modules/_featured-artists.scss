@@ -1,11 +1,51 @@
+.featured-artists {
+  .paragraph-block {
+    @include offsetContentBlock;
+    margin-bottom: $spacing-base;
+
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-m;
+    }
+
+    @media #{$medium-breakpoint} {
+      display: flex;
+    }
+
+    h2 {
+      flex-shrink: 0;
+      margin-right: $spacing-l;
+
+      @media #{$medium-breakpoint} {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      max-width: 500px;
+
+      @media #{$medium-breakpoint} {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .featured-artists-list {
-  @media #{$medium-breakpoint} {
-    margin-top: $spacing-m;
-    display: flex;
-    flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: $spacing-base;
+  grid-row-gap: $spacing-m;
+
+  @media screen and (min-width: 700px) {
+    grid-row-gap: $spacing-m + $spacing-base;
   }
 
-  .artist-card {
-    width: 18%;
+  @media #{$medium-breakpoint} {
+    grid-template-columns: repeat(3, 1fr);
   }
+
+  @media #{$small-large-breakpoint} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
 }

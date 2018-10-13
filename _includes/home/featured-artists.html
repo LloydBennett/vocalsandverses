@@ -1,29 +1,30 @@
 <div class="featured-artists section">
   <div class="container">
     <div class="paragraph-block">
-      <h2 class="title-with-divider">The Artists</h2>
-      {% include title-divider.html %}
+      <h2>The Artists</h2>
       <p>
         Learn more about the plethora of talented artists that graced the
         Vocals & Verses stage over the years, ranging from spoken word poetry,
         rap and live music.
       </p>
     </div>
-  </div>
-  <div class="featured-artists-list">
-    {% for artist in site.artists %}
-      {% if artist.featured %}
-      <div class="artist-card">
-        <div class="thumbnail">
-          <img src="../images/artists/{{ artist.directory }}/{{ artist.avatar-image }}"
-          alt="{{ artist.name }}">
+    <div class="featured-artists-list">
+      {% for artist in site.artists %}
+        {% if artist.featured %}
+        <div class="artist-card">
+          <div class="thumbnail">
+            <img src="../images/artists/{{ artist.directory }}/{{ artist.avatar-image }}"
+            alt="{{ artist.name }}">
+          </div>
+          <div class="artist-card-strap">
+            <h3 class="artist-card-name">{{ artist.title }}</h3>
+            <span class="artist-card-title">{{ artist.jobtitle }}</span>
+            <a href="#" class="button button-small button-dark">Learn More</a>
+          </div>
         </div>
-        <div class="artist-card-strap">
-          <h3 class="artist-card-name">{{ artist.title }}</h3>
-          <span class="artist-card-title">{{ artist.jobtitle }}</span>
-        </div>
-      </div>
-      {% endif %}
-    {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
+
 </div>

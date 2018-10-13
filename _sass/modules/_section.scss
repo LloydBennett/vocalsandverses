@@ -1,7 +1,7 @@
 .section {
-  margin-bottom: $spacing-l;
+  margin-bottom: $spacing-m;
 
   @media #{$small-breakpoint} {
-    margin-bottom: $spacing-m;
+    margin-bottom: $spacing-l;
   }
 }

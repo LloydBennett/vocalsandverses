@@ -497,13 +497,12 @@ body {
   font-family: "Droid Serif", serif;
   font-weight: 400; }
   body.dark-theme {
+    color: #BCBCBC;
     background-color: #222222; }
     body.dark-theme h1,
     body.dark-theme h2,
     body.dark-theme h3 {
       color: white; }
-    body.dark-theme p {
-      color: #BCBCBC; }
 
 h1,
 h2,
@@ -724,7 +723,7 @@ footer {
   letter-spacing: 2px;
   font-weight: 600;
   padding: 0 0.8rem 0.8rem; }
-  @media screen and (max-width: 47em) {
+  @media screen and (max-width: 767px) {
     .button {
       margin-left: auto;
       margin-right: auto; } }
@@ -741,6 +740,11 @@ footer {
     bottom: 0; }
   .button:focus {
     outline: none; }
+  .button.button-small {
+    font-size: 0.625em; }
+    @media only screen and (min-width: 48em) {
+      .button.button-small {
+        font-size: 0.8em; } }
   @media screen and (max-width: 47em) {
     .button + .button,
     .button + .play-btn {
@@ -833,14 +837,14 @@ footer {
   z-index: 2;
   text-align: center;
   width: 100%; }
+  @media only screen and (min-width: 75em) {
+    .hero-content-inner {
+      margin-left: 10%; } }
   @media only screen and (min-width: 48em) {
     .hero-content-inner {
       display: inline-block;
       width: auto;
       text-align: left; } }
-  @media only screen and (min-width: 75em) {
-    .hero-content-inner {
-      margin-left: 10%; } }
 
 .home-hero-image {
   position: absolute;
@@ -876,13 +880,81 @@ footer {
   @media screen and (min-height: 901px) {
     .content {
       margin-top: 950px; } }
-  .content::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    top: -25%;
-    left: 0;
-    background: url("../images/paintbrush-top.svg") repeat-x center top/cover;
-    height: 200px; }
+
+.artist-card {
+  position: relative;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 380px; }
+  @media only screen and (min-width: 48em) {
+    .artist-card {
+      display: inline-block; } }
+  .artist-card .thumbnail {
+    display: block; }
+
+.artist-card-strap {
+  margin-top: 0.8rem;
+  text-align: center; }
+  .artist-card-strap .button {
+    display: table;
+    margin: 1.6rem auto 0; }
+
+.artist-card-name {
+  margin-bottom: 0.2rem;
+  color: #fff;
+  margin-top: 0;
+  font-weight: 500; }
+
+.artist-card-title {
+  font-size: 1em;
+  font-style: italic; }
+
+.featured-artists .paragraph-block {
+  margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 75em) {
+    .featured-artists .paragraph-block {
+      margin-left: 10%; } }
+  @media only screen and (min-width: 34.375em) {
+    .featured-artists .paragraph-block {
+      margin-bottom: 3.2rem; } }
+  @media only screen and (min-width: 48em) {
+    .featured-artists .paragraph-block {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
+  .featured-artists .paragraph-block h2 {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin-right: 6.4rem; }
+    @media only screen and (min-width: 48em) {
+      .featured-artists .paragraph-block h2 {
+        margin-bottom: 0; } }
+  .featured-artists .paragraph-block p {
+    max-width: 500px; }
+    @media only screen and (min-width: 48em) {
+      .featured-artists .paragraph-block p {
+        margin-bottom: 0; } }
+
+.featured-artists-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1.6rem;
+  grid-row-gap: 3.2rem; }
+  @media screen and (min-width: 700px) {
+    .featured-artists-list {
+      grid-row-gap: 4.8rem; } }
+  @media only screen and (min-width: 48em) {
+    .featured-artists-list {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media only screen and (min-width: 60em) {
+    .featured-artists-list {
+      grid-template-columns: repeat(4, 1fr); } }
+
+.section {
+  margin-bottom: 3.2rem; }
+  @media only screen and (min-width: 34.375em) {
+    .section {
+      margin-bottom: 6.4rem; } }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

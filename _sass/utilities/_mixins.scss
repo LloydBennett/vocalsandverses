@@ -1,3 +1,20 @@
+@mixin offsetContentBlock() {
+  @media #{$large-breakpoint} {
+    margin-left: 10%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// to be scrapped
+
 @mixin play-btnWithCircle($widtheight){
     width: $widtheight;
     border-radius: 100%;

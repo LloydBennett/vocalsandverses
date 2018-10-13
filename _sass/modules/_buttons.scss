@@ -11,7 +11,7 @@
   font-weight: $font-weight-semi-bold;
   padding: 0 $spacing-s $spacing-s;
 
-  @media screen and (max-width: $medium-device - 1) {
+  @media screen and (max-width: 767px) {
     margin-left: auto;
     margin-right: auto;
   }
@@ -33,6 +33,14 @@
 	&:focus {
     outline: none;
 	}
+
+  &.button-small {
+    font-size: 0.625em;
+
+    @media #{$medium-breakpoint} {
+      font-size: 0.8em;
+    }
+  }
 
   & + &,
   & + .play-btn {
