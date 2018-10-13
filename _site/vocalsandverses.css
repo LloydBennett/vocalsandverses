@@ -599,7 +599,8 @@ blockquote .quotee {
   font-weight: 400; }
 
 .call-out {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  display: table; }
   @media only screen and (min-width: 34.375em) {
     .call-out {
       font-size: 1.3125em;
@@ -956,5 +957,13 @@ footer {
   @media only screen and (min-width: 34.375em) {
     .section {
       margin-bottom: 6.4rem; } }
+
+.tweet {
+  text-align: center; }
+  .tweet .icon {
+    display: inline-block;
+    margin-bottom: 1.6rem; }
+  .tweet:hover .call-out {
+    text-decoration: underline dotted; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

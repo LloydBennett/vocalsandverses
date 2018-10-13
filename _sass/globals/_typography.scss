@@ -148,6 +148,7 @@ blockquote {
 
 .call-out {
   font-size: pxtoem(18px);
+  display: table;
 
   @media #{$small-breakpoint} {
     font-size: pxtoem(21px);

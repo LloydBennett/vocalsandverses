@@ -1,0 +1,14 @@
+.tweet {
+  text-align: center;
+
+  .icon {
+    display: inline-block;
+    margin-bottom: $spacing-base;
+  }
+
+  &:hover {
+    .call-out {
+      text-decoration: underline dotted;
+    }
+  }
+}

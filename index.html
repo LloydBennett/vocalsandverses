@@ -1,10 +1,17 @@
 ---
 layout: home
+tweet1:
+  tweet: "I met so many of the poets/artist that I now lean on at @VocalsAndVerses &
+every show I’ve been too has been better than the last. Check them"
+  link: https://twitter.com/SophiaThakur/status/976059493829304320
 ---
 <div class="container">
   <p class="call-out call-out-center">Vocals & Verses is an event dedicated to showcasing the finest
     spoken word and live music in the UK.</p>
 </div>
+
+{% include tweet.html tweet= page.tweet1.tweet link= page.tweet1.link %}
+
 
 {% include home/featured-artists.html %}
 <!--
