@@ -4,6 +4,10 @@
   margin-top: 100vh;
   background-color: $color-eclipse;
 
+  @media screen and (min-height: 901px) {
+    margin-top: 900px;
+  }
+
   &::before {
     content: "";
     position: absolute;

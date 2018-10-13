@@ -477,10 +477,11 @@ li {
   color: white; }
 
 .container {
-  margin-right: auto;
   margin-left: auto;
-  width: 95%;
-  max-width: 1400px; }
+  margin-right: auto;
+  max-width: 1400px;
+  position: relative;
+  width: 95%; }
 
 /* Typography */
 html {
@@ -789,6 +790,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100vh;
+  max-height: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -797,22 +799,52 @@ footer {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+@media only screen and (min-width: 48em) {
+  .home-hero .hero-content-inner {
+    margin-top: 80px; } }
+
 .hero-content {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  display: flex; }
+  .hero-content .container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 .hero-content-title + .ctas {
   margin-top: 3.2rem; }
 
-@media only screen and (min-width: 48em) {
-  .hero-content-inner {
-    display: inline-block;
-    margin-left: 10%; } }
+.hero-content-inner {
+  z-index: 2; }
+  @media only screen and (min-width: 48em) {
+    .hero-content-inner {
+      display: inline-block; } }
+  @media only screen and (min-width: 75em) {
+    .hero-content-inner {
+      margin-left: 10%; } }
+
+.home-hero-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  max-height: 700px;
+  display: none; }
+  @media only screen and (min-width: 48em) {
+    .home-hero-image {
+      display: block; } }
+  @media only screen and (min-width: 90em) {
+    .home-hero-image {
+      right: 5%; } }
+  .home-hero-image img {
+    height: 100%;
+    display: block; }
 
 .with-gradient {
   background: linear-gradient(243deg, #000000 7%, #01033C 78%); }
@@ -828,6 +860,9 @@ footer {
   z-index: 2;
   margin-top: 100vh;
   background-color: #222222; }
+  @media screen and (min-height: 901px) {
+    .content {
+      margin-top: 900px; } }
   .content::before {
     content: "";
     position: absolute;
