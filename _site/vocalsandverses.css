@@ -871,18 +871,18 @@ footer {
 .content {
   position: relative;
   z-index: 2;
-  margin-top: 100vh;
+  margin-top: calc(100vh + 50px);
   background-color: #222222; }
   @media screen and (min-height: 901px) {
     .content {
-      margin-top: 900px; } }
+      margin-top: 950px; } }
   .content::before {
     content: "";
     position: absolute;
-    padding-bottom: 7%;
     width: 100%;
-    top: -10%;
+    top: -25%;
     left: 0;
-    background: url("../images/paintbrush-top.svg") no-repeat center top/cover; }
+    background: url("../images/paintbrush-top.svg") repeat-x center top/cover;
+    height: 200px; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */
