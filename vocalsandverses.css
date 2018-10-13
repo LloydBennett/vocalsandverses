@@ -962,8 +962,20 @@ footer {
   text-align: center; }
   .tweet .icon {
     display: inline-block;
-    margin-bottom: 1.6rem; }
+    margin-bottom: 0.8rem;
+    width: 25px; }
+    @media only screen and (min-width: 48em) {
+      .tweet .icon {
+        margin-bottom: 1.6rem;
+        width: 35px; } }
+    @media only screen and (min-width: 60em) {
+      .tweet .icon {
+        width: auto; } }
+    .tweet .icon svg {
+      width: 100%; }
   .tweet:hover .call-out {
     text-decoration: underline dotted; }
+  .tweet .emoji {
+    font-style: normal; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

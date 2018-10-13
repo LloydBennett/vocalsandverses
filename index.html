@@ -4,6 +4,9 @@ tweet1:
   tweet: "I met so many of the poets/artist that I now lean on at @VocalsAndVerses &
 every show I’ve been too has been better than the last. Check them"
   link: https://twitter.com/SophiaThakur/status/976059493829304320
+tweet2:
+  tweet: A lot of Brit up and coming artists that have graced the @VocalsAndVerses stage are blowing up and winning Grammys <span class="emoji">🙌🏾</span> 
+  link: https://twitter.com/TobiRachel_/status/864582081556480001
 ---
 <div class="container">
   <p class="call-out call-out-center">Vocals & Verses is an event dedicated to showcasing the finest
@@ -14,6 +17,9 @@ every show I’ve been too has been better than the last. Check them"
 
 
 {% include home/featured-artists.html %}
+
+{% include tweet.html tweet= page.tweet2.tweet link= page.tweet2.link %}
+
 <!--
 <section class="section why-go">
   <div class="container">

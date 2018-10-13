@@ -3,12 +3,30 @@
 
   .icon {
     display: inline-block;
-    margin-bottom: $spacing-base;
+    margin-bottom: $spacing-s;
+    width: 25px;
+
+    @media #{$medium-breakpoint} {
+      margin-bottom: $spacing-base;
+      width: 35px;
+    }
+
+    @media #{$small-large-breakpoint} {
+      width: auto;
+    }
+
+    svg {
+      width: 100%;
+    }
   }
 
   &:hover {
     .call-out {
       text-decoration: underline dotted;
     }
+  }
+
+  .emoji {
+    font-style: normal;
   }
 }
