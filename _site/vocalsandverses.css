@@ -591,6 +591,11 @@ blockquote .quotee {
   display: block;
   white-space: nowrap; }
 
+@media only screen and (min-width: 48em) {
+  .no-wrap-break-medium {
+    display: block;
+    white-space: nowrap; } }
+
 .italicized-heading {
   font-family: "Droid Serif", serif;
   font-style: italic;
@@ -969,6 +974,44 @@ footer {
   @media only screen and (min-width: 75em) {
     .section {
       margin-bottom: 8rem; } }
+
+@media only screen and (min-width: 60em) {
+  .section-fifty-fifty .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3.2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; } }
+
+.section-fifty-fifty .section-image {
+  margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 34.375em) {
+    .section-fifty-fifty .section-image {
+      margin-bottom: 3.2rem; } }
+  @media only screen and (min-width: 60em) {
+    .section-fifty-fifty .section-image {
+      margin-bottom: 0; } }
+
+.section-copy p {
+  max-width: 700px; }
+
+@media only screen and (min-width: 34.375em) {
+  .section-centered {
+    text-align: center; } }
+
+.section-centered .section-image {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.section-centered .section-copy {
+  margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 34.375em) {
+    .section-centered .section-copy {
+      margin-bottom: 3.2rem; } }
+  .section-centered .section-copy p {
+    margin: 0 auto; }
 
 .tweet {
   text-align: center; }
