@@ -4,4 +4,8 @@
   @media #{$small-breakpoint} {
     margin-bottom: $spacing-l;
   }
+
+  @media #{$large-breakpoint} {
+    margin-bottom: $spacing-l + $spacing-base;
+  }
 }

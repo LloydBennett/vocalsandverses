@@ -20,8 +20,8 @@
     }
   }
 
-  &:hover {
-    .call-out {
+  .call-out {
+    &:hover {
       text-decoration: underline dotted;
     }
   }

@@ -1,6 +1,6 @@
 footer {
   @include paintBrush(before, '../images/footer-section-brush.png', 35%);
-	//background-color: $swatch-brand-black;
+	background-color: $color-darkness;
 	color: white;
 	padding: $spacing-m 0;
 	text-align: center;
@@ -20,6 +20,11 @@ footer {
 
 .footer-icons {
 	margin-bottom: $spacing-m;
+
+  @media #{$medium-breakpoint} {
+    margin-bottom: $spacing-m + $spacing-base;
+  }
+
 
 	a {
 		display: inline-block;
@@ -44,27 +49,34 @@ footer {
 	}
 }
 
+.footer-spacer {
+  height: $spacing-l;
+
+  @media #{$large-breakpoint} {
+    height: $spacing-l + $spacing-base;
+  }
+}
+
 .copywright {
-	display: block;
   font-size: 14px;
+  font-family: $font-display-family;
+  font-weight: $font-weight-light;
 
   span {
+    display: block;
+
     @media #{$small-breakpoint} {
-      display: block;
+      display: inline-block;
     }
   }
 }
 
 .footer-logo {
-  max-width: 150px;
+  max-width: 100px;
   margin-left: auto;
   margin-right: auto;
 
   @media #{$medium-breakpoint} {
-    max-width: 200px;
-  }
-
-  svg {
-    fill: white;
+    max-width: 150px;
   }
 }

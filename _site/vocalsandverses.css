@@ -656,6 +656,7 @@ blockquote .quotee {
 
 footer {
   position: relative;
+  background-color: #1B1B1B;
   color: white;
   padding: 3.2rem 0;
   text-align: center; }
@@ -677,6 +678,9 @@ footer {
 
 .footer-icons {
   margin-bottom: 3.2rem; }
+  @media only screen and (min-width: 48em) {
+    .footer-icons {
+      margin-bottom: 4.8rem; } }
   .footer-icons a {
     display: inline-block;
     margin-right: 3.2rem;
@@ -693,22 +697,29 @@ footer {
     .footer-icons a:last-child {
       margin-right: 0; }
 
+.footer-spacer {
+  height: 6.4rem; }
+  @media only screen and (min-width: 75em) {
+    .footer-spacer {
+      height: 8rem; } }
+
 .copywright {
-  display: block;
-  font-size: 14px; }
-  @media only screen and (min-width: 34.375em) {
-    .copywright span {
-      display: block; } }
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300; }
+  .copywright span {
+    display: block; }
+    @media only screen and (min-width: 34.375em) {
+      .copywright span {
+        display: inline-block; } }
 
 .footer-logo {
-  max-width: 150px;
+  max-width: 100px;
   margin-left: auto;
   margin-right: auto; }
   @media only screen and (min-width: 48em) {
     .footer-logo {
-      max-width: 200px; } }
-  .footer-logo svg {
-    fill: white; }
+      max-width: 150px; } }
 
 .button {
   position: relative;
@@ -955,6 +966,9 @@ footer {
   @media only screen and (min-width: 34.375em) {
     .section {
       margin-bottom: 6.4rem; } }
+  @media only screen and (min-width: 75em) {
+    .section {
+      margin-bottom: 8rem; } }
 
 .tweet {
   text-align: center; }
@@ -971,7 +985,7 @@ footer {
         width: auto; } }
     .tweet .icon svg {
       width: 100%; }
-  .tweet:hover .call-out {
+  .tweet .call-out:hover {
     text-decoration: underline dotted; }
   .tweet .emoji {
     font-style: normal; }
