@@ -1,122 +1,81 @@
 .why-go {
-  & + .gallery-grid {
-    margin-top: $spacing-l + $spacing-base;
-
-    // @media screen and (min-width: 500px) {
-    //   margin-top: $spacing-l + $spacing-base;
-    // }
-
-    @media #{$small-large-breakpoint} {
-      margin-top: $spacing-xl;
-    }
-
-    @media #{$x-large-breakpoint} {
-      margin-top: 0;
-    }
-  }
-
-  .thumbnail {
-    max-width: 800px;
-  }
-
-  .centered-image-block {
-    @media #{$small-large-breakpoint} {
-      margin-bottom: $spacing-l + $spacing-m;
-      position: relative;
-    }
-
-    @media #{$x-large-breakpoint} {
-      margin-bottom: $spacing-l;
-    }
-  }
-
-  .image-block {
-    @media #{$small-large-breakpoint} {
-      width: 80%;
-      position: absolute;
-      text-align: right;
-    }
-
-    @media #{$x-large-breakpoint} {
-      width: 52.5%;
-      position: static;
-      left: 0;
-    }
-  }
-
-  .paragraph-block {
-    @media #{$small-large-breakpoint} {
-      width: 55%;
-    }
-
-    @media #{$x-large-breakpoint} {
-      width: 45%;
-    }
+  .section-image {
+    position: relative;
   }
 }
 
-.why-go-style-left {
-  @media #{$small-large-breakpoint} {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-top: $spacing-m;
-  }
+.why-go-style-1 {
+  margin-top: $spacing-xl + $spacing-m;
+  margin-bottom: $spacing-xl + $spacing-m;
 
-  @media #{$x-large-breakpoint} {
-    justify-content: flex-end;
-    margin-top: 0;
-  }
+  .section-image {
+    display: inline-block;
 
-  .image-block {
     @media #{$small-large-breakpoint} {
-      left: -40%;
-    }
-
-    @media #{$x-large-breakpoint} {
-      margin-right: 2.5%;
-      text-align: left;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row-reverse;
     }
   }
-}
 
-.why-go-style-right {
-  .image-block {
+  .dots {
+    position: absolute;
+    left: 0;
+
     @media #{$small-large-breakpoint} {
-      right: -40%;
+      top: -12%;
+    }
+
+    @media screen and (min-width: 1040px) {
+      left: 5%;
     }
 
     @media #{$large-breakpoint} {
-      right: -25%;
+      top: auto;
     }
 
     @media #{$x-large-breakpoint} {
-      margin-left: 2.5%;
+      left: 10%;
     }
   }
-}
 
-.why-go-tall-image {
-  @media #{$small-large-breakpoint} {
-    margin-top: $spacing-xl + $spacing-m;
+  .thumbnail-1 {
+    position: absolute;
+    top: -25%;
+    left: 0;
+    width: 30%;
+    z-index: 2;
+
+    @media screen and (min-width: 1040px) {
+      left: 12%;
+    }
+
+    @media #{$x-large-breakpoint} {
+      left: 20%;
+    }
   }
 
-  @media #{$x-large-breakpoint} {
-    margin-top: 0;
+  .thumbnail-2 {
+    max-width: 350px;
+    position: relative;
+
+    @media #{$large-breakpoint} {
+      left: -10%;
+    }
   }
 
-  .image-block {
+  .thumbnail-3 {
+    position: absolute;
+    left: 0;
+    bottom: -30%;
+    width: 60%;
+
     @media #{$small-large-breakpoint} {
-      left: -35%;
+      width: 50%;
     }
-  }
 
-  .thumbnail {
-    max-width: 700px;
-  }
-}
-
-.why-go-align-right {
-  @media #{$medium-breakpoint} {
-    text-align: right;
+    @media #{$large-breakpoint} {
+      bottom: -40%;
+    }
   }
 }

@@ -1042,4 +1042,69 @@ footer {
     .usp .underline {
       max-width: none; } }
 
+.why-go .section-image {
+  position: relative; }
+
+.why-go-style-1 {
+  margin-top: 16rem;
+  margin-bottom: 16rem; }
+  .why-go-style-1 .section-image {
+    display: inline-block; }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .section-image {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse; } }
+  .why-go-style-1 .dots {
+    position: absolute;
+    left: 0; }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .dots {
+        top: -12%; } }
+    @media screen and (min-width: 1040px) {
+      .why-go-style-1 .dots {
+        left: 5%; } }
+    @media only screen and (min-width: 75em) {
+      .why-go-style-1 .dots {
+        top: auto; } }
+    @media only screen and (min-width: 90em) {
+      .why-go-style-1 .dots {
+        left: 10%; } }
+  .why-go-style-1 .thumbnail-1 {
+    position: absolute;
+    top: -25%;
+    left: 0;
+    width: 30%;
+    z-index: 2; }
+    @media screen and (min-width: 1040px) {
+      .why-go-style-1 .thumbnail-1 {
+        left: 12%; } }
+    @media only screen and (min-width: 90em) {
+      .why-go-style-1 .thumbnail-1 {
+        left: 20%; } }
+  .why-go-style-1 .thumbnail-2 {
+    max-width: 350px;
+    position: relative; }
+    @media only screen and (min-width: 75em) {
+      .why-go-style-1 .thumbnail-2 {
+        left: -10%; } }
+  .why-go-style-1 .thumbnail-3 {
+    position: absolute;
+    left: 0;
+    bottom: -30%;
+    width: 60%; }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .thumbnail-3 {
+        width: 50%; } }
+    @media only screen and (min-width: 75em) {
+      .why-go-style-1 .thumbnail-3 {
+        bottom: -40%; } }
+
 /*# sourceMappingURL=vocalsandverses.css.map */
