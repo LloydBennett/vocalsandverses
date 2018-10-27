@@ -1045,29 +1045,49 @@ footer {
 .why-go .section-image {
   position: relative; }
 
+.dots {
+  opacity: 0.5; }
+
 .why-go-style-1 {
-  margin-top: 16rem;
-  margin-bottom: 16rem; }
+  margin-top: 12.8rem; }
+  @media only screen and (min-width: 60em) {
+    .why-go-style-1 {
+      margin-top: 16rem;
+      margin-bottom: 16rem; } }
   .why-go-style-1 .section-image {
-    display: inline-block; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    max-width: 700px;
+    margin-bottom: 6.4rem; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-1 .section-image {
+        margin-bottom: 8rem; } }
     @media only screen and (min-width: 60em) {
       .why-go-style-1 .section-image {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: flex-end;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: reverse;
-            -ms-flex-direction: row-reverse;
-                flex-direction: row-reverse; } }
+        max-width: none;
+        margin-bottom: 0; } }
   .why-go-style-1 .dots {
     position: absolute;
-    left: 0; }
+    left: 5%;
+    top: 0;
+    height: 100%;
+    overflow: hidden; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-1 .dots {
+        height: auto;
+        overflow: auto; } }
     @media only screen and (min-width: 60em) {
       .why-go-style-1 .dots {
-        top: -12%; } }
+        top: -12%;
+        left: 0; } }
     @media screen and (min-width: 1040px) {
       .why-go-style-1 .dots {
         left: 5%; } }
@@ -1080,9 +1100,12 @@ footer {
   .why-go-style-1 .thumbnail-1 {
     position: absolute;
     top: -25%;
-    left: 0;
+    left: 12%;
     width: 30%;
     z-index: 2; }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .thumbnail-1 {
+        left: 0; } }
     @media screen and (min-width: 1040px) {
       .why-go-style-1 .thumbnail-1 {
         left: 12%; } }
@@ -1091,18 +1114,28 @@ footer {
         left: 20%; } }
   .why-go-style-1 .thumbnail-2 {
     max-width: 350px;
-    position: relative; }
+    position: relative;
+    width: 70%; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-1 .thumbnail-2 {
+        max-width: 450px;
+        width: auto; } }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .thumbnail-2 {
+        max-width: 350px; } }
     @media only screen and (min-width: 75em) {
       .why-go-style-1 .thumbnail-2 {
         left: -10%; } }
   .why-go-style-1 .thumbnail-3 {
     position: absolute;
-    left: 0;
-    bottom: -30%;
-    width: 60%; }
+    left: 2%;
+    bottom: -20%;
+    width: 40%; }
     @media only screen and (min-width: 60em) {
       .why-go-style-1 .thumbnail-3 {
-        width: 50%; } }
+        width: 50%;
+        bottom: -30%;
+        left: 0; } }
     @media only screen and (min-width: 75em) {
       .why-go-style-1 .thumbnail-3 {
         bottom: -40%; } }
