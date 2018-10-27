@@ -1140,4 +1140,91 @@ footer {
       .why-go-style-1 .thumbnail-3 {
         bottom: -40%; } }
 
+@media only screen and (min-width: 48em) {
+  .why-go-style-2 {
+    margin-bottom: 9.6rem; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go-style-2 {
+    margin-bottom: 12.8rem; } }
+
+.why-go-style-2 h2 {
+  margin-bottom: 8rem; }
+  @media screen and (min-width: 440px) {
+    .why-go-style-2 h2 {
+      margin-bottom: 9.6rem; } }
+  @media only screen and (min-width: 34.375em) {
+    .why-go-style-2 h2 {
+      margin-bottom: 12.8rem; } }
+  @media only screen and (min-width: 60em) {
+    .why-go-style-2 h2 {
+      margin-bottom: 14.4rem; } }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 h2 {
+      margin-bottom: 6.4rem; } }
+
+.why-go-style-2 .thumbnail:first-child, .why-go-style-2 .thumbnail:last-child {
+  position: absolute; }
+
+.why-go-style-2 .thumbnail:first-child {
+  right: 0;
+  top: -50%;
+  width: 40%;
+  max-width: 350px; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail:first-child {
+      top: -55%;
+      width: auto;
+      max-width: auto; } }
+
+.why-go-style-2 .thumbnail:last-child {
+  left: 0;
+  bottom: -70%;
+  width: 40%;
+  max-width: 330px; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail:last-child {
+      bottom: -60%;
+      width: auto; } }
+
+.why-go-style-2 .thumbnail:nth-child(2) {
+  width: 80%;
+  max-width: 690px; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail:nth-child(2) {
+      width: auto; } }
+
+.why-go-style-2 .section-image {
+  text-align: center; }
+
+.why-go-style-2 .section-copy {
+  margin-top: 11.2rem; }
+  @media screen and (min-width: 440px) {
+    .why-go-style-2 .section-copy {
+      margin-top: 12.8rem; } }
+  @media only screen and (min-width: 34.375em) {
+    .why-go-style-2 .section-copy {
+      margin-top: 16rem; } }
+  @media screen and (min-width: 700px) {
+    .why-go-style-2 .section-copy {
+      margin-top: 19.2rem; } }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .section-copy {
+      margin-top: 3.2rem; } }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .section-copy {
+      margin-top: 4.8rem; } }
+  .why-go-style-2 .section-copy p {
+    max-width: 650px; }
+    @media only screen and (min-width: 48em) {
+      .why-go-style-2 .section-copy p {
+        margin-left: auto;
+        width: 55%; } }
+    @media screen and (min-width: 1080px) {
+      .why-go-style-2 .section-copy p {
+        width: auto; } }
+
+.why-go-max-width .container {
+  max-width: 1075px; }
+
 /*# sourceMappingURL=vocalsandverses.css.map */

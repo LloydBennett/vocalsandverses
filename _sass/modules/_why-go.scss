@@ -119,3 +119,123 @@
     }
   }
 }
+
+
+.why-go-style-2 {
+
+  @media #{$medium-breakpoint} {
+    margin-bottom: $spacing-l + $spacing-m;
+  }
+
+  @media #{$small-large-breakpoint} {
+    margin-bottom: $spacing-xl;
+  }
+
+  h2 {
+    margin-bottom: $spacing-l + $spacing-base;
+
+    @media screen and (min-width: 440px) {
+      margin-bottom: $spacing-l + $spacing-m;
+    }
+
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-xl;
+    }
+
+    @media #{$small-large-breakpoint} {
+      margin-bottom: $spacing-xl + $spacing-base;
+    }
+
+    @media screen and (min-width: 1080px) {
+      margin-bottom: $spacing-l;
+    }
+  }
+
+  .thumbnail {
+    &:first-child,
+    &:last-child {
+      position: absolute;
+    }
+
+    &:first-child {
+      right: 0;
+      top: -50%;
+      width: 40%;
+      max-width: 350px;
+
+      @media screen and (min-width: 1080px) {
+        top: -55%;
+        width: auto;
+        max-width: auto;
+      }
+    }
+
+    &:last-child {
+      left: 0;
+      bottom: -70%;
+      width: 40%;
+      max-width: 330px;
+
+      @media screen and (min-width: 1080px) {
+        bottom: -60%;
+        width: auto;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 80%;
+      max-width: 690px;
+
+      @media screen and (min-width: 1080px) {
+        width: auto;
+      }
+    }
+  }
+
+  .section-image {
+    text-align: center;
+  }
+
+  .section-copy {
+    margin-top: $spacing-l + $spacing-m + $spacing-base;
+
+    @media screen and (min-width: 440px) {
+      margin-top: $spacing-xl;
+    }
+
+    @media #{$small-breakpoint} {
+      margin-top: $spacing-xl + $spacing-m;
+    }
+
+    @media screen and (min-width: 700px) {
+      margin-top: $spacing-xl + $spacing-l;
+    }
+
+    @media #{$medium-breakpoint} {
+      margin-top: $spacing-m;
+    }
+
+    @media screen and (min-width: 1080px) {
+      margin-top: $spacing-m + $spacing-base;
+    }
+
+    p {
+      max-width: 650px;
+
+      @media #{$medium-breakpoint} {
+        margin-left: auto;
+        width: 55%;
+      }
+
+      @media screen and (min-width: 1080px) {
+        width: auto;
+      }
+    }
+  }
+}
+
+.why-go-max-width {
+  .container {
+    max-width: 1075px;
+  }
+}
