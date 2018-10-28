@@ -1163,35 +1163,65 @@ footer {
     .why-go-style-2 h2 {
       margin-bottom: 6.4rem; } }
 
-.why-go-style-2 .thumbnail:first-child, .why-go-style-2 .thumbnail:last-child {
-  position: absolute; }
+.why-go-style-2 .dots {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  overflow: hidden; }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .dots {
+      width: auto;
+      overflow: auto; } }
 
-.why-go-style-2 .thumbnail:first-child {
+.why-go-style-2 .dots-1 {
+  right: 25%;
+  top: -30%;
+  max-height: 200px; }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .dots-1 {
+      right: 5%;
+      max-height: none; } }
+
+.why-go-style-2 .dots-2 {
+  bottom: -30%;
+  left: 30%;
+  max-height: 220px; }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .dots-2 {
+      max-height: none;
+      left: 5%; } }
+
+.why-go-style-2 .thumbnail-1 {
+  position: absolute;
   right: 0;
   top: -50%;
   width: 40%;
-  max-width: 350px; }
+  max-width: 350px;
+  z-index: 3; }
   @media screen and (min-width: 1080px) {
-    .why-go-style-2 .thumbnail:first-child {
+    .why-go-style-2 .thumbnail-1 {
       top: -55%;
-      width: auto;
-      max-width: auto; } }
+      width: auto; } }
 
-.why-go-style-2 .thumbnail:last-child {
+.why-go-style-2 .thumbnail-2 {
+  width: 80%;
+  max-width: 690px;
+  position: relative;
+  z-index: 2; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail-2 {
+      width: auto; } }
+
+.why-go-style-2 .thumbnail-3 {
+  position: absolute;
   left: 0;
   bottom: -70%;
   width: 40%;
-  max-width: 330px; }
+  max-width: 330px;
+  z-index: 2; }
   @media screen and (min-width: 1080px) {
-    .why-go-style-2 .thumbnail:last-child {
+    .why-go-style-2 .thumbnail-3 {
       bottom: -60%;
-      width: auto; } }
-
-.why-go-style-2 .thumbnail:nth-child(2) {
-  width: 80%;
-  max-width: 690px; }
-  @media screen and (min-width: 1080px) {
-    .why-go-style-2 .thumbnail:nth-child(2) {
       width: auto; } }
 
 .why-go-style-2 .section-image {

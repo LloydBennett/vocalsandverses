@@ -151,44 +151,77 @@
     }
   }
 
-  .thumbnail {
-    &:first-child,
-    &:last-child {
-      position: absolute;
+  .dots {
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    overflow: hidden;
+
+    @media #{$medium-breakpoint} {
+      width: auto;
+      overflow: auto;
     }
+  }
 
-    &:first-child {
-      right: 0;
-      top: -50%;
-      width: 40%;
-      max-width: 350px;
+  .dots-1 {
+    right: 25%;
+    top: -30%;
+    max-height: 200px;
 
-      @media screen and (min-width: 1080px) {
-        top: -55%;
-        width: auto;
-        max-width: auto;
-      }
+    @media #{$medium-breakpoint} {
+      right: 5%;
+      max-height: none;
     }
+  }
 
-    &:last-child {
-      left: 0;
-      bottom: -70%;
-      width: 40%;
-      max-width: 330px;
+  .dots-2 {
+    bottom: -30%;
+    left: 30%;
+    max-height: 220px;
 
-      @media screen and (min-width: 1080px) {
-        bottom: -60%;
-        width: auto;
-      }
+    @media #{$medium-breakpoint} {
+      max-height: none;
+      left: 5%;
     }
+  }
 
-    &:nth-child(2) {
-      width: 80%;
-      max-width: 690px;
 
-      @media screen and (min-width: 1080px) {
-        width: auto;
-      }
+  .thumbnail-1 {
+    position: absolute;
+    right: 0;
+    top: -50%;
+    width: 40%;
+    max-width: 350px;
+    z-index: 3;
+
+    @media screen and (min-width: 1080px) {
+      top: -55%;
+      width: auto;
+    }
+  }
+
+  .thumbnail-2 {
+    width: 80%;
+    max-width: 690px;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+    }
+  }
+
+  .thumbnail-3 {
+    position: absolute;
+    left: 0;
+    bottom: -70%;
+    width: 40%;
+    max-width: 330px;
+    z-index: 2;
+
+    @media screen and (min-width: 1080px) {
+      bottom: -60%;
+      width: auto;
     }
   }
 
