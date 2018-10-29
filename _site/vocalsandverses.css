@@ -1000,11 +1000,6 @@ footer {
   .section-centered {
     text-align: center; } }
 
-.section-centered .section-image {
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto; }
-
 .section-centered .section-copy {
   margin-bottom: 1.6rem; }
   @media only screen and (min-width: 34.375em) {
@@ -1253,6 +1248,21 @@ footer {
     @media screen and (min-width: 1080px) {
       .why-go-style-2 .section-copy p {
         width: auto; } }
+
+.why-go-style-3 .section-copy {
+  margin-bottom: 25.6rem; }
+
+.why-go-style-3 .thumbnail-1 {
+  position: absolute;
+  left: 0;
+  top: -58%; }
+
+.why-go-style-3 .thumbnail-3 {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .why-go-max-width .container {
   max-width: 1075px; }

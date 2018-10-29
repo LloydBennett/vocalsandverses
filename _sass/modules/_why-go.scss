@@ -185,7 +185,6 @@
     }
   }
 
-
   .thumbnail-1 {
     position: absolute;
     right: 0;
@@ -265,6 +264,29 @@
       }
     }
   }
+}
+
+
+.why-go-style-3 {
+
+  .section-copy {
+    margin-bottom: $spacing-xxl; 
+  }
+
+  .thumbnail-1 {
+    position: absolute;
+    left: 0;
+    top: -58%;
+  }
+
+
+  .thumbnail-3 {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
 }
 
 .why-go-max-width {
