@@ -268,25 +268,63 @@
 
 
 .why-go-style-3 {
+  position: relative;
 
   .section-copy {
-    margin-bottom: $spacing-xxl; 
+    margin-bottom: $spacing-xl + $spacing-l;
+
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-xl + $spacing-l + $spacing-base;
+    }
+  }
+
+  .bg-paint {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 30%;
+    display: block !important;
   }
 
   .thumbnail-1 {
     position: absolute;
     left: 0;
     top: -58%;
+    width: 45%;
+    max-width: 340px;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+    }
   }
 
+  .thumbnail-2 {
+    width: 80%;
+    max-width: 600px;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+    }
+  }
 
   .thumbnail-3 {
+    max-width: 210px;
     position: absolute;
-    right: 5%;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
+    width: 25%;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+      max-width: none;
+      right: 5%;
+    }
   }
 
+  .section-image {
+    text-align: center;
+  }
 }
 
 .why-go-max-width {
