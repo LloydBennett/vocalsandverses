@@ -45,7 +45,7 @@
   & + &,
   & + .play-btn {
 
-    @media screen and (max-width: $medium-device - 1) {
+    @media screen and (max-width: 767px) {
       display: table;
       margin: $spacing-base auto 0;
     }

@@ -760,7 +760,7 @@ footer {
     @media only screen and (min-width: 48em) {
       .button.button-small {
         font-size: 0.8em; } }
-  @media screen and (max-width: 47em) {
+  @media screen and (max-width: 767px) {
     .button + .button,
     .button + .play-btn {
       display: table;
@@ -895,6 +895,17 @@ footer {
   @media screen and (min-height: 901px) {
     .content {
       margin-top: 950px; } }
+  .content::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -150px;
+    left: 0;
+    background: url("../images/paintbrush-top.svg") repeat-x center top/cover;
+    height: 200px; }
+    @media only screen and (min-width: 75em) {
+      .content::before {
+        top: -200px; } }
 
 .artist-card {
   position: relative;
