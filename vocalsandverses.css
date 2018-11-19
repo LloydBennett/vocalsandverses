@@ -1313,4 +1313,9 @@ footer {
 .why-go-max-width .container {
   max-width: 1075px; }
 
+.get-tickets {
+  text-align: center; }
+  .get-tickets h2 {
+    margin-bottom: 3.2rem; }
+
 /*# sourceMappingURL=vocalsandverses.css.map */

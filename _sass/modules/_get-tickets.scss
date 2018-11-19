@@ -1,62 +1,7 @@
 .get-tickets {
-  position: relative;
+  text-align: center;
 
-  @media #{$small-large-breakpoint} {
-    margin-top: $spacing-xl;
-    margin-bottom: $spacing-xxl;
-  }
-
-  @media #{$large-breakpoint} {
-    margin-top: $spacing-xl + $spacing-l;
-    margin-bottom: $spacing-xxl + $spacing-m;
-  }
-
-  @media screen and (min-width: 1600px) {
-    margin-top: 0;
-    margin-bottom: $spacing-l;
-  }
-
-  .image-block {
-    position: relative;
-    right: -10%;
-    margin-top: $spacing-base;
-    width: 150vw;
-    max-width: 800px;
-
-    @media #{$medium-breakpoint} {
-      right: -30%;
-    }
-
-    @media #{$small-large-breakpoint} {
-      position: absolute;
-    }
-
-    @media #{$large-breakpoint} {
-      max-width: 1000px;
-    }
-
-    @media #{$x-large-breakpoint} {
-      right: -20%;
-    }
-
-    @media screen and (min-width: 1600px) {
-      position: relative;
-      flex: 2;
-      right: -10%;
-      margin-top: 0;
-      display: table;
-    }
-  }
-
-  .paragraph-block {
-    max-width: 500px;
-
-    @media #{$small-large-breakpoint} {
-      max-width: 400px;
-    }
-
-    @media screen and (min-width: 1100px) {
-      max-width: 500px;
-    }
+  h2 {
+    margin-bottom: $spacing-m;
   }
 }
