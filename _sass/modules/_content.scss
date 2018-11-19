@@ -17,8 +17,8 @@
     background: url('../images/paintbrush-top.svg') repeat-x center top/cover;
     height: 200px;
 
-    @media #{$large-breakpoint} {
-      top: -200px;
+    @media #{$huge-breakpoint} {
+      top: -180px;
     }
   }
 }

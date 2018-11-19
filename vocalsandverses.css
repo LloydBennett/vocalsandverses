@@ -903,9 +903,9 @@ footer {
     left: 0;
     background: url("../images/paintbrush-top.svg") repeat-x center top/cover;
     height: 200px; }
-    @media only screen and (min-width: 75em) {
+    @media only screen and (min-width: 125em) {
       .content::before {
-        top: -200px; } }
+        top: -180px; } }
 
 .artist-card {
   position: relative;
@@ -1038,6 +1038,10 @@ footer {
     text-decoration: underline dotted; }
   .tweet .emoji {
     font-style: normal; }
+
+@media only screen and (min-width: 75em) {
+  .usp {
+    padding-top: 3.2rem; } }
 
 .usp .underline {
   margin-left: auto;
@@ -1272,7 +1276,9 @@ footer {
     width: 100%;
     left: 0;
     top: 30%;
-    display: block !important; }
+    display: block !important;
+    height: 100%;
+    background: url("../images/why-go-3/background.svg") no-repeat center/cover; }
   .why-go-style-3 .thumbnail-1 {
     position: absolute;
     left: 0;

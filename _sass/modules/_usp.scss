@@ -1,4 +1,8 @@
 .usp {
+  @media #{$large-breakpoint} {
+    padding-top: $spacing-m;
+  }
+
   .underline {
     margin-left: auto;
     margin-right: auto;
