@@ -1,7 +1,16 @@
 .get-tickets {
   text-align: center;
+  margin-bottom: $spacing-m;
+
+  @media #{$large-breakpoint} {
+    margin-bottom: 0;
+  }
 
   h2 {
-    margin-bottom: $spacing-m;
+    margin-bottom: $spacing-base;
+
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-m;
+    }
   }
 }
