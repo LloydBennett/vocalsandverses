@@ -1,4 +1,6 @@
 .gallery-grid {
+  position: relative;
+
   .container {
     columns: 3;
     column-gap: $spacing-s;
@@ -52,6 +54,20 @@
           margin-top: 70%;
         }
       }
+    }
+  }
+
+  .bg-paint {
+    background-color: $color-bg-paint;
+
+    &::before {
+      content: "";
+      background: url('../images/gallery/gallery-top-brush.svg') no-repeat top/cover;
+      height: 200px;
+      top: -200px;
+      position: absolute;
+      left: 0;
+      width: 100%;
     }
   }
 }
