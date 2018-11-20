@@ -591,6 +591,11 @@ blockquote .quotee {
   display: block;
   white-space: nowrap; }
 
+@media only screen and (min-width: 48em) {
+  .no-wrap-break-medium {
+    display: block;
+    white-space: nowrap; } }
+
 .italicized-heading {
   font-family: "Droid Serif", serif;
   font-style: italic;
@@ -755,7 +760,7 @@ footer {
     @media only screen and (min-width: 48em) {
       .button.button-small {
         font-size: 0.8em; } }
-  @media screen and (max-width: 47em) {
+  @media screen and (max-width: 767px) {
     .button + .button,
     .button + .play-btn {
       display: table;
@@ -890,6 +895,17 @@ footer {
   @media screen and (min-height: 901px) {
     .content {
       margin-top: 950px; } }
+  .content::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -150px;
+    left: 0;
+    background: url("../images/paintbrush-top.svg") repeat-x center top/cover;
+    height: 200px; }
+    @media only screen and (min-width: 125em) {
+      .content::before {
+        top: -180px; } }
 
 .artist-card {
   position: relative;
@@ -970,6 +986,39 @@ footer {
     .section {
       margin-bottom: 8rem; } }
 
+@media only screen and (min-width: 60em) {
+  .section-fifty-fifty .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3.2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; } }
+
+.section-fifty-fifty .section-image {
+  margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 34.375em) {
+    .section-fifty-fifty .section-image {
+      margin-bottom: 3.2rem; } }
+  @media only screen and (min-width: 60em) {
+    .section-fifty-fifty .section-image {
+      margin-bottom: 0; } }
+
+.section-copy p {
+  max-width: 700px; }
+
+@media only screen and (min-width: 34.375em) {
+  .section-centered {
+    text-align: center; } }
+
+.section-centered .section-copy {
+  margin-bottom: 1.6rem; }
+  @media only screen and (min-width: 34.375em) {
+    .section-centered .section-copy {
+      margin-bottom: 3.2rem; } }
+  .section-centered .section-copy p {
+    margin: 0 auto; }
+
 .tweet {
   text-align: center; }
   .tweet .icon {
@@ -990,6 +1039,10 @@ footer {
   .tweet .emoji {
     font-style: normal; }
 
+@media only screen and (min-width: 75em) {
+  .usp {
+    padding-top: 3.2rem; } }
+
 .usp .underline {
   margin-left: auto;
   margin-right: auto;
@@ -998,5 +1051,342 @@ footer {
   @media only screen and (min-width: 75em) {
     .usp .underline {
       max-width: none; } }
+
+.why-go .section-image {
+  position: relative; }
+
+.dots {
+  opacity: 0.5; }
+
+.why-go-style-1 {
+  margin-top: 12.8rem; }
+  @media only screen and (min-width: 60em) {
+    .why-go-style-1 {
+      margin-top: 16rem;
+      margin-bottom: 16rem; } }
+  .why-go-style-1 .section-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    max-width: 700px;
+    margin-bottom: 6.4rem; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-1 .section-image {
+        margin-bottom: 8rem; } }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .section-image {
+        max-width: none;
+        margin-bottom: 0; } }
+  .why-go-style-1 .dots {
+    position: absolute;
+    left: 5%;
+    top: 0;
+    height: 100%;
+    overflow: hidden; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-1 .dots {
+        height: auto;
+        overflow: auto; } }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .dots {
+        top: -12%;
+        left: 0; } }
+    @media screen and (min-width: 1040px) {
+      .why-go-style-1 .dots {
+        left: 5%; } }
+    @media only screen and (min-width: 75em) {
+      .why-go-style-1 .dots {
+        top: auto; } }
+    @media only screen and (min-width: 90em) {
+      .why-go-style-1 .dots {
+        left: 10%; } }
+  .why-go-style-1 .thumbnail-1 {
+    position: absolute;
+    top: -25%;
+    left: 12%;
+    width: 30%;
+    z-index: 2; }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .thumbnail-1 {
+        left: 0; } }
+    @media screen and (min-width: 1040px) {
+      .why-go-style-1 .thumbnail-1 {
+        left: 12%; } }
+    @media only screen and (min-width: 90em) {
+      .why-go-style-1 .thumbnail-1 {
+        left: 20%; } }
+  .why-go-style-1 .thumbnail-2 {
+    max-width: 350px;
+    position: relative;
+    width: 70%; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-1 .thumbnail-2 {
+        max-width: 450px;
+        width: auto; } }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .thumbnail-2 {
+        max-width: 350px; } }
+    @media only screen and (min-width: 75em) {
+      .why-go-style-1 .thumbnail-2 {
+        left: -10%; } }
+  .why-go-style-1 .thumbnail-3 {
+    position: absolute;
+    left: 2%;
+    bottom: -20%;
+    width: 40%; }
+    @media only screen and (min-width: 60em) {
+      .why-go-style-1 .thumbnail-3 {
+        width: 50%;
+        bottom: -30%;
+        left: 0; } }
+    @media only screen and (min-width: 75em) {
+      .why-go-style-1 .thumbnail-3 {
+        bottom: -40%; } }
+
+@media only screen and (min-width: 48em) {
+  .why-go-style-2 {
+    margin-bottom: 9.6rem; } }
+
+@media only screen and (min-width: 60em) {
+  .why-go-style-2 {
+    margin-bottom: 12.8rem; } }
+
+.why-go-style-2 h2 {
+  margin-bottom: 8rem; }
+  @media screen and (min-width: 440px) {
+    .why-go-style-2 h2 {
+      margin-bottom: 9.6rem; } }
+  @media only screen and (min-width: 34.375em) {
+    .why-go-style-2 h2 {
+      margin-bottom: 12.8rem; } }
+  @media only screen and (min-width: 60em) {
+    .why-go-style-2 h2 {
+      margin-bottom: 14.4rem; } }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 h2 {
+      margin-bottom: 6.4rem; } }
+
+.why-go-style-2 .dots {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  overflow: hidden; }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .dots {
+      width: auto;
+      overflow: auto; } }
+
+.why-go-style-2 .dots-1 {
+  right: 25%;
+  top: -30%;
+  max-height: 200px; }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .dots-1 {
+      right: 5%;
+      max-height: none; } }
+
+.why-go-style-2 .dots-2 {
+  bottom: -30%;
+  left: 30%;
+  max-height: 220px; }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .dots-2 {
+      max-height: none;
+      left: 5%; } }
+
+.why-go-style-2 .thumbnail-1 {
+  position: absolute;
+  right: 0;
+  top: -50%;
+  width: 40%;
+  max-width: 350px;
+  z-index: 3; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail-1 {
+      top: -55%;
+      width: auto; } }
+
+.why-go-style-2 .thumbnail-2 {
+  width: 80%;
+  max-width: 690px;
+  position: relative;
+  z-index: 2; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail-2 {
+      width: auto; } }
+
+.why-go-style-2 .thumbnail-3 {
+  position: absolute;
+  left: 0;
+  bottom: -70%;
+  width: 40%;
+  max-width: 330px;
+  z-index: 2; }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .thumbnail-3 {
+      bottom: -60%;
+      width: auto; } }
+
+.why-go-style-2 .section-image {
+  text-align: center; }
+
+.why-go-style-2 .section-copy {
+  margin-top: 11.2rem; }
+  @media screen and (min-width: 440px) {
+    .why-go-style-2 .section-copy {
+      margin-top: 12.8rem; } }
+  @media only screen and (min-width: 34.375em) {
+    .why-go-style-2 .section-copy {
+      margin-top: 16rem; } }
+  @media screen and (min-width: 700px) {
+    .why-go-style-2 .section-copy {
+      margin-top: 19.2rem; } }
+  @media only screen and (min-width: 48em) {
+    .why-go-style-2 .section-copy {
+      margin-top: 3.2rem; } }
+  @media screen and (min-width: 1080px) {
+    .why-go-style-2 .section-copy {
+      margin-top: 4.8rem; } }
+  .why-go-style-2 .section-copy p {
+    max-width: 650px; }
+    @media only screen and (min-width: 48em) {
+      .why-go-style-2 .section-copy p {
+        margin-left: auto;
+        width: 55%; } }
+    @media screen and (min-width: 1080px) {
+      .why-go-style-2 .section-copy p {
+        width: auto; } }
+
+.why-go-style-3 {
+  position: relative; }
+  .why-go-style-3 .section-copy {
+    margin-bottom: 19.2rem; }
+    @media only screen and (min-width: 34.375em) {
+      .why-go-style-3 .section-copy {
+        margin-bottom: 20.8rem; } }
+  .why-go-style-3 .bg-paint {
+    top: 30%;
+    display: block !important;
+    background: url("../images/why-go-3/background.svg") no-repeat center/cover;
+    opacity: 0.7; }
+  .why-go-style-3 .thumbnail-1 {
+    position: absolute;
+    left: 0;
+    top: -58%;
+    width: 45%;
+    max-width: 340px; }
+    @media screen and (min-width: 1080px) {
+      .why-go-style-3 .thumbnail-1 {
+        width: auto; } }
+  .why-go-style-3 .thumbnail-2 {
+    width: 80%;
+    max-width: 600px; }
+    @media screen and (min-width: 1080px) {
+      .why-go-style-3 .thumbnail-2 {
+        width: auto; } }
+  .why-go-style-3 .thumbnail-3 {
+    max-width: 210px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 25%; }
+    @media screen and (min-width: 1080px) {
+      .why-go-style-3 .thumbnail-3 {
+        width: auto;
+        max-width: none;
+        right: 5%; } }
+  .why-go-style-3 .section-image {
+    text-align: center; }
+
+.why-go-max-width .container {
+  max-width: 1075px; }
+
+.get-tickets {
+  text-align: center;
+  padding-top: 3.2rem;
+  padding-bottom: 9.6rem;
+  background-color: #2d2d2d; }
+  @media only screen and (min-width: 34.375em) {
+    .get-tickets {
+      padding-top: 6.4rem; } }
+  @media only screen and (min-width: 75em) {
+    .get-tickets {
+      padding-bottom: 8rem;
+      padding-top: 8rem; } }
+  .get-tickets h2 {
+    margin-bottom: 1.6rem; }
+    @media only screen and (min-width: 34.375em) {
+      .get-tickets h2 {
+        margin-bottom: 3.2rem; } }
+
+.gallery-grid {
+  position: relative; }
+  .gallery-grid .container {
+    -webkit-columns: 3;
+            columns: 3;
+    -webkit-column-gap: 0.8rem;
+            column-gap: 0.8rem; }
+    @media only screen and (min-width: 48em) {
+      .gallery-grid .container {
+        -webkit-columns: 4;
+                columns: 4;
+        -webkit-column-gap: 1.6rem;
+                column-gap: 1.6rem; } }
+    @media screen and (min-width: 1350px) {
+      .gallery-grid .container {
+        -webkit-column-gap: 3.2rem;
+                column-gap: 3.2rem; } }
+    .gallery-grid .container .thumbnail {
+      margin-bottom: 0.4rem; }
+      @media only screen and (min-width: 34.375em) {
+        .gallery-grid .container .thumbnail {
+          margin-bottom: 0.8rem; } }
+      @media only screen and (min-width: 48em) {
+        .gallery-grid .container .thumbnail {
+          margin-bottom: 1.6rem; } }
+      @media screen and (max-width: 767px) {
+        .gallery-grid .container .thumbnail:first-child {
+          margin-top: 80%; } }
+      @media only screen and (min-width: 48em) {
+        .gallery-grid .container .thumbnail:first-child {
+          display: block;
+          -webkit-transform: translateY(80%);
+                  transform: translateY(80%);
+          margin-bottom: 0; } }
+      @media only screen and (min-width: 48em) {
+        .gallery-grid .container .thumbnail:nth-child(2) {
+          margin-top: 50%; } }
+      @media screen and (max-width: 767px) {
+        .gallery-grid .container .thumbnail:nth-child(6) {
+          margin-top: 50%; } }
+      @media only screen and (min-width: 48em) {
+        .gallery-grid .container .thumbnail:nth-child(7) {
+          margin-top: 70%; } }
+  .gallery-grid .bg-paint {
+    background-color: #2d2d2d; }
+    .gallery-grid .bg-paint::before {
+      content: "";
+      background: url("../images/gallery/gallery-top-brush.svg") no-repeat top/cover;
+      height: 200px;
+      top: -200px;
+      position: absolute;
+      left: 0;
+      width: 100%; }
+
+.bg-paint {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 30%;
+  height: 100%; }
 
 /*# sourceMappingURL=vocalsandverses.css.map */

@@ -8,17 +8,17 @@
     margin-top: 950px;
   }
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   //padding-bottom: 7%;
-  //   width: 100%;
-  //   top: -25%; //15
-  //   left: 0;
-  //   background: url('../images/paintbrush-top.svg') repeat-x center top/cover;
-  //   height: 200px;
-  //   // @media #{$small-breakpoint} {
-  //   //   padding-bottom: 15%;
-  //   // }
-  // }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -150px;
+    left: 0;
+    background: url('../images/paintbrush-top.svg') repeat-x center top/cover;
+    height: 200px;
+
+    @media #{$huge-breakpoint} {
+      top: -180px;
+    }
+  }
 }

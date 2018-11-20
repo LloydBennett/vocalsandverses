@@ -1,105 +1,73 @@
 .gallery-grid {
   position: relative;
-  padding-top: $spacing-base;
-  background-color: $swatch-gallery-bg;
-  margin-bottom: $spacing-xl;
 
-  @media #{$small-breakpoint} {
-    margin-bottom: $spacing-l + $spacing-base;
-  }
-
-  @media #{$medium-breakpoint} {
-    padding-top: $spacing-m;
-    margin-bottom: $spacing-xl + $spacing-m;
-  }
-
-  @media #{$small-large-breakpoint} {
-    margin-bottom: $spacing-xl + $spacing-l;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 10%;
-
-    @media #{$small-large-breakpoint} {
-      height: 20%;
-    }
-  }
-
-  &::before {
-    background: url('/images/gallery/top-section.png') no-repeat center top/cover;
-    top: -10%;
-
-    @media #{$small-large-breakpoint} {
-      top: -20%;
-    }
-  }
-
-  &::after {
-    background: url('/images/gallery/bottom-section.png') no-repeat center top/cover;
-    bottom: -20%;
-    height: 20%;
+  .container {
+    columns: 3;
+    column-gap: $spacing-s;
 
     @media #{$medium-breakpoint} {
-      bottom: -40%;
-      height: 40%;
+      columns: 4;
+      column-gap: $spacing-base;
+    }
+
+    @media screen and (min-width: 1350px) {
+      column-gap: $spacing-m;
+    }
+
+    .thumbnail {
+      margin-bottom: $spacing-xs;
+
+      @media #{$small-breakpoint} {
+        margin-bottom: $spacing-s;
+      }
+
+      @media #{$medium-breakpoint} {
+        margin-bottom: $spacing-base;
+      }
+
+      &:first-child {
+        @media screen and (max-width: 767px) {
+          margin-top: 80%;
+        }
+
+        @media #{$medium-breakpoint} {
+          display: block;
+          transform: translateY(80%);
+          margin-bottom: 0;
+        }
+      }
+
+      &:nth-child(2) {
+        @media #{$medium-breakpoint} {
+          margin-top: 50%;
+        }
+      }
+
+      &:nth-child(6) {
+        @media screen and (max-width: 767px) {
+          margin-top: 50%;
+        }
+      }
+
+      &:nth-child(7) {
+        @media #{$medium-breakpoint} {
+          margin-top: 70%;
+        }
+      }
     }
   }
 
-  .thumbnail {
-    display: block;
-    cursor: pointer;
-  }
+  .bg-paint {
+    background-color: $color-bg-paint;
 
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  [class^="col-"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .ctas {
-    margin-top: $spacing-m;
-  }
-}
-
-.gallery-modal {
-  background-color: gray;
-
-  // .carousel-controller {
-  //   display: flex;
-  //   flex-direction: column;
-  //   height: 100%;
-  //   justify-content: center;
-  // }
-
-  .carousel-controller {
-    width: 80px;
-  }
-
-  .carousel-chevrons {
-    top: 50%;
-
-    // .prev {
-    //   left: -10%;
-    // }
-    //
-    // .next {
-    //   right: -10%;
-    // }
-
-    svg {
-      height: 100%;
+    &::before {
+      content: "";
+      background: url('../images/gallery/gallery-top-brush.svg') no-repeat top/cover;
+      height: 200px;
+      top: -200px;
+      position: absolute;
+      left: 0;
+      width: 100%;
     }
-  }
-
-  .icon-stroke {
-    fill: $white;
   }
 }

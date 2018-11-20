@@ -1,122 +1,332 @@
 .why-go {
-  & + .gallery-grid {
-    margin-top: $spacing-l + $spacing-base;
+  .section-image {
+    position: relative;
+  }
+}
 
-    // @media screen and (min-width: 500px) {
-    //   margin-top: $spacing-l + $spacing-base;
-    // }
+.dots {
+  opacity: 0.5;
+}
+
+.why-go-style-1 {
+  margin-top: $spacing-xl;
+
+  @media #{$small-large-breakpoint} {
+    margin-top: $spacing-xl + $spacing-m;
+    margin-bottom: $spacing-xl + $spacing-m;
+  }
+
+  .section-image {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    max-width: 700px;
+    margin-bottom: $spacing-l;
+
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-l + $spacing-base;
+    }
 
     @media #{$small-large-breakpoint} {
-      margin-top: $spacing-xl;
+      max-width: none;
+      margin-bottom: 0;
+    }
+  }
+
+  .dots {
+    position: absolute;
+    left: 5%;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+
+    @media #{$small-breakpoint} {
+      height: auto;
+      overflow: auto;
+    }
+
+    @media #{$small-large-breakpoint} {
+      top: -12%;
+      left: 0;
+    }
+
+    @media screen and (min-width: 1040px) {
+      left: 5%;
+    }
+
+    @media #{$large-breakpoint} {
+      top: auto;
     }
 
     @media #{$x-large-breakpoint} {
-      margin-top: 0;
+      left: 10%;
     }
   }
 
-  .thumbnail {
-    max-width: 800px;
+  .thumbnail-1 {
+    position: absolute;
+    top: -25%;
+    left: 12%;
+    width: 30%;
+    z-index: 2;
+
+    @media #{$small-large-breakpoint} {
+      left: 0;
+    }
+
+    @media screen and (min-width: 1040px) {
+      left: 12%;
+    }
+
+    @media #{$x-large-breakpoint} {
+      left: 20%;
+    }
   }
 
-  .centered-image-block {
+  .thumbnail-2 {
+    max-width: 350px;
+    position: relative;
+    width: 70%;
+
+    @media #{$small-breakpoint} {
+      max-width: 450px;
+      width: auto;
+    }
+
     @media #{$small-large-breakpoint} {
+      max-width: 350px;
+    }
+
+    @media #{$large-breakpoint} {
+      left: -10%;
+    }
+  }
+
+  .thumbnail-3 {
+    position: absolute;
+    left: 2%;
+    bottom: -20%;
+    width: 40%;
+
+    @media #{$small-large-breakpoint} {
+      width: 50%;
+      bottom: -30%;
+      left: 0;
+    }
+
+    @media #{$large-breakpoint} {
+      bottom: -40%;
+    }
+  }
+}
+
+
+.why-go-style-2 {
+
+  @media #{$medium-breakpoint} {
+    margin-bottom: $spacing-l + $spacing-m;
+  }
+
+  @media #{$small-large-breakpoint} {
+    margin-bottom: $spacing-xl;
+  }
+
+  h2 {
+    margin-bottom: $spacing-l + $spacing-base;
+
+    @media screen and (min-width: 440px) {
       margin-bottom: $spacing-l + $spacing-m;
-      position: relative;
     }
 
-    @media #{$x-large-breakpoint} {
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-xl;
+    }
+
+    @media #{$small-large-breakpoint} {
+      margin-bottom: $spacing-xl + $spacing-base;
+    }
+
+    @media screen and (min-width: 1080px) {
       margin-bottom: $spacing-l;
     }
   }
 
-  .image-block {
-    @media #{$small-large-breakpoint} {
-      width: 80%;
-      position: absolute;
-      text-align: right;
-    }
+  .dots {
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    overflow: hidden;
 
-    @media #{$x-large-breakpoint} {
-      width: 52.5%;
-      position: static;
-      left: 0;
+    @media #{$medium-breakpoint} {
+      width: auto;
+      overflow: auto;
     }
   }
 
-  .paragraph-block {
-    @media #{$small-large-breakpoint} {
-      width: 55%;
+  .dots-1 {
+    right: 25%;
+    top: -30%;
+    max-height: 200px;
+
+    @media #{$medium-breakpoint} {
+      right: 5%;
+      max-height: none;
+    }
+  }
+
+  .dots-2 {
+    bottom: -30%;
+    left: 30%;
+    max-height: 220px;
+
+    @media #{$medium-breakpoint} {
+      max-height: none;
+      left: 5%;
+    }
+  }
+
+  .thumbnail-1 {
+    position: absolute;
+    right: 0;
+    top: -50%;
+    width: 40%;
+    max-width: 350px;
+    z-index: 3;
+
+    @media screen and (min-width: 1080px) {
+      top: -55%;
+      width: auto;
+    }
+  }
+
+  .thumbnail-2 {
+    width: 80%;
+    max-width: 690px;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+    }
+  }
+
+  .thumbnail-3 {
+    position: absolute;
+    left: 0;
+    bottom: -70%;
+    width: 40%;
+    max-width: 330px;
+    z-index: 2;
+
+    @media screen and (min-width: 1080px) {
+      bottom: -60%;
+      width: auto;
+    }
+  }
+
+  .section-image {
+    text-align: center;
+  }
+
+  .section-copy {
+    margin-top: $spacing-l + $spacing-m + $spacing-base;
+
+    @media screen and (min-width: 440px) {
+      margin-top: $spacing-xl;
     }
 
-    @media #{$x-large-breakpoint} {
-      width: 45%;
+    @media #{$small-breakpoint} {
+      margin-top: $spacing-xl + $spacing-m;
+    }
+
+    @media screen and (min-width: 700px) {
+      margin-top: $spacing-xl + $spacing-l;
+    }
+
+    @media #{$medium-breakpoint} {
+      margin-top: $spacing-m;
+    }
+
+    @media screen and (min-width: 1080px) {
+      margin-top: $spacing-m + $spacing-base;
+    }
+
+    p {
+      max-width: 650px;
+
+      @media #{$medium-breakpoint} {
+        margin-left: auto;
+        width: 55%;
+      }
+
+      @media screen and (min-width: 1080px) {
+        width: auto;
+      }
     }
   }
 }
 
-.why-go-style-left {
-  @media #{$small-large-breakpoint} {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-top: $spacing-m;
+.why-go-style-3 {
+  position: relative;
+
+  .section-copy {
+    margin-bottom: $spacing-xl + $spacing-l;
+
+    @media #{$small-breakpoint} {
+      margin-bottom: $spacing-xl + $spacing-l + $spacing-base;
+    }
   }
 
-  @media #{$x-large-breakpoint} {
-    justify-content: flex-end;
-    margin-top: 0;
+  .bg-paint {
+    top: 30%;
+    display: block !important;
+    background: url('../images/why-go-3/background.svg') no-repeat center/cover;
+    opacity: 0.7;
   }
 
-  .image-block {
-    @media #{$small-large-breakpoint} {
-      left: -40%;
-    }
+  .thumbnail-1 {
+    position: absolute;
+    left: 0;
+    top: -58%;
+    width: 45%;
+    max-width: 340px;
 
-    @media #{$x-large-breakpoint} {
-      margin-right: 2.5%;
-      text-align: left;
+    @media screen and (min-width: 1080px) {
+      width: auto;
     }
+  }
+
+  .thumbnail-2 {
+    width: 80%;
+    max-width: 600px;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+    }
+  }
+
+  .thumbnail-3 {
+    max-width: 210px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25%;
+
+    @media screen and (min-width: 1080px) {
+      width: auto;
+      max-width: none;
+      right: 5%;
+    }
+  }
+
+  .section-image {
+    text-align: center;
   }
 }
 
-.why-go-style-right {
-  .image-block {
-    @media #{$small-large-breakpoint} {
-      right: -40%;
-    }
-
-    @media #{$large-breakpoint} {
-      right: -25%;
-    }
-
-    @media #{$x-large-breakpoint} {
-      margin-left: 2.5%;
-    }
-  }
-}
-
-.why-go-tall-image {
-  @media #{$small-large-breakpoint} {
-    margin-top: $spacing-xl + $spacing-m;
-  }
-
-  @media #{$x-large-breakpoint} {
-    margin-top: 0;
-  }
-
-  .image-block {
-    @media #{$small-large-breakpoint} {
-      left: -35%;
-    }
-  }
-
-  .thumbnail {
-    max-width: 700px;
-  }
-}
-
-.why-go-align-right {
-  @media #{$medium-breakpoint} {
-    text-align: right;
+.why-go-max-width {
+  .container {
+    max-width: 1075px;
   }
 }

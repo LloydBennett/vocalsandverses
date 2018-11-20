@@ -140,6 +140,12 @@ blockquote {
   @include nowrap(null, true);
 }
 
+.no-wrap-break-medium {
+  @media #{$medium-breakpoint} {
+    @include nowrap(null, true);
+  }
+}
+
 .italicized-heading {
   font-family: $font-base-family;
   font-style: italic;

@@ -1,17 +1,10 @@
-<section class="section gallery-grid">
-  <div class="row">
-    {% for counter in (1..12)%}
-    <div class="col-xs-4 col-sm-3 col-md-2">
+<section class="gallery-grid">
+  <div class="bg-paint thumbnail"></div>
+  <div class="container">
+    {% for counter in (1..8)%}
       <div class="thumbnail" data-trigger-modal="gallery-modal" data-index="{{ counter }}" data-carousel-tab>
-        <img src="../images/gallery/gallery-image-{{ counter }}.jpg" alt="Gallery Image">
+        <img src="../images/gallery/{{ counter }}/gallery-image-{{ counter }}.jpg" alt="Gallery Image">
       </div>
-    </div>
     {% endfor %}
-  </div>
-  <div class="ctas text-center">
-    <a href="https://www.facebook.com/pg/VocalsAndVerses/photos/?ref=page_internal"
-    class="btn btn-sml" target="_blank">
-      See more photos
-    </a>
   </div>
 </section>
