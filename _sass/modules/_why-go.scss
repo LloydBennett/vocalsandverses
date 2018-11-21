@@ -9,7 +9,11 @@
 }
 
 .why-go-style-1 {
-  margin-top: $spacing-xl;
+  margin-top: $spacing-l + $spacing-m;
+
+  @media #{$small-breakpoint} {
+    margin-top: $spacing-xl;
+  }
 
   @media #{$small-large-breakpoint} {
     margin-top: $spacing-xl + $spacing-m;
