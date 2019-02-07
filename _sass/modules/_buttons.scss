@@ -10,6 +10,11 @@
   letter-spacing: 2px;
   font-weight: $font-weight-semi-bold;
   padding: 0 $spacing-s $spacing-s;
+  font-size: 0.8em;
+
+  @media #{$small-breakpoint} {
+    font-size: 16px;
+  }
 
   @media screen and (max-width: 767px) {
     margin-left: auto;

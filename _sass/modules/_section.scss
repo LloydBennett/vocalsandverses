@@ -1,5 +1,5 @@
 .section {
-  margin-bottom: $spacing-m;
+  margin-bottom: $spacing-m + $spacing-base;
 
   @media #{$small-breakpoint} {
     margin-bottom: $spacing-l;
