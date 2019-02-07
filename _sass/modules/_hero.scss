@@ -20,8 +20,8 @@
     }
   }
   .hero-content-title {
-    @media screen and (max-width: 549px) {
-      font-size: 11vw;
+    @media screen and (min-width: 350px) and (max-width: 549px) {
+      font-size: pxtoem(42px);
     }
   }
 }

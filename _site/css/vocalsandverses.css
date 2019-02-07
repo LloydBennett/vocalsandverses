@@ -821,9 +821,9 @@ footer {
 @media only screen and (min-width: 48em) {
   .home-hero .hero-content-inner {
     margin-top: 80px; } }
-@media screen and (max-width: 549px) {
+@media screen and (min-width: 350px) and (max-width: 549px) {
   .home-hero .hero-content-title {
-    font-size: 11vw; } }
+    font-size: 2.625em; } }
 
 .hero-content {
   height: 100%;
