@@ -153,12 +153,16 @@ blockquote {
 }
 
 .call-out {
-  font-size: pxtoem(18px);
+  font-size: pxtoem(16px);
   display: table;
+  max-width: 600px;
 
   @media #{$small-breakpoint} {
+    font-size: pxtoem(18px);
+  }
+
+  @media #{$medium-breakpoint} {
     font-size: pxtoem(21px);
-    max-width: 600px;
   }
 
   @media #{$large-breakpoint} {

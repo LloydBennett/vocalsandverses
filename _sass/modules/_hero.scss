@@ -11,6 +11,10 @@
 
 .home-hero {
   .hero-content-inner {
+    @media screen and (max-width: 549px) {
+      margin-top: -80px;
+    }
+
     @media #{$medium-breakpoint} {
       margin-top: 80px;
     }

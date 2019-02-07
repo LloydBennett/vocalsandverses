@@ -270,7 +270,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Droid Serif", serif;
+  font-family: "droid-serif", serif;
   /* 1 */
   font-size: 100%;
   /* 1 */
@@ -490,7 +490,7 @@ html {
 body {
   color: #808080;
   font-size: 1em;
-  font-family: "Droid Serif", serif;
+  font-family: "droid-serif", serif;
   font-weight: 400; }
   body.dark-theme {
     color: #BCBCBC;
@@ -594,17 +594,20 @@ blockquote .quotee {
     white-space: nowrap; } }
 
 .italicized-heading {
-  font-family: "Droid Serif", serif;
+  font-family: "droid-serif", serif;
   font-style: italic;
   font-weight: 400; }
 
 .call-out {
-  font-size: 1.125em;
-  display: table; }
+  font-size: 1em;
+  display: table;
+  max-width: 600px; }
   @media only screen and (min-width: 34.375em) {
     .call-out {
-      font-size: 1.3125em;
-      max-width: 600px; } }
+      font-size: 1.125em; } }
+  @media only screen and (min-width: 48em) {
+    .call-out {
+      font-size: 1.3125em; } }
   @media only screen and (min-width: 75em) {
     .call-out {
       font-size: 2em;
@@ -812,6 +815,9 @@ footer {
   display: flex;
   flex-direction: column; }
 
+@media screen and (max-width: 549px) {
+  .home-hero .hero-content-inner {
+    margin-top: -80px; } }
 @media only screen and (min-width: 48em) {
   .home-hero .hero-content-inner {
     margin-top: 80px; } }
@@ -1227,8 +1233,14 @@ footer {
 .why-go-style-3 {
   position: relative; }
   .why-go-style-3 .section-copy {
-    margin-bottom: 19.2rem; }
+    margin-bottom: 11rem; }
+    @media screen and (min-width: 450px) {
+      .why-go-style-3 .section-copy {
+        margin-bottom: 14.4rem; } }
     @media only screen and (min-width: 34.375em) {
+      .why-go-style-3 .section-copy {
+        margin-bottom: 20.8rem; } }
+    @media only screen and (min-width: 48em) {
       .why-go-style-3 .section-copy {
         margin-bottom: 20.8rem; } }
   .why-go-style-3 .bg-paint {
