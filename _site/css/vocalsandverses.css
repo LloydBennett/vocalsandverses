@@ -1357,3 +1357,47 @@ footer {
   left: 0;
   top: 30%;
   height: 100%; }
+
+.loading-canvas {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: black;
+  z-index: 3;
+  justify-content: center;
+  align-items: center; }
+
+.title {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 0.4rem; }
+  .title:last-child {
+    margin-right: 0; }
+  .title span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.3125em;
+    color: white;
+    display: inline-block;
+    transform: translateY(100%); }
+
+.loading-canvas-wipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0; }
+  .loading-canvas-wipe.loading-canvas-wipe-sunrise {
+    background-color: #FED700; }
+  .loading-canvas-wipe.loading-canvas-wipe-sunrise {
+    background-color: white; }
+
+.loading-titles-logo {
+  display: table;
+  transform: translateX(-50%) rotate(20deg);
+  left: 50%;
+  position: absolute;
+  transform-origin: 100% 50%;
+  opacity: 0;
+  transition: 400ms ease; }
