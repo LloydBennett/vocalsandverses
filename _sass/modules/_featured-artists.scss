@@ -31,7 +31,9 @@
 }
 
 .featured-artists-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr $spacing-base 1fr;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: $spacing-base;
   grid-row-gap: $spacing-m;
@@ -41,10 +43,12 @@
   }
 
   @media #{$medium-breakpoint} {
+    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
   }
 
   @media #{$small-large-breakpoint} {
+    -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
   }
 

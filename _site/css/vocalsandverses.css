@@ -948,7 +948,9 @@ footer {
         margin-bottom: 0; } }
 
 .featured-artists-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1.6rem 1fr;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 1.6rem;
   grid-row-gap: 3.2rem; }
@@ -957,9 +959,11 @@ footer {
       grid-row-gap: 4.8rem; } }
   @media only screen and (min-width: 48em) {
     .featured-artists-list {
+      -ms-grid-columns: 1fr [3];
       grid-template-columns: repeat(3, 1fr); } }
   @media only screen and (min-width: 60em) {
     .featured-artists-list {
+      -ms-grid-columns: 1fr [4];
       grid-template-columns: repeat(4, 1fr); } }
 
 .section {
