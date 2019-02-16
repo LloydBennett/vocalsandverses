@@ -9,13 +9,13 @@ $loading-titles: "people", "artistry", "talent";
   z-index: 3;
   justify-content: center;
   align-items: center;
-  transition: 400ms ease;
+  transition: 500ms ease 250ms;
 
   &.hide {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: 400ms ease;
+    //transition: 500ms ease 200ms;
   }
 }
 
@@ -58,7 +58,7 @@ $loading-titles: "people", "artistry", "talent";
 
   &.wipe-transition {
     width: 100%;
-    transition: 600ms ease;
+    transition: 600ms ease-out 400ms;
   }
 
   &.loading-canvas-wipe-sunrise {
@@ -67,7 +67,7 @@ $loading-titles: "people", "artistry", "talent";
 
   &.loading-canvas-wipe-whitenoise {
     background-color: white;
-    transition: 600ms ease 100ms;
+    transition: 600ms ease-out 500ms;
     z-index: 2;
   }
 }
@@ -87,9 +87,19 @@ $loading-titles: "people", "artistry", "talent";
   transform-origin: 100% 50%;
   opacity: 0;
   transition: 400ms ease 700ms;
+  width: 100px;
+
+  @media #{$small-breakpoint} {
+    width: auto;
+  }
 
   &.enter-transition {
     transform: translateX(-50%) rotate(0);
     opacity: 1;
+  }
+
+  img {
+    display: block;
+    width: 100%;
   }
 }
