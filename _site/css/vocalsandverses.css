@@ -1366,7 +1366,13 @@ footer {
   background: black;
   z-index: 3;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: 400ms ease; }
+  .loading-canvas.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 400ms ease; }
 
 .title {
   display: inline-block;
@@ -1380,7 +1386,20 @@ footer {
     font-size: 1.3125em;
     color: white;
     display: inline-block;
-    transform: translateY(100%); }
+    transform: translateY(100%);
+    animation-name: revealText;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    animation-fill-mode: forwards; }
+
+.title:nth-child(1) span {
+  animation-delay: 300ms; }
+
+.title:nth-child(2) span {
+  animation-delay: 600ms; }
+
+.title:nth-child(3) span {
+  animation-delay: 900ms; }
 
 .loading-canvas-wipe {
   position: absolute;
@@ -1388,16 +1407,34 @@ footer {
   left: 0;
   height: 100%;
   width: 0; }
+  .loading-canvas-wipe.wipe-transition {
+    width: 100%;
+    transition: 600ms ease; }
   .loading-canvas-wipe.loading-canvas-wipe-sunrise {
     background-color: #FED700; }
-  .loading-canvas-wipe.loading-canvas-wipe-sunrise {
-    background-color: white; }
+  .loading-canvas-wipe.loading-canvas-wipe-whitenoise {
+    background-color: white;
+    transition: 600ms ease 100ms;
+    z-index: 2; }
+
+.loading-titles.exit-transition {
+  transition: 500ms ease 200ms;
+  opacity: 0; }
 
 .loading-titles-logo {
   display: table;
-  transform: translateX(-50%) rotate(20deg);
+  transform: translateX(-50%) rotate(-20deg);
   left: 50%;
   position: absolute;
   transform-origin: 100% 50%;
   opacity: 0;
-  transition: 400ms ease; }
+  transition: 400ms ease 700ms; }
+  .loading-titles-logo.enter-transition {
+    transform: translateX(-50%) rotate(0);
+    opacity: 1; }
+
+@keyframes revealText {
+  from {
+    transform: translateY(100%); }
+  to {
+    transform: translateY(0); } }

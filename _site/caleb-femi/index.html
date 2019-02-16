@@ -14,6 +14,41 @@
   <link rel="canonical" href="http://localhost:4000/caleb-femi/">
   <link rel="alternate" type="application/rss+xml" title="Vocals &amp; Verses" href="/feed.xml">
 </head>
+<script>
+
+
+  window.addEventListener('load', function(){
+    var $lastTitle = document.querySelector('.title:last-child span');
+    var $titles = document.querySelector('.loading-titles');
+    var $logo = document.querySelector('.loading-titles-logo');
+    var $wipes = document.querySelectorAll('.loading-canvas-wipe');
+    var $loadingCanvas = document.querySelector('.loading-canvas');
+
+    $lastTitle.addEventListener("webkitAnimationEnd", titlesTransitionOut);
+    $logo.addEventListener("webkitTransitionEnd", logoTransitionOut);
+
+    function titlesTransitionOut() {
+      console.log('im done!!');
+      $titles.classList.add('exit-transition');
+      $logo.classList.add('enter-transition');
+    }
+
+    function logoTransitionOut(){
+      $wipes.forEach(function(element) {
+        element.classList.add('wipe-transition');
+
+        if(element.classList.contains('loading-canvas-wipe-whitenoise')) {
+          element.addEventListener("webkitTransitionEnd", resetCanvas);
+        }
+      });
+    }
+
+    function resetCanvas() {
+      $loadingCanvas.classList.add('hide');
+    }
+
+  });
+</script>
 
 
   <body >
