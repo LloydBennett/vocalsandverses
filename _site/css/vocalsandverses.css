@@ -731,7 +731,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
-  padding: 0 0.8rem 0.8rem;
+  padding: 0.8rem 1.6rem;
   font-size: 0.8em; }
   @media only screen and (min-width: 34.375em) {
     .button {
@@ -750,7 +750,9 @@ footer {
     background-color: #6890CA;
     position: absolute;
     left: 0;
-    bottom: 0; }
+    bottom: 0;
+    z-index: 1;
+    transition: 200ms ease; }
   .button:focus {
     outline: none; }
   .button.button-small {
@@ -767,6 +769,14 @@ footer {
       margin-left: 3.2rem; } }
   .button.button-dark {
     color: #fff; }
+
+.button-name {
+  position: relative;
+  z-index: 2; }
+
+.button:hover::after {
+  height: 100%;
+  transition: 200ms ease; }
 
 .play-btn {
   display: inline-block;
