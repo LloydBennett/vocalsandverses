@@ -1,0 +1,105 @@
+$loading-titles: "people", "artistry", "talent";
+
+.loading-canvas {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: black;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  transition: 500ms ease 250ms;
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    //transition: 500ms ease 200ms;
+  }
+}
+
+.title {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: $spacing-xs;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  span {
+    font-family: $font-display-family;
+    font-weight: 500;
+    font-size: pxtoem(21px);
+    color: white;
+    display: inline-block;
+    transform: translateY(100%);
+    animation-name: revealText;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    animation-fill-mode: forwards;
+
+  }
+}
+
+@for $loading-titles from 1 through 3 {
+  .title:nth-child(#{$loading-titles}) span {
+    animation-delay: #{300 * $loading-titles}ms;
+  }
+}
+
+.loading-canvas-wipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+
+  &.wipe-transition {
+    width: 100%;
+    transition: 600ms ease 400ms;
+  }
+
+  &.loading-canvas-wipe-sunrise {
+    background-color: $color-sunrise;
+  }
+
+  &.loading-canvas-wipe-whitenoise {
+    background-color: white;
+    transition: 600ms ease 500ms;
+    z-index: 2;
+  }
+}
+
+.loading-titles {
+  &.exit-transition {
+    transition: 500ms ease 200ms;
+    opacity: 0;
+  }
+}
+
+.loading-titles-logo {
+  display: table;
+  transform: translateX(-50%) rotate(-20deg);
+  left: 50%;
+  position: absolute;
+  transform-origin: 100% 50%;
+  opacity: 0;
+  transition: 400ms ease 700ms;
+  width: 100px;
+
+  @media #{$small-breakpoint} {
+    width: auto;
+  }
+
+  &.enter-transition {
+    transform: translateX(-50%) rotate(0);
+    opacity: 1;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}

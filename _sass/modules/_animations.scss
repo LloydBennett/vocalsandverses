@@ -1,28 +1,8 @@
-@keyframes animate-nav-menu {
-
-	from {
-		width: 0;
-	}
-
-	to {
-		width: 50%;
-		/*@media #{$medium-breakpoint} {
-			width: 50%;
-		}*/
-	}
-}
-
-@keyframes bounce-arrow-next {
-  // 0%, 50%, 100%  {
-  //   transform: translateX(0);
-  // }
-  // 25%, 75% {
-  //   transform: translateX(-80px);
-  // }
+@keyframes revealText {
   from {
-    transform: translateX(0);
+    transform: translateY(100%);
   }
   to {
-    transform: translateX(-80px);
+    transform: translateY(0);
   }
 }
