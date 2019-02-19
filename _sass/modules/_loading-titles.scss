@@ -58,7 +58,7 @@ $loading-titles: "people", "artistry", "talent";
 
   &.wipe-transition {
     width: 100%;
-    transition: 600ms ease-out 400ms;
+    transition: 600ms ease 400ms;
   }
 
   &.loading-canvas-wipe-sunrise {
@@ -67,7 +67,7 @@ $loading-titles: "people", "artistry", "talent";
 
   &.loading-canvas-wipe-whitenoise {
     background-color: white;
-    transition: 600ms ease-out 500ms;
+    transition: 600ms ease 500ms;
     z-index: 2;
   }
 }
