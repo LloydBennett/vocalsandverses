@@ -733,7 +733,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem;
   font-size: 0.8em; }
   @media only screen and (min-width: 34.375em) {
     .button {
@@ -775,10 +775,6 @@ footer {
 .button-name {
   position: relative;
   z-index: 2; }
-
-.button:hover::after {
-  height: 100%;
-  transition: 200ms ease; }
 
 .play-btn {
   display: inline-block;

@@ -9,7 +9,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: $font-weight-semi-bold;
-  padding: $spacing-s $spacing-base;
+  padding: $spacing-s;
   font-size: 0.8em;
 
   @media #{$small-breakpoint} {
@@ -72,10 +72,10 @@
   z-index: 2;
 }
 
-.button:hover::after {
-  height: 100%;
-  transition: 200ms ease;
-}
+// .button:hover::after {
+//   height: 100%;
+//   transition: 200ms ease;
+// }
 
 .play-btn {
   display: inline-block;
