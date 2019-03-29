@@ -14,9 +14,29 @@
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Vocals &amp; Verses" href="/feed.xml">
 </head>
+
+
+  <body  class="dark-theme" >
+    <!-- <div class="loading-canvas">
+  <div class="loading-canvas-wipe loading-canvas-wipe-whitenoise"></div>
+  <div class="loading-canvas-wipe loading-canvas-wipe-sunrise"></div>
+  <div class="loading-titles">
+    <div class="title">
+      <span>People, </span>
+    </div>
+    <div class="title">
+      <span>Artistry, </span>
+    </div>
+    <div class="title">
+      <span>Talent</span>
+    </div>
+  </div>
+  <div class="loading-titles-logo">
+    <img src="../images/logo.svg" alt="Vocals &amp; Verses" />
+  </div>
+</div>
+
 <script>
-
-
   window.addEventListener('load', function(){
     var $lastTitle = document.querySelector('.title:last-child span');
     var $titles = document.querySelector('.loading-titles');
@@ -49,28 +69,7 @@
 
   });
 </script>
-
-
-  <body  class="dark-theme" >
-    <div class="loading-canvas">
-  <div class="loading-canvas-wipe loading-canvas-wipe-whitenoise"></div>
-  <div class="loading-canvas-wipe loading-canvas-wipe-sunrise"></div>
-  <div class="loading-titles">
-    <div class="title">
-      <span>People, </span>
-    </div>
-    <div class="title">
-      <span>Artistry, </span>
-    </div>
-    <div class="title">
-      <span>Talent</span>
-    </div>
-  </div>
-  <div class="loading-titles-logo">
-    <img src="../images/logo.svg" alt="Vocals &amp; Verses" />
-  </div>
-</div>
-
+ -->
     <div id="page-wrapper" class="overflow">
       <section class="hero home-hero with-gradient">
   <header class="nav-bar">
@@ -130,10 +129,10 @@
           <span class="no-wrap-break italicized-heading">Feed The Soul.</span>
         </h1>
         <div class="ctas">
-          <a href="https://www.facebook.com/pg/VocalsAndVerses/events/?ref=page_internal" class="button button-dark" target="_blank">
+          <a href="https://www.tickettailor.com/events/vocalsverses/" class="button button-dark" target="_blank">
             <span class="button-name">Get Tickets</span>
           </a>
-          <div class="play-btn" data-trigger-modal="video-modal">
+          <div class="play-btn" data-trigger-modal="video">
             <div class="play-btn-icon">
               <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                 <title>
@@ -152,6 +151,19 @@
     </div>
   </div>
 </section>
+
+<div class="modal-window video-modal" data-modal="video">
+  <div class="close-modal" data-trigger-modal="video">
+    <span></span>
+    <span></span>
+  </div>
+  <video controls>
+    <source src="videos/featured-video/featured-video.mp4" type="video/mp4">
+    <source src="videos/featured-video/featured-video.ogv" type="video/ogv">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
       <div class="content">
         <div class="usp section">
@@ -770,8 +782,8 @@
       <p>Providing high quality acts from beginning to end, with talent
         that leaves you captivated past the end of the show.
         For many artists the Vocals &amp; Verses stage has been part of the journey to mainstream
-        success examples include <span class="nowrap">JP Cooper,</span>
-        <span class="nowrap">Jacob Banks,</span> Shakka,
+        success. Examples include <span class="nowrap">JP Cooper,</span>
+        <span class="nowrap">Jacob Banks,</span>&nbsp;George The Poet, Shakka,
         <span class="nowrap">Cynthia Erivo</span> and <span class="nowrap">Ray BLK</span>.
       </p>
     </div>
@@ -1944,9 +1956,10 @@
       </div>
     </div>
     <div class="section-copy">
-      <p>Creates an environment that people of different backgrounds
-        and walks of life come together with a common purpose and provides
-        the perfect platform for people to network with others with similar passions.
+      <p>
+        Vocals and Verses creates an open environment that encourages diversity,
+        networking and allows people from all walks of life to come together with
+        one commons love; the stage.
       </p>
     </div>
   </div>
@@ -1991,9 +2004,9 @@
         </span>
       </h2>
       <p>
-        Creates an environment that people of different backgrounds and
-        walks of life come together with a common purpose and provides the
-        perfect platform for people to network with others with similar passions.
+        An event that not only entertains, but also unearths and invigorates passion
+        in the hearts of those who attend, encouraging them to follow their own dreams
+        as a result of being immersed in the artistry on stage.
       </p>
     </div>
     <div class="section-image">
@@ -2289,6 +2302,6 @@
 
       </div>
     </div>
-    <!-- <script src="javascript/production/script.js"></script> -->
+    <script src="javascript/video-modal.js"></script>
   </body>
 </html>
