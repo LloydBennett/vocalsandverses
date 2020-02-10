@@ -1498,3 +1498,7 @@ footer {
     width: 100%; }
     .close-modal span:last-child {
       transform: rotate(-45deg); }
+
+.video-iframe {
+  width: 100%;
+  height: 100%; }

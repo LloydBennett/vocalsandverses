@@ -7,17 +7,13 @@
 
   function toggleModal() {
     if(!openModal) {
-      console.log('heyy!!');
       body.classList.add('no-scrolling');
       modal.classList.add('visible');
-      featuredVideo.play();
       openModal = true;
     }
     else {
       body.classList.remove('no-scrolling');
       modal.classList.remove('visible');
-      featuredVideo.pause();
-      featuredVideo.currentTime = 0;
       openModal = false;
     }
   }
